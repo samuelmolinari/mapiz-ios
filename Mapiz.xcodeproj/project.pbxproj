@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7EAA9D531994122A000A8588 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D521994122A000A8588 /* Foundation.framework */; };
+		7EAA9D551994122A000A8588 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D541994122A000A8588 /* CoreGraphics.framework */; };
+		7EAA9D571994122A000A8588 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D561994122A000A8588 /* UIKit.framework */; };
+		7EAA9D5D1994122A000A8588 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA9D5B1994122A000A8588 /* InfoPlist.strings */; };
+		7EAA9D5F1994122A000A8588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9D5E1994122A000A8588 /* main.m */; };
+		7EAA9D631994122A000A8588 /* MapizAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9D621994122A000A8588 /* MapizAppDelegate.m */; };
+		7EAA9D661994122A000A8588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA9D641994122A000A8588 /* Main.storyboard */; };
+		7EAA9D691994122A000A8588 /* MapizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9D681994122A000A8588 /* MapizViewController.m */; };
+		7EAA9D6B1994122A000A8588 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA9D6A1994122A000A8588 /* Images.xcassets */; };
+		7EAA9D721994122A000A8588 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D711994122A000A8588 /* XCTest.framework */; };
+		7EAA9D731994122A000A8588 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D521994122A000A8588 /* Foundation.framework */; };
+		7EAA9D741994122A000A8588 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D561994122A000A8588 /* UIKit.framework */; };
+		7EAA9D7C1994122A000A8588 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA9D7A1994122A000A8588 /* InfoPlist.strings */; };
+		7EAA9D7E1994122A000A8588 /* MapizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9D7D1994122A000A8588 /* MapizTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EAA9D751994122A000A8588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EAA9D471994122A000A8588 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EAA9D4E1994122A000A8588;
+			remoteInfo = Mapiz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7EAA9D4F1994122A000A8588 /* Mapiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mapiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EAA9D521994122A000A8588 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7EAA9D541994122A000A8588 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7EAA9D561994122A000A8588 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7EAA9D5A1994122A000A8588 /* Mapiz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mapiz-Info.plist"; sourceTree = "<group>"; };
+		7EAA9D5C1994122A000A8588 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7EAA9D5E1994122A000A8588 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7EAA9D601994122A000A8588 /* Mapiz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mapiz-Prefix.pch"; sourceTree = "<group>"; };
+		7EAA9D611994122A000A8588 /* MapizAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapizAppDelegate.h; sourceTree = "<group>"; };
+		7EAA9D621994122A000A8588 /* MapizAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapizAppDelegate.m; sourceTree = "<group>"; };
+		7EAA9D651994122A000A8588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7EAA9D671994122A000A8588 /* MapizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapizViewController.h; sourceTree = "<group>"; };
+		7EAA9D681994122A000A8588 /* MapizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapizViewController.m; sourceTree = "<group>"; };
+		7EAA9D6A1994122A000A8588 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7EAA9D701994122A000A8588 /* MapizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EAA9D711994122A000A8588 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7EAA9D791994122A000A8588 /* MapizTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MapizTests-Info.plist"; sourceTree = "<group>"; };
+		7EAA9D7B1994122A000A8588 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7EAA9D7D1994122A000A8588 /* MapizTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapizTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7EAA9D4C1994122A000A8588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA9D551994122A000A8588 /* CoreGraphics.framework in Frameworks */,
+				7EAA9D571994122A000A8588 /* UIKit.framework in Frameworks */,
+				7EAA9D531994122A000A8588 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EAA9D6D1994122A000A8588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA9D721994122A000A8588 /* XCTest.framework in Frameworks */,
+				7EAA9D741994122A000A8588 /* UIKit.framework in Frameworks */,
+				7EAA9D731994122A000A8588 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7EAA9D461994122A000A8588 = {
+			isa = PBXGroup;
+			children = (
+				7EAA9D581994122A000A8588 /* Mapiz */,
+				7EAA9D771994122A000A8588 /* MapizTests */,
+				7EAA9D511994122A000A8588 /* Frameworks */,
+				7EAA9D501994122A000A8588 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7EAA9D501994122A000A8588 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA9D4F1994122A000A8588 /* Mapiz.app */,
+				7EAA9D701994122A000A8588 /* MapizTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EAA9D511994122A000A8588 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA9D521994122A000A8588 /* Foundation.framework */,
+				7EAA9D541994122A000A8588 /* CoreGraphics.framework */,
+				7EAA9D561994122A000A8588 /* UIKit.framework */,
+				7EAA9D711994122A000A8588 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EAA9D581994122A000A8588 /* Mapiz */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA9D611994122A000A8588 /* MapizAppDelegate.h */,
+				7EAA9D621994122A000A8588 /* MapizAppDelegate.m */,
+				7EAA9D641994122A000A8588 /* Main.storyboard */,
+				7EAA9D671994122A000A8588 /* MapizViewController.h */,
+				7EAA9D681994122A000A8588 /* MapizViewController.m */,
+				7EAA9D6A1994122A000A8588 /* Images.xcassets */,
+				7EAA9D591994122A000A8588 /* Supporting Files */,
+			);
+			path = Mapiz;
+			sourceTree = "<group>";
+		};
+		7EAA9D591994122A000A8588 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA9D5A1994122A000A8588 /* Mapiz-Info.plist */,
+				7EAA9D5B1994122A000A8588 /* InfoPlist.strings */,
+				7EAA9D5E1994122A000A8588 /* main.m */,
+				7EAA9D601994122A000A8588 /* Mapiz-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EAA9D771994122A000A8588 /* MapizTests */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA9D7D1994122A000A8588 /* MapizTests.m */,
+				7EAA9D781994122A000A8588 /* Supporting Files */,
+			);
+			path = MapizTests;
+			sourceTree = "<group>";
+		};
+		7EAA9D781994122A000A8588 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA9D791994122A000A8588 /* MapizTests-Info.plist */,
+				7EAA9D7A1994122A000A8588 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7EAA9D4E1994122A000A8588 /* Mapiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EAA9D811994122A000A8588 /* Build configuration list for PBXNativeTarget "Mapiz" */;
+			buildPhases = (
+				7EAA9D4B1994122A000A8588 /* Sources */,
+				7EAA9D4C1994122A000A8588 /* Frameworks */,
+				7EAA9D4D1994122A000A8588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mapiz;
+			productName = Mapiz;
+			productReference = 7EAA9D4F1994122A000A8588 /* Mapiz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7EAA9D6F1994122A000A8588 /* MapizTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EAA9D841994122A000A8588 /* Build configuration list for PBXNativeTarget "MapizTests" */;
+			buildPhases = (
+				7EAA9D6C1994122A000A8588 /* Sources */,
+				7EAA9D6D1994122A000A8588 /* Frameworks */,
+				7EAA9D6E1994122A000A8588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EAA9D761994122A000A8588 /* PBXTargetDependency */,
+			);
+			name = MapizTests;
+			productName = MapizTests;
+			productReference = 7EAA9D701994122A000A8588 /* MapizTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7EAA9D471994122A000A8588 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Mapiz;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Mapiz;
+				TargetAttributes = {
+					7EAA9D6F1994122A000A8588 = {
+						TestTargetID = 7EAA9D4E1994122A000A8588;
+					};
+				};
+			};
+			buildConfigurationList = 7EAA9D4A1994122A000A8588 /* Build configuration list for PBXProject "Mapiz" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7EAA9D461994122A000A8588;
+			productRefGroup = 7EAA9D501994122A000A8588 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7EAA9D4E1994122A000A8588 /* Mapiz */,
+				7EAA9D6F1994122A000A8588 /* MapizTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7EAA9D4D1994122A000A8588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA9D6B1994122A000A8588 /* Images.xcassets in Resources */,
+				7EAA9D5D1994122A000A8588 /* InfoPlist.strings in Resources */,
+				7EAA9D661994122A000A8588 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EAA9D6E1994122A000A8588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA9D7C1994122A000A8588 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7EAA9D4B1994122A000A8588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA9D631994122A000A8588 /* MapizAppDelegate.m in Sources */,
+				7EAA9D691994122A000A8588 /* MapizViewController.m in Sources */,
+				7EAA9D5F1994122A000A8588 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EAA9D6C1994122A000A8588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EAA9D7E1994122A000A8588 /* MapizTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7EAA9D761994122A000A8588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EAA9D4E1994122A000A8588 /* Mapiz */;
+			targetProxy = 7EAA9D751994122A000A8588 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7EAA9D5B1994122A000A8588 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EAA9D5C1994122A000A8588 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7EAA9D641994122A000A8588 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EAA9D651994122A000A8588 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7EAA9D7A1994122A000A8588 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EAA9D7B1994122A000A8588 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7EAA9D7F1994122A000A8588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7EAA9D801994122A000A8588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7EAA9D821994122A000A8588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapiz/Mapiz-Prefix.pch";
+				INFOPLIST_FILE = "Mapiz/Mapiz-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7EAA9D831994122A000A8588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapiz/Mapiz-Prefix.pch";
+				INFOPLIST_FILE = "Mapiz/Mapiz-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7EAA9D851994122A000A8588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mapiz.app/Mapiz";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapiz/Mapiz-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MapizTests/MapizTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7EAA9D861994122A000A8588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mapiz.app/Mapiz";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapiz/Mapiz-Prefix.pch";
+				INFOPLIST_FILE = "MapizTests/MapizTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7EAA9D4A1994122A000A8588 /* Build configuration list for PBXProject "Mapiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EAA9D7F1994122A000A8588 /* Debug */,
+				7EAA9D801994122A000A8588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EAA9D811994122A000A8588 /* Build configuration list for PBXNativeTarget "Mapiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EAA9D821994122A000A8588 /* Debug */,
+				7EAA9D831994122A000A8588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7EAA9D841994122A000A8588 /* Build configuration list for PBXNativeTarget "MapizTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EAA9D851994122A000A8588 /* Debug */,
+				7EAA9D861994122A000A8588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7EAA9D471994122A000A8588 /* Project object */;
+}
