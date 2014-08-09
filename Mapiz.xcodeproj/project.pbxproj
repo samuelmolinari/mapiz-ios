@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E7BA19D199424010090D9ED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7BA19C199424010090D9ED /* MapKit.framework */; };
+		7E7BA1A319952A770090D9ED /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1A219952A770090D9ED /* MapViewController.m */; };
+		7E7BA1A619953D430090D9ED /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1A519953D430090D9ED /* InboxViewController.m */; };
+		7E7BA1A919954B500090D9ED /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1A819954B500090D9ED /* FriendsViewController.m */; };
+		7E7BA1AB19958AC50090D9ED /* ic_marker_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1AA19958AC50090D9ED /* ic_marker_blue.png */; };
+		7E7BA1B319958ECE0090D9ED /* ic_marker_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1AE19958ECE0090D9ED /* ic_marker_black.png */; };
+		7E7BA1B419958ECE0090D9ED /* ic_marker_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1AF19958ECE0090D9ED /* ic_marker_green.png */; };
+		7E7BA1B519958ECE0090D9ED /* ic_marker_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1B019958ECE0090D9ED /* ic_marker_orange.png */; };
+		7E7BA1B619958ECE0090D9ED /* ic_marker_purple.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1B119958ECE0090D9ED /* ic_marker_purple.png */; };
+		7E7BA1B719958ECE0090D9ED /* ic_marker_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1B219958ECE0090D9ED /* ic_marker_red.png */; };
+		7E7BA1B919958F540090D9ED /* ic_marker_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1B819958F540090D9ED /* ic_marker_yellow.png */; };
+		7E7BA1BD199590700090D9ED /* MapizPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1BC199590700090D9ED /* MapizPin.m */; };
+		7E7BA1C61995AD950090D9ED /* Damion-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1BF1995AD950090D9ED /* Damion-Regular.ttf */; };
+		7E7BA1C71995AD950090D9ED /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C01995AD950090D9ED /* FontAwesome.ttf */; };
+		7E7BA1C81995AD950090D9ED /* glyphicons-halflings-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C11995AD950090D9ED /* glyphicons-halflings-regular.ttf */; };
+		7E7BA1C91995AD950090D9ED /* glyphicons-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C21995AD950090D9ED /* glyphicons-regular.ttf */; };
+		7E7BA1CA1995AD950090D9ED /* glyphicons-social-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C31995AD950090D9ED /* glyphicons-social-regular.ttf */; };
+		7E7BA1CB1995AD950090D9ED /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C41995AD950090D9ED /* octicons.ttf */; };
+		7E7BA1CC1995AD950090D9ED /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C51995AD950090D9ED /* weathericons-regular-webfont.ttf */; };
+		7E7BA1D01995B6980090D9ED /* MapizPrimaryImportant.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportant.m */; };
 		7EAA9D531994122A000A8588 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D521994122A000A8588 /* Foundation.framework */; };
 		7EAA9D551994122A000A8588 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D541994122A000A8588 /* CoreGraphics.framework */; };
 		7EAA9D571994122A000A8588 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D561994122A000A8588 /* UIKit.framework */; };
@@ -34,6 +54,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E7BA19C199424010090D9ED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7E7BA1A119952A770090D9ED /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7E7BA1A219952A770090D9ED /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		7E7BA1A419953D430090D9ED /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
+		7E7BA1A519953D430090D9ED /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		7E7BA1A719954B500090D9ED /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		7E7BA1A819954B500090D9ED /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		7E7BA1AA19958AC50090D9ED /* ic_marker_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_marker_blue.png; path = "../../../../Workspace/java/Mapiz/mobile/src/main/res/drawable-xxhdpi/ic_marker_blue.png"; sourceTree = "<group>"; };
+		7E7BA1AE19958ECE0090D9ED /* ic_marker_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_marker_black.png; sourceTree = "<group>"; };
+		7E7BA1AF19958ECE0090D9ED /* ic_marker_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_marker_green.png; sourceTree = "<group>"; };
+		7E7BA1B019958ECE0090D9ED /* ic_marker_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_marker_orange.png; sourceTree = "<group>"; };
+		7E7BA1B119958ECE0090D9ED /* ic_marker_purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_marker_purple.png; sourceTree = "<group>"; };
+		7E7BA1B219958ECE0090D9ED /* ic_marker_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_marker_red.png; sourceTree = "<group>"; };
+		7E7BA1B819958F540090D9ED /* ic_marker_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_marker_yellow.png; sourceTree = "<group>"; };
+		7E7BA1BB199590700090D9ED /* MapizPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizPin.h; sourceTree = "<group>"; };
+		7E7BA1BC199590700090D9ED /* MapizPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizPin.m; sourceTree = "<group>"; };
+		7E7BA1BF1995AD950090D9ED /* Damion-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Damion-Regular.ttf"; sourceTree = "<group>"; };
+		7E7BA1C01995AD950090D9ED /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		7E7BA1C11995AD950090D9ED /* glyphicons-halflings-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-halflings-regular.ttf"; sourceTree = "<group>"; };
+		7E7BA1C21995AD950090D9ED /* glyphicons-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-regular.ttf"; sourceTree = "<group>"; };
+		7E7BA1C31995AD950090D9ED /* glyphicons-social-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-social-regular.ttf"; sourceTree = "<group>"; };
+		7E7BA1C41995AD950090D9ED /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = octicons.ttf; sourceTree = "<group>"; };
+		7E7BA1C51995AD950090D9ED /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
+		7E7BA1CE1995B6980090D9ED /* MapizPrimaryImportant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizPrimaryImportant.h; sourceTree = "<group>"; };
+		7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizPrimaryImportant.m; sourceTree = "<group>"; };
 		7EAA9D4F1994122A000A8588 /* Mapiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mapiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAA9D521994122A000A8588 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EAA9D541994122A000A8588 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +107,7 @@
 			files = (
 				7EAA9D551994122A000A8588 /* CoreGraphics.framework in Frameworks */,
 				7EAA9D571994122A000A8588 /* UIKit.framework in Frameworks */,
+				7E7BA19D199424010090D9ED /* MapKit.framework in Frameworks */,
 				7EAA9D531994122A000A8588 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +125,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E7BA1AC19958AD50090D9ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7E7BA1BE1995AD5F0090D9ED /* Fonts */,
+				7E7BA1AD19958B0A0090D9ED /* Images */,
+			);
+			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		7E7BA1AD19958B0A0090D9ED /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7E7BA1B819958F540090D9ED /* ic_marker_yellow.png */,
+				7E7BA1AE19958ECE0090D9ED /* ic_marker_black.png */,
+				7E7BA1AF19958ECE0090D9ED /* ic_marker_green.png */,
+				7E7BA1B019958ECE0090D9ED /* ic_marker_orange.png */,
+				7E7BA1B119958ECE0090D9ED /* ic_marker_purple.png */,
+				7E7BA1B219958ECE0090D9ED /* ic_marker_red.png */,
+				7E7BA1AA19958AC50090D9ED /* ic_marker_blue.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		7E7BA1BA19958FD20090D9ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E7BA1BB199590700090D9ED /* MapizPin.h */,
+				7E7BA1BC199590700090D9ED /* MapizPin.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7E7BA1BE1995AD5F0090D9ED /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7E7BA1BF1995AD950090D9ED /* Damion-Regular.ttf */,
+				7E7BA1C01995AD950090D9ED /* FontAwesome.ttf */,
+				7E7BA1C11995AD950090D9ED /* glyphicons-halflings-regular.ttf */,
+				7E7BA1C21995AD950090D9ED /* glyphicons-regular.ttf */,
+				7E7BA1C31995AD950090D9ED /* glyphicons-social-regular.ttf */,
+				7E7BA1C41995AD950090D9ED /* octicons.ttf */,
+				7E7BA1C51995AD950090D9ED /* weathericons-regular-webfont.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		7E7BA1CD1995B6690090D9ED /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7E7BA1CE1995B6980090D9ED /* MapizPrimaryImportant.h */,
+				7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportant.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		7EAA9D461994122A000A8588 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +203,7 @@
 		7EAA9D511994122A000A8588 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E7BA19C199424010090D9ED /* MapKit.framework */,
 				7EAA9D521994122A000A8588 /* Foundation.framework */,
 				7EAA9D541994122A000A8588 /* CoreGraphics.framework */,
 				7EAA9D561994122A000A8588 /* UIKit.framework */,
@@ -112,6 +215,9 @@
 		7EAA9D581994122A000A8588 /* Mapiz */ = {
 			isa = PBXGroup;
 			children = (
+				7E7BA1CD1995B6690090D9ED /* UI */,
+				7E7BA1BA19958FD20090D9ED /* Models */,
+				7E7BA1AC19958AD50090D9ED /* Resources */,
 				7EAA9D611994122A000A8588 /* MapizAppDelegate.h */,
 				7EAA9D621994122A000A8588 /* MapizAppDelegate.m */,
 				7EAA9D641994122A000A8588 /* Main.storyboard */,
@@ -119,6 +225,12 @@
 				7EAA9D681994122A000A8588 /* MapizViewController.m */,
 				7EAA9D6A1994122A000A8588 /* Images.xcassets */,
 				7EAA9D591994122A000A8588 /* Supporting Files */,
+				7E7BA1A119952A770090D9ED /* MapViewController.h */,
+				7E7BA1A219952A770090D9ED /* MapViewController.m */,
+				7E7BA1A419953D430090D9ED /* InboxViewController.h */,
+				7E7BA1A519953D430090D9ED /* InboxViewController.m */,
+				7E7BA1A719954B500090D9ED /* FriendsViewController.h */,
+				7E7BA1A819954B500090D9ED /* FriendsViewController.m */,
 			);
 			path = Mapiz;
 			sourceTree = "<group>";
@@ -200,6 +312,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Mapiz;
 				TargetAttributes = {
+					7EAA9D4E1994122A000A8588 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					7EAA9D6F1994122A000A8588 = {
 						TestTargetID = 7EAA9D4E1994122A000A8588;
 					};
@@ -230,8 +349,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EAA9D6B1994122A000A8588 /* Images.xcassets in Resources */,
+				7E7BA1C91995AD950090D9ED /* glyphicons-regular.ttf in Resources */,
+				7E7BA1C61995AD950090D9ED /* Damion-Regular.ttf in Resources */,
+				7E7BA1AB19958AC50090D9ED /* ic_marker_blue.png in Resources */,
 				7EAA9D5D1994122A000A8588 /* InfoPlist.strings in Resources */,
+				7E7BA1B619958ECE0090D9ED /* ic_marker_purple.png in Resources */,
+				7E7BA1B419958ECE0090D9ED /* ic_marker_green.png in Resources */,
+				7E7BA1C81995AD950090D9ED /* glyphicons-halflings-regular.ttf in Resources */,
+				7E7BA1B719958ECE0090D9ED /* ic_marker_red.png in Resources */,
 				7EAA9D661994122A000A8588 /* Main.storyboard in Resources */,
+				7E7BA1CB1995AD950090D9ED /* octicons.ttf in Resources */,
+				7E7BA1B519958ECE0090D9ED /* ic_marker_orange.png in Resources */,
+				7E7BA1C71995AD950090D9ED /* FontAwesome.ttf in Resources */,
+				7E7BA1B319958ECE0090D9ED /* ic_marker_black.png in Resources */,
+				7E7BA1CC1995AD950090D9ED /* weathericons-regular-webfont.ttf in Resources */,
+				7E7BA1CA1995AD950090D9ED /* glyphicons-social-regular.ttf in Resources */,
+				7E7BA1B919958F540090D9ED /* ic_marker_yellow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +383,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7BA1A919954B500090D9ED /* FriendsViewController.m in Sources */,
 				7EAA9D631994122A000A8588 /* MapizAppDelegate.m in Sources */,
 				7EAA9D691994122A000A8588 /* MapizViewController.m in Sources */,
+				7E7BA1A619953D430090D9ED /* InboxViewController.m in Sources */,
 				7EAA9D5F1994122A000A8588 /* main.m in Sources */,
+				7E7BA1D01995B6980090D9ED /* MapizPrimaryImportant.m in Sources */,
+				7E7BA1A319952A770090D9ED /* MapViewController.m in Sources */,
+				7E7BA1BD199590700090D9ED /* MapizPin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +518,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mapiz/Mapiz-Prefix.pch";
 				INFOPLIST_FILE = "Mapiz/Mapiz-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -393,6 +532,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mapiz/Mapiz-Prefix.pch";
 				INFOPLIST_FILE = "Mapiz/Mapiz-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -457,6 +597,7 @@
 				7EAA9D831994122A000A8588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7EAA9D841994122A000A8588 /* Build configuration list for PBXNativeTarget "MapizTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +606,7 @@
 				7EAA9D861994122A000A8588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
