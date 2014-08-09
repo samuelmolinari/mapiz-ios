@@ -1,19 +1,18 @@
 //
-//  FriendsViewController.m
+//  MapizLoginViewController.m
 //  Mapiz
 //
-//  Created by samuel on 08/08/2014.
+//  Created by samuel on 09/08/2014.
 //  Copyright (c) 2014 Mapiz. All rights reserved.
 //
 
-#import "FriendsViewController.h"
+#import "MapizLoginViewController.h"
 
+@interface MapizLoginViewController ()
 
+@end
 
-@implementation FriendsViewController
-
-@synthesize submitButton;
-
+@implementation MapizLoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

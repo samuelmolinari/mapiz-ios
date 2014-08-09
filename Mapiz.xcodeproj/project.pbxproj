@@ -22,11 +22,17 @@
 		7E7BA1C61995AD950090D9ED /* Damion-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1BF1995AD950090D9ED /* Damion-Regular.ttf */; };
 		7E7BA1C71995AD950090D9ED /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C01995AD950090D9ED /* FontAwesome.ttf */; };
 		7E7BA1C81995AD950090D9ED /* glyphicons-halflings-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C11995AD950090D9ED /* glyphicons-halflings-regular.ttf */; };
-		7E7BA1C91995AD950090D9ED /* glyphicons-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C21995AD950090D9ED /* glyphicons-regular.ttf */; };
+		7E7BA1C91995AD950090D9ED /* Glyphicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C21995AD950090D9ED /* Glyphicons.ttf */; };
 		7E7BA1CA1995AD950090D9ED /* glyphicons-social-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C31995AD950090D9ED /* glyphicons-social-regular.ttf */; };
 		7E7BA1CB1995AD950090D9ED /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C41995AD950090D9ED /* octicons.ttf */; };
 		7E7BA1CC1995AD950090D9ED /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1C51995AD950090D9ED /* weathericons-regular-webfont.ttf */; };
-		7E7BA1D01995B6980090D9ED /* MapizPrimaryImportant.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportant.m */; };
+		7E7BA1D01995B6980090D9ED /* MapizPrimaryImportantButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportantButton.m */; };
+		7E7BA1D319961DF90090D9ED /* MapizPrimaryImportantCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1D219961DF90090D9ED /* MapizPrimaryImportantCircleButton.m */; };
+		7E7BA1D619964DF90090D9ED /* MapizSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1D519964DF90090D9ED /* MapizSplashViewController.m */; };
+		7E7BA1D919964E2B0090D9ED /* MapizAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1D819964E2B0090D9ED /* MapizAuthViewController.m */; };
+		7E7BA1DC19964E990090D9ED /* MapizLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1DB19964E990090D9ED /* MapizLoginViewController.m */; };
+		7E7BA1DF19964EF20090D9ED /* MapizSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1DE19964EF20090D9ED /* MapizSignupViewController.m */; };
+		7E7BA1E119964F3F0090D9ED /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1E019964F3F0090D9ED /* ic_launcher.png */; };
 		7EAA9D531994122A000A8588 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D521994122A000A8588 /* Foundation.framework */; };
 		7EAA9D551994122A000A8588 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D541994122A000A8588 /* CoreGraphics.framework */; };
 		7EAA9D571994122A000A8588 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D561994122A000A8588 /* UIKit.framework */; };
@@ -73,12 +79,23 @@
 		7E7BA1BF1995AD950090D9ED /* Damion-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Damion-Regular.ttf"; sourceTree = "<group>"; };
 		7E7BA1C01995AD950090D9ED /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		7E7BA1C11995AD950090D9ED /* glyphicons-halflings-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-halflings-regular.ttf"; sourceTree = "<group>"; };
-		7E7BA1C21995AD950090D9ED /* glyphicons-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-regular.ttf"; sourceTree = "<group>"; };
+		7E7BA1C21995AD950090D9ED /* Glyphicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Glyphicons.ttf; sourceTree = "<group>"; };
 		7E7BA1C31995AD950090D9ED /* glyphicons-social-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "glyphicons-social-regular.ttf"; sourceTree = "<group>"; };
 		7E7BA1C41995AD950090D9ED /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = octicons.ttf; sourceTree = "<group>"; };
 		7E7BA1C51995AD950090D9ED /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
-		7E7BA1CE1995B6980090D9ED /* MapizPrimaryImportant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizPrimaryImportant.h; sourceTree = "<group>"; };
-		7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizPrimaryImportant.m; sourceTree = "<group>"; };
+		7E7BA1CE1995B6980090D9ED /* MapizPrimaryImportantButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizPrimaryImportantButton.h; sourceTree = "<group>"; };
+		7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportantButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizPrimaryImportantButton.m; sourceTree = "<group>"; };
+		7E7BA1D119961DF90090D9ED /* MapizPrimaryImportantCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizPrimaryImportantCircleButton.h; sourceTree = "<group>"; };
+		7E7BA1D219961DF90090D9ED /* MapizPrimaryImportantCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizPrimaryImportantCircleButton.m; sourceTree = "<group>"; };
+		7E7BA1D419964DF90090D9ED /* MapizSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizSplashViewController.h; sourceTree = "<group>"; };
+		7E7BA1D519964DF90090D9ED /* MapizSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizSplashViewController.m; sourceTree = "<group>"; };
+		7E7BA1D719964E2B0090D9ED /* MapizAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizAuthViewController.h; sourceTree = "<group>"; };
+		7E7BA1D819964E2B0090D9ED /* MapizAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizAuthViewController.m; sourceTree = "<group>"; };
+		7E7BA1DA19964E990090D9ED /* MapizLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizLoginViewController.h; sourceTree = "<group>"; };
+		7E7BA1DB19964E990090D9ED /* MapizLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizLoginViewController.m; sourceTree = "<group>"; };
+		7E7BA1DD19964EF20090D9ED /* MapizSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizSignupViewController.h; sourceTree = "<group>"; };
+		7E7BA1DE19964EF20090D9ED /* MapizSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizSignupViewController.m; sourceTree = "<group>"; };
+		7E7BA1E019964F3F0090D9ED /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		7EAA9D4F1994122A000A8588 /* Mapiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mapiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAA9D521994122A000A8588 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EAA9D541994122A000A8588 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,7 +181,7 @@
 				7E7BA1BF1995AD950090D9ED /* Damion-Regular.ttf */,
 				7E7BA1C01995AD950090D9ED /* FontAwesome.ttf */,
 				7E7BA1C11995AD950090D9ED /* glyphicons-halflings-regular.ttf */,
-				7E7BA1C21995AD950090D9ED /* glyphicons-regular.ttf */,
+				7E7BA1C21995AD950090D9ED /* Glyphicons.ttf */,
 				7E7BA1C31995AD950090D9ED /* glyphicons-social-regular.ttf */,
 				7E7BA1C41995AD950090D9ED /* octicons.ttf */,
 				7E7BA1C51995AD950090D9ED /* weathericons-regular-webfont.ttf */,
@@ -175,8 +192,10 @@
 		7E7BA1CD1995B6690090D9ED /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				7E7BA1CE1995B6980090D9ED /* MapizPrimaryImportant.h */,
-				7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportant.m */,
+				7E7BA1CE1995B6980090D9ED /* MapizPrimaryImportantButton.h */,
+				7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportantButton.m */,
+				7E7BA1D119961DF90090D9ED /* MapizPrimaryImportantCircleButton.h */,
+				7E7BA1D219961DF90090D9ED /* MapizPrimaryImportantCircleButton.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -215,6 +234,7 @@
 		7EAA9D581994122A000A8588 /* Mapiz */ = {
 			isa = PBXGroup;
 			children = (
+				7E7BA1E019964F3F0090D9ED /* ic_launcher.png */,
 				7E7BA1CD1995B6690090D9ED /* UI */,
 				7E7BA1BA19958FD20090D9ED /* Models */,
 				7E7BA1AC19958AD50090D9ED /* Resources */,
@@ -231,6 +251,14 @@
 				7E7BA1A519953D430090D9ED /* InboxViewController.m */,
 				7E7BA1A719954B500090D9ED /* FriendsViewController.h */,
 				7E7BA1A819954B500090D9ED /* FriendsViewController.m */,
+				7E7BA1D419964DF90090D9ED /* MapizSplashViewController.h */,
+				7E7BA1D519964DF90090D9ED /* MapizSplashViewController.m */,
+				7E7BA1D719964E2B0090D9ED /* MapizAuthViewController.h */,
+				7E7BA1D819964E2B0090D9ED /* MapizAuthViewController.m */,
+				7E7BA1DA19964E990090D9ED /* MapizLoginViewController.h */,
+				7E7BA1DB19964E990090D9ED /* MapizLoginViewController.m */,
+				7E7BA1DD19964EF20090D9ED /* MapizSignupViewController.h */,
+				7E7BA1DE19964EF20090D9ED /* MapizSignupViewController.m */,
 			);
 			path = Mapiz;
 			sourceTree = "<group>";
@@ -349,7 +377,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EAA9D6B1994122A000A8588 /* Images.xcassets in Resources */,
-				7E7BA1C91995AD950090D9ED /* glyphicons-regular.ttf in Resources */,
+				7E7BA1E119964F3F0090D9ED /* ic_launcher.png in Resources */,
+				7E7BA1C91995AD950090D9ED /* Glyphicons.ttf in Resources */,
 				7E7BA1C61995AD950090D9ED /* Damion-Regular.ttf in Resources */,
 				7E7BA1AB19958AC50090D9ED /* ic_marker_blue.png in Resources */,
 				7EAA9D5D1994122A000A8588 /* InfoPlist.strings in Resources */,
@@ -386,10 +415,15 @@
 				7E7BA1A919954B500090D9ED /* FriendsViewController.m in Sources */,
 				7EAA9D631994122A000A8588 /* MapizAppDelegate.m in Sources */,
 				7EAA9D691994122A000A8588 /* MapizViewController.m in Sources */,
+				7E7BA1D619964DF90090D9ED /* MapizSplashViewController.m in Sources */,
 				7E7BA1A619953D430090D9ED /* InboxViewController.m in Sources */,
 				7EAA9D5F1994122A000A8588 /* main.m in Sources */,
-				7E7BA1D01995B6980090D9ED /* MapizPrimaryImportant.m in Sources */,
+				7E7BA1D01995B6980090D9ED /* MapizPrimaryImportantButton.m in Sources */,
+				7E7BA1D919964E2B0090D9ED /* MapizAuthViewController.m in Sources */,
+				7E7BA1DF19964EF20090D9ED /* MapizSignupViewController.m in Sources */,
+				7E7BA1D319961DF90090D9ED /* MapizPrimaryImportantCircleButton.m in Sources */,
 				7E7BA1A319952A770090D9ED /* MapViewController.m in Sources */,
+				7E7BA1DC19964E990090D9ED /* MapizLoginViewController.m in Sources */,
 				7E7BA1BD199590700090D9ED /* MapizPin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

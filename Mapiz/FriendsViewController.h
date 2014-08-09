@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FriendsViewController : UIViewController
+@interface FriendsViewController : UIViewController {
+  IBOutlet UIButton *submitButton;
+}
+
+@property (nonatomic, retain) IBOutlet UIButton *submitButton;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapizPrimaryImportantCircleButton.h"
 
 @class MapViewController;
 @class InboxViewController;
@@ -21,6 +22,7 @@
   IBOutlet UIButton *findMeButton;
   IBOutlet UIButton *meetupButton;
   IBOutlet UIView *tabsView;
+  IBOutlet MapizPrimaryImportantCircleButton *submitButton;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
@@ -34,7 +36,9 @@
 @property (nonatomic, retain) IBOutlet UIButton *findMeButton;
 @property (nonatomic, retain) IBOutlet UIButton *meetupButton;
 @property (nonatomic, retain) IBOutlet UIView *tabsView;
+@property (nonatomic, retain) IBOutlet MapizPrimaryImportantCircleButton *submitButton;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView;
+- (void)setModeImHere;
 
 @end

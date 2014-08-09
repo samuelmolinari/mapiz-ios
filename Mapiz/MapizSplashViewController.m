@@ -1,19 +1,18 @@
 //
-//  FriendsViewController.m
+//  MapizSplashViewController.m
 //  Mapiz
 //
-//  Created by samuel on 08/08/2014.
+//  Created by samuel on 09/08/2014.
 //  Copyright (c) 2014 Mapiz. All rights reserved.
 //
 
-#import "FriendsViewController.h"
+#import "MapizSplashViewController.h"
 
+@interface MapizSplashViewController ()
 
+@end
 
-@implementation FriendsViewController
-
-@synthesize submitButton;
-
+@implementation MapizSplashViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

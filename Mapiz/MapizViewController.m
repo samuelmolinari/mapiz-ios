@@ -28,8 +28,10 @@
 @synthesize findMeButton;
 @synthesize meetupButton;
 @synthesize tabsView;
+@synthesize submitButton;
 
 int const MODE_IM_HERE = 0;
+int const MODE_WHERE_ARE_YOU = 1;
 
 int const TOTAL_SECTIONS = 3;
 int const INDEX_SECTION_INBOX = 0;
@@ -46,6 +48,8 @@ CGRect tabFrame;
   [super viewDidLoad];
   self.scrollView.delegate = self;
   
+  mode = MODE_WHERE_ARE_YOU;
+  
   self.inboxViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InboxViewController"];
   self.mapViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
   self.friendsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsViewController"];
@@ -58,6 +62,11 @@ CGRect tabFrame;
   
   [meetupButton.titleLabel setFont: [UIFont fontWithName:@"FontAwesome" size:20]];
   [meetupButton setTitle:@"\uf073" forState:UIControlStateNormal];
+  
+  [submitButton.titleLabel setFont: [UIFont fontWithName:@"Glyphicons" size:20]];
+  [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
+  
+  
 }
 
 -(void)viewDidLayoutSubviews
@@ -79,23 +88,25 @@ CGRect tabFrame;
   inboxFrame.origin.y = 0;
   
   CGRect friendsFrame;
-  inboxFrame.size = size;
-  inboxFrame.origin.x = size.width * INDEX_SECTION_FRIENDS;
-  inboxFrame.origin.y = 0;
+  friendsFrame.size = size;
+  friendsFrame.origin.x = size.width * INDEX_SECTION_FRIENDS;
+  friendsFrame.origin.y = 0;
   
   self.inboxViewController.view.frame = inboxFrame;
   self.mapViewController.view.frame = mapFrame;
   self.friendsViewController.view.frame = friendsFrame;
   
   [self.scrollView addSubview: self.mapViewController.view];
-  [self.scrollView addSubview: self.inboxViewController.view];
   [self.scrollView addSubview: self.friendsViewController.view];
+  [self.scrollView addSubview: self.inboxViewController.view];
   
   tabFrame = tabsView.frame;
   
   [self moveToPosition: INDEX_SECTION_MAP];
   
   [self.view layoutIfNeeded];
+  
+  mapViewController.mapizViewController = self;
 }
 
 - (IBAction)goToRight:(id)sender {
@@ -107,7 +118,6 @@ CGRect tabFrame;
       [self moveToPosition:INDEX_SECTION_MAP];
       break;
     case INDEX_SECTION_FRIENDS:
-//      [self moveToPosition:INDEX_SECTION_MAP];
       break;
   }
 }
@@ -115,11 +125,16 @@ CGRect tabFrame;
 - (IBAction)goToLeft:(id)sender {
   switch(position) {
     case INDEX_SECTION_MAP:
-      [self moveToPosition:INDEX_SECTION_INBOX];
+      if([self isInModeWhereAreYou]) {
+        [self moveToPosition:INDEX_SECTION_INBOX];
+      }
+      [self cancelMode];
       break;
     case INDEX_SECTION_INBOX:
+      [self cancelMode];
       break;
     case INDEX_SECTION_FRIENDS:
+      [self cancelMode];
       [self moveToPosition:INDEX_SECTION_MAP];
       break;
   }
@@ -134,8 +149,77 @@ CGRect tabFrame;
   [self.scrollView scrollRectToVisible:frame animated:YES];
 }
 
-- (void)setMode: (int) mode {
-  self.mode = mode;
+- (void)setMode: (int) modeValue {
+  mode = modeValue;
+  switch(mode) {
+    case MODE_IM_HERE:
+      [self moveToPosition:INDEX_SECTION_FRIENDS];
+      [self lockMap];
+      [submitButton setHidden: NO];
+      [lockUnlockButton setEnabled:NO];
+      [findMeButton setEnabled:NO];
+      [mapViewController.pinButton setEnabled:NO];
+      [friendsViewController.submitButton setHidden: YES];
+      break;
+    case MODE_WHERE_ARE_YOU:
+      [submitButton setHidden: YES];
+      [lockUnlockButton setEnabled:YES];
+      [findMeButton setEnabled:YES];
+      [mapViewController.pinButton setEnabled:YES];
+      [mapViewController.submitButton setHidden: NO];
+      [friendsViewController.submitButton setHidden: NO];
+      break;
+  }
+}
+
+- (IBAction)submit:(id)sender {
+  if([self isInModeImHere]) {
+    switch (position) {
+      case INDEX_SECTION_INBOX:
+      case INDEX_SECTION_MAP:
+        [self moveToPosition:INDEX_SECTION_FRIENDS];
+        [self lockMap];
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+- (void)cancelMode {
+  switch(mode) {
+    case MODE_IM_HERE:
+      [self setModeWhereAreYou];
+      break;
+  }
+  
+  switch(position) {
+    case INDEX_SECTION_MAP:
+      leftNavButton.title = @"Inbox";
+      break;
+    case INDEX_SECTION_INBOX:
+      leftNavButton.title = @"Settings";
+      break;
+    case INDEX_SECTION_FRIENDS:
+      leftNavButton.title = @"Back";
+      break;
+  }
+}
+
+- (void)setModeImHere {
+  [self setMode: MODE_IM_HERE];
+}
+
+- (void)setModeWhereAreYou {
+  [self setMode: MODE_WHERE_ARE_YOU];
+}
+
+- (BOOL) isInModeImHere {
+  return mode == MODE_IM_HERE;
+}
+
+- (BOOL) isInModeWhereAreYou {
+  return mode == MODE_WHERE_ARE_YOU;
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,17 +236,21 @@ CGRect tabFrame;
 - (IBAction)toggleMapLock:(id)sender {
   MKMapView *mapView = mapViewController.mapView;
   
-  BOOL enabled = !mapView.isScrollEnabled;
-  
-  if(enabled) {
-    [lockUnlockButton setTitle:@"\uf09c" forState:UIControlStateNormal];
+  if(!mapView.isScrollEnabled) {
+    [self unlockMap];
   } else {
-    [lockUnlockButton setTitle:@"\uf023" forState:UIControlStateNormal];
+    [self lockMap];
   }
-  
-  [mapView setZoomEnabled: enabled];
-  [mapView setScrollEnabled: enabled];
-  [mapView setUserInteractionEnabled: enabled];
+}
+
+- (void)lockMap {
+  [lockUnlockButton setTitle:@"\uf023" forState:UIControlStateNormal];
+  [mapViewController lockMap];
+}
+
+- (void)unlockMap {
+  [lockUnlockButton setTitle:@"\uf09c" forState:UIControlStateNormal];
+  [mapViewController unlockMap];
 }
 
 - (IBAction)findMe:(id)sender {
@@ -170,6 +258,7 @@ CGRect tabFrame;
     [self.mapViewController startTracking];
   }
 }
+
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -204,24 +293,62 @@ CGRect tabFrame;
   
   switch(position) {
     case INDEX_SECTION_MAP:
-      leftNavButton.title = @"Inbox";
+      switch (mode) {
+        case MODE_IM_HERE:
+          leftNavButton.title = @"Cancel";
+          break;
+        case MODE_WHERE_ARE_YOU:
+          leftNavButton.title = @"Inbox";
+          break;
+      }
+      
       rightNavButton.title = @"Friends";
       self.navigationBar.topItem.title = @"Mapiz";
+      
+      if([self isInModeImHere]) {
+        [submitButton setTitle:@"\ue224" forState:UIControlStateNormal];
+      } else {
+        [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
+      }
+      
       break;
     case INDEX_SECTION_INBOX:
-      leftNavButton.title = @"Settings";
+      
+      switch (mode) {
+        case MODE_IM_HERE:
+          leftNavButton.title = @"Cancel";
+          break;
+        case MODE_WHERE_ARE_YOU:
+          leftNavButton.title = @"Settings";
+          break;
+      }
+      
       rightNavButton.title = @"Back";
       self.navigationBar.topItem.title = @"Inbox";
+      
+      if([self isInModeImHere]) {
+        [submitButton setTitle:@"\ue224" forState:UIControlStateNormal];
+      } else {
+        [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
+      }
+      
       break;
     case INDEX_SECTION_FRIENDS:
-      leftNavButton.title = @"Back";
+      switch (mode) {
+        case MODE_IM_HERE:
+          leftNavButton.title = @"Cancel";
+          break;
+        case MODE_WHERE_ARE_YOU:
+          leftNavButton.title = @"Back";
+          break;
+      }
+      
+      [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
+      
       rightNavButton.title = @"Search";
       self.navigationBar.topItem.title = @"Friends";
       break;
   }
-  
-  
-  
 }
 
 -(int)getCurrentPosition

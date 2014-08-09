@@ -12,6 +12,8 @@
 @implementation MapViewController
 @synthesize mapView;
 @synthesize pinButton;
+@synthesize mapizViewController;
+@synthesize submitButton;
 
 BOOL trackingUser = NO;
 int pinColour;
@@ -33,6 +35,11 @@ int pinColour;
   pinColour = PinColourBlue;
   self.mapView.delegate = self;
   [self startTracking];
+}
+
+- (IBAction)submitImHere:(id)sender {
+  [mapizViewController setModeImHere];
+  [submitButton setHidden: YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +73,18 @@ int pinColour;
 
 -(BOOL)isTracking {
   return trackingUser;
+}
+
+-(void)lockMap {
+  [mapView setZoomEnabled: NO];
+  [mapView setScrollEnabled: NO];
+  [mapView setUserInteractionEnabled: NO];
+}
+
+-(void)unlockMap {
+  [mapView setZoomEnabled: YES];
+  [mapView setScrollEnabled: YES];
+  [mapView setUserInteractionEnabled: YES];
 }
 
 @end

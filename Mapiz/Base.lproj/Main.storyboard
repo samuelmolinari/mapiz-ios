@@ -1,10 +1,213 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iYO-vw-LIF">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Mapiz Splash View Controller-->
+        <scene sceneID="OoO-r3-IeD">
+            <objects>
+                <viewController storyboardIdentifier="MapizSplashViewController" id="iYO-vw-LIF" customClass="MapizSplashViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CXd-xc-bTl"/>
+                        <viewControllerLayoutGuide type="bottom" id="XSw-Ma-7gJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ezC-6r-rJ1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher.png" translatesAutoresizingMaskIntoConstraints="NO" id="j07-Er-rIj">
+                                <rect key="frame" x="130" y="210" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mapiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yP2-w4-rbr">
+                                <rect key="frame" x="117" y="278" width="87" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.56470590829849243" green="0.51764708757400513" blue="0.51764708757400513" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ztf-9c-0dr">
+                                <rect key="frame" x="150" y="329" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9490196704864502" green="0.9490196704864502" blue="0.9490196704864502" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8h3-Uv-ItH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173" y="-23"/>
+        </scene>
+        <!--Mapiz Auth View Controller-->
+        <scene sceneID="5Qw-g2-DQr">
+            <objects>
+                <viewController storyboardIdentifier="MapizAuthViewController" id="oBu-zC-9W6" customClass="MapizAuthViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KTV-Ok-Zzg"/>
+                        <viewControllerLayoutGuide type="bottom" id="ief-Fx-Z0Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q7B-w9-A7P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0g-cy-i0P">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ief-Fx-Z0Z" firstAttribute="top" secondItem="b0g-cy-i0P" secondAttribute="bottom" id="DAU-HP-McO"/>
+                            <constraint firstAttribute="centerY" secondItem="b0g-cy-i0P" secondAttribute="centerY" id="RqR-fh-BfR"/>
+                            <constraint firstAttribute="centerX" secondItem="b0g-cy-i0P" secondAttribute="centerX" id="aX8-ET-pb3"/>
+                            <constraint firstItem="b0g-cy-i0P" firstAttribute="top" secondItem="KTV-Ok-Zzg" secondAttribute="bottom" constant="-20" id="ck4-8a-1pB"/>
+                            <constraint firstItem="b0g-cy-i0P" firstAttribute="leading" secondItem="q7B-w9-A7P" secondAttribute="leading" id="gb9-k5-EcQ"/>
+                            <constraint firstAttribute="trailing" secondItem="b0g-cy-i0P" secondAttribute="trailing" id="pTh-aF-TF3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FYQ-Cp-uIL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cai-SE-WC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="-309"/>
+        </scene>
+        <!--Mapiz Login View Controller-->
+        <scene sceneID="t6p-b9-YVq">
+            <objects>
+                <viewController id="zaQ-m1-cym" customClass="MapizLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nWM-X3-Ave"/>
+                        <viewControllerLayoutGuide type="bottom" id="QfE-l9-Wv2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UTY-4L-If1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOu-Qr-HEX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher.png" translatesAutoresizingMaskIntoConstraints="NO" id="L1W-P0-3Yh">
+                                        <rect key="frame" x="130" y="130" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mapiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jx-2d-80L">
+                                        <rect key="frame" x="117" y="198" width="87" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" red="0.5647059083" green="0.5176470876" blue="0.5176470876" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email or username" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ufG-fg-sHC">
+                                        <rect key="frame" x="69" y="271" width="182" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1N-hL-hK7">
+                                        <rect key="frame" x="69" y="309" width="182" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8g-hY-X6A" customClass="MapizPrimaryImportantButton">
+                                        <rect key="frame" x="69" y="347" width="84" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="tintColor" red="0.88627457620000005" green="0.25490197539999998" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                        <inset key="imageEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                        <state key="normal" title="Log in">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitImHere:" destination="Lr9-HP-BJ8" eventType="touchUpInside" id="sZ1-Ia-UPh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94901967050000002" green="0.94901967050000002" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdy-1l-5Bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="-309"/>
+        </scene>
+        <!--Mapiz Signup View Controller-->
+        <scene sceneID="uCr-h0-PXj">
+            <objects>
+                <viewController id="apy-RF-Sbj" customClass="MapizSignupViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JRU-UW-cnN"/>
+                        <viewControllerLayoutGuide type="bottom" id="K2z-UM-qRb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uUv-6Z-DxU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher.png" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-oM-l58">
+                                <rect key="frame" x="130" y="130" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Join Mapiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0z-jg-lHQ">
+                                <rect key="frame" x="100" y="198" width="120" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.5647059083" green="0.5176470876" blue="0.5176470876" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uxb-m9-UeT">
+                                <rect key="frame" x="69" y="249" width="182" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="QnX-nH-4ES">
+                                <rect key="frame" x="69" y="287" width="182" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRr-6u-nqe">
+                                <rect key="frame" x="69" y="325" width="182" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt1-ou-Nwb" customClass="MapizPrimaryImportantButton">
+                                <rect key="frame" x="157" y="363" width="94" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.88627457620000005" green="0.25490197539999998" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitImHere:" destination="Lr9-HP-BJ8" eventType="touchUpInside" id="StY-16-Dt5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901967050000002" green="0.94901967050000002" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vY6-ny-Jzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1310" y="-309"/>
+        </scene>
         <!--Mapiz View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -50,8 +253,18 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="scrollView" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dm-Hr-m8V">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.35686275360000003" green="0.83529418710000003" blue="0.75294125079999996" alpha="1" colorSpace="deviceRGB"/>
                             </scrollView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaD-Lu-Uy3" customClass="MapizPrimaryImportantCircleButton">
+                                <rect key="frame" x="135" y="215" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="j2x-CV-0HZ"/>
+                                </connections>
+                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDH-B1-3MF" userLabel="TabsContainer">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -115,6 +328,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="6dm-Hr-m8V" secondAttribute="height" id="ES1-Wq-gXz"/>
+                            <constraint firstItem="xT5-Rt-Dbh" firstAttribute="top" secondItem="oaD-Lu-Uy3" secondAttribute="bottom" constant="100" id="qhM-1H-D86"/>
                             <constraint firstItem="6dm-Hr-m8V" firstAttribute="top" secondItem="9Ax-vI-wIg" secondAttribute="bottom" constant="44" id="zh0-aI-rNg"/>
                         </constraints>
                     </view>
@@ -126,18 +340,18 @@
                         <outlet property="navigationBar" destination="T5f-Fu-25h" id="Xb9-l0-D0K"/>
                         <outlet property="rightNavButton" destination="EgY-tB-sTW" id="Oty-tx-iF8"/>
                         <outlet property="scrollView" destination="6dm-Hr-m8V" id="RO8-dM-Q8s"/>
+                        <outlet property="submitButton" destination="oaD-Lu-Uy3" id="tb9-4E-uwF"/>
                         <outlet property="tabsView" destination="hWU-1V-WYS" id="vKB-RQ-m9j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="rOO-RT-WPi"/>
             </objects>
-            <point key="canvasLocation" x="-176" y="101"/>
+            <point key="canvasLocation" x="604" y="281"/>
         </scene>
         <!--Inbox View Controller-->
         <scene sceneID="mH9-rT-Kqg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6yw-yM-iaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="InboxViewController" automaticallyAdjustsScrollViewInsets="NO" id="Z34-lr-gbX" customClass="InboxViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iNQ-OQ-uSm"/>
@@ -159,8 +373,9 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6yw-yM-iaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="-475"/>
+            <point key="canvasLocation" x="977" y="281"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Cm6-0b-Oin">
@@ -204,18 +419,22 @@
                                     <constraint firstAttribute="centerX" secondItem="HcD-tL-LXF" secondAttribute="centerX" id="ZNh-zu-V2v"/>
                                 </constraints>
                             </view>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKs-Fd-X0a" customClass="MapizPrimaryImportant">
-                                <rect key="frame" x="105" y="293" width="112" height="38"/>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKs-Fd-X0a" customClass="MapizPrimaryImportantButton">
+                                <rect key="frame" x="105" y="291" width="112" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" red="0.88627457620000005" green="0.25490197539999998" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
-                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
                                 <inset key="imageEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                                 <state key="normal" title="I'm here!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitImHere:" destination="Lr9-HP-BJ8" eventType="touchUpInside" id="4Sj-bU-SYV"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cf1-xx-aPe">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cf1-xx-aPe">
                                 <rect key="frame" x="138" y="339" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -240,11 +459,12 @@
                     <connections>
                         <outlet property="mapView" destination="Mtp-NR-t9q" id="KmI-Aa-SLg"/>
                         <outlet property="pinButton" destination="EbQ-gd-ypG" id="URV-pp-CNa"/>
+                        <outlet property="submitButton" destination="tKs-Fd-X0a" id="f2H-vF-dfP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wji-n7-WJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="101"/>
+            <point key="canvasLocation" x="1310" y="281"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="K8Q-3D-Af3">
@@ -289,19 +509,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-Ye-Pil" customClass="MapizPrimaryImportantButton">
+                                <rect key="frame" x="104" y="219" width="112" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.88627457620000005" green="0.25490197539999998" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Where are you?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitImHere:" destination="Lr9-HP-BJ8" eventType="touchUpInside" id="8oi-iJ-KOH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="jcI-Ye-Pil" secondAttribute="centerX" id="F3h-a4-cyB"/>
+                            <constraint firstItem="K92-7z-gVx" firstAttribute="top" secondItem="jcI-Ye-Pil" secondAttribute="bottom" constant="150" id="Ljj-IX-gif"/>
                             <constraint firstAttribute="height" secondItem="zZn-lb-Cfs" secondAttribute="height" id="yAg-TH-vz3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="submitButton" destination="jcI-Ye-Pil" id="c6U-IH-eNU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxC-lK-yLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="684"/>
+            <point key="canvasLocation" x="1645" y="281"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_launcher.png" width="144" height="144"/>
         <image name="ic_marker_blue.png" width="144" height="144"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

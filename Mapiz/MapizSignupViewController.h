@@ -1,5 +1,5 @@
 //
-//  MapizPrimaryImportant.h
+//  MapizSignupViewController.h
 //  Mapiz
 //
 //  Created by samuel on 09/08/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapizPrimaryImportant : UIButton
+@interface MapizSignupViewController : UIViewController
 
 @end
