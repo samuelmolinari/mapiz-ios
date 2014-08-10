@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MeteorClient.h>
 
 @interface MapizAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) MeteorClient *meteorClient;
 
 @end

@@ -7,6 +7,8 @@
 		<string>FontAwesome.ttf</string>
 		<string>Glyphicons.ttf</string>
 	</array>
+	<key>setStatusBarStyle</key>
+	<string></string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIStatusBarStyle</key>

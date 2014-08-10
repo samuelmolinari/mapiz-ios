@@ -10,10 +10,17 @@
 
 @implementation MapizAppDelegate
 
+@synthesize meteorClient;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    return YES;
+  
+//  self.meteorClient = [[MeteorClient alloc] init];
+//  ObjectiveDDP *ddp = [[ObjectiveDDP alloc] initWithURLString:@"ws://192.168.0.65:3000/websocket" delegate:self.meteorClient];
+//  self.meteorClient.ddp = ddp;
+//  [self.meteorClient.ddp connectWebSocket];
+  
+  return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

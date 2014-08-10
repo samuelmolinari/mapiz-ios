@@ -1,0 +1,940 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03F9E2778AB54B57A02D4113 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9778E2B6B3EE48FF94B582CA /* Foundation.framework */; };
+		061ECFC7F8DA4752A1B37560 /* IQNSArray+Sort.h in Headers */ = {isa = PBXBuildFile; fileRef = 21EB796E10074CB1970EF459 /* IQNSArray+Sort.h */; };
+		0C1309F9A1A14267B38FA0F5 /* ObjectiveDDP.h in Headers */ = {isa = PBXBuildFile; fileRef = 68089C67BB784BEAB24E545A /* ObjectiveDDP.h */; };
+		11CE884D97204CFE89F5A543 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F93AB96D7A43E1828EF7D5 /* Security.framework */; };
+		1B6BED46ED644EDDAEF69429 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9778E2B6B3EE48FF94B582CA /* Foundation.framework */; };
+		1C5088719D344648A9D8E472 /* libPods-Mapiz-SocketRocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC04851AE4FD4708817F0A8F /* libPods-Mapiz-SocketRocket.a */; };
+		302C97E319334F6392A300E9 /* IQKeyboardManagerConstantsInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 802C5E3053F54BE28E3F269F /* IQKeyboardManagerConstantsInternal.h */; };
+		34C581C572644DBDB2D04179 /* libPods-Mapiz-IQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1E924621A94F6E88D8E40F /* libPods-Mapiz-IQKeyboardManager.a */; };
+		3E4B35F92CCE43A6AE1B16AE /* DependencyProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = D56B9DB7989A48F6B1E0DE01 /* DependencyProvider.h */; };
+		3EF484BEEE74440DBE8F581C /* BSONIdGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8464FD18A4BB442990408D07 /* BSONIdGenerator.h */; };
+		4602AD4046834CBA91F90F13 /* IQSegmentedNextPrevious.m in Sources */ = {isa = PBXBuildFile; fileRef = 2861256D954C4E0AAAC78947 /* IQSegmentedNextPrevious.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		462E8F961738413E840C369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9778E2B6B3EE48FF94B582CA /* Foundation.framework */; };
+		4D0203C9CB7E4E66A771A367 /* DependencyProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 435975B3C61A434F91654C85 /* DependencyProvider.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		4E4E629E868E419AB11D5F24 /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 125716838BBC4C9E90ECC220 /* IQTitleBarButtonItem.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		53FE0227B87D41FE826D96AA /* Pods-Mapiz-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA45579FFF34082830497D6 /* Pods-Mapiz-dummy.m */; };
+		5471F09AE6844A54963A803A /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = E0EBD721B79640C785129014 /* SRWebSocket.h */; };
+		5585AA594D56468092E9F727 /* IQUIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF4D6AAD6524E2B8A916929 /* IQUIView+Hierarchy.h */; };
+		5D02906AAE3D49F3BA4C70B1 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AC1506698B4DAB92FB9C1F /* IQKeyboardManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		611F794B33984BABAF0B158A /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0621065C2F44B0990131489 /* IQToolbar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		7108E5A6204D4BCC808A1679 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB64C7DF9084AE1932FD873 /* SRWebSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		78CBC9F38AB54D46A5189D2E /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F1C715F71C4B598CFAF0C8 /* IQNSArray+Sort.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		7922D76EB5CF4118B8B5B2D0 /* Pods-Mapiz-IQKeyboardManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6952D29D0D74E729F729DA8 /* Pods-Mapiz-IQKeyboardManager-dummy.m */; };
+		7A40A20B9A3C46C0842A6FBE /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3835C7D7841CDBB34D204 /* IQTextView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		7DB43EE8BECB490CA76CAFFC /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4634108254814B7E7BEBF /* base64.c */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		7E12FB78DB4F435B8357B1C4 /* IQUIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 696DF9956B7F46468CE4BFF9 /* IQUIWindow+Hierarchy.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		7EF6CB59E0EF45218144CBAE /* NSData+SRB64Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F9071FF13F94C54901C5ED1 /* NSData+SRB64Additions.h */; };
+		7F01E9C1C55B412F851DA89C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9778E2B6B3EE48FF94B582CA /* Foundation.framework */; };
+		81AEDB36B09B4D0F9704F816 /* Pods-Mapiz-ObjectiveDDP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC62F2C243648D8AE793087 /* Pods-Mapiz-ObjectiveDDP-dummy.m */; };
+		87AD8B60FBBD4A8A8697FCE1 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E1B20BF4A34B47AB968435 /* IQUIView+Hierarchy.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		89645AA5978F4EF7BB8D1AD7 /* libPods-Mapiz-ObjectiveDDP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D211F91E88BB433E86DE0361 /* libPods-Mapiz-ObjectiveDDP.a */; };
+		8B383479C4474316A09D81AA /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CBDA641DE149C6AE730037 /* NSData+SRB64Additions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		8E6AB3F9F3024A6C8579DC03 /* BSONIdGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC29BAE6D244AACBDC72ABA /* BSONIdGenerator.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		9A6059349E694468919E15DD /* MeteorClient+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF367D8166B41FBA39831CB /* MeteorClient+Parsing.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		9BFA78D9C2064AE1BDF415C2 /* MeteorClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2839212F9B644D7F8C3C6D1E /* MeteorClient.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A693B109E62A4C6496BCC2B1 /* IQSegmentedNextPrevious.h in Headers */ = {isa = PBXBuildFile; fileRef = E85A57E582304527B95F5047 /* IQSegmentedNextPrevious.h */; };
+		B3921F6F6ACD4310B0A24C51 /* IQUIView+IQKeyboardToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = A6091EBD25EB43B585580E4A /* IQUIView+IQKeyboardToolbar.h */; };
+		C093741003CE4E91B56E93BD /* IQKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DDF4D73D1444073ACAC124F /* IQKeyboardManager.h */; };
+		C58240C530A14CCE8A73E100 /* IQTitleBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 89FB27E4049F4CEE874EDC98 /* IQTitleBarButtonItem.h */; };
+		D2DC6FDA23E545B6AE718EBE /* IQUIWindow+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CDE25539E724AA6891CABFF /* IQUIWindow+Hierarchy.h */; };
+		DBCEAC051FD946BB8E4CC0F3 /* IQToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 29EDB30279064C2189CC740B /* IQToolbar.h */; };
+		DC3AA17D6BCB40479B4D61D7 /* base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 103ADFE194E54426B583B5F7 /* base64.h */; };
+		E0542BD428804708BF6FCABB /* Pods-Mapiz-SocketRocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5099407480F445B2960650ED /* Pods-Mapiz-SocketRocket-dummy.m */; };
+		E4865F903E0C4F6CB607C1A4 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A27119542E6415EA286EBCC /* IQUIView+IQKeyboardToolbar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		E887D2AAFF5C434FBC9378CF /* IQTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F9EF4D9D0C403E89CA5C3B /* IQTextView.h */; };
+		E989B36F7CDD4B8BA13B7A84 /* IQKeyboardManagerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 769E2BFFA35B4647B917A53D /* IQKeyboardManagerConstants.h */; };
+		EF38DEB59D5440AF91078DEC /* ObjectiveDDP.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB549B220F461FB9595E0E /* ObjectiveDDP.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F3DB2185FBBE456AACD4B557 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C67D8511EC44AAB9410486 /* CFNetwork.framework */; };
+		F6454DB37B3D4F57BFEEAE6E /* MeteorClient.h in Headers */ = {isa = PBXBuildFile; fileRef = CC98614588474BE0BD38BE1F /* MeteorClient.h */; };
+		F949121A87274D3E9EB9BB68 /* MeteorClient+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C15C6CFEE19C4885846ACFBE /* MeteorClient+Private.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37F6D8D967794801A7552362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F44A57AF583E4D3A81FD065F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C60CEB93E4CA464B85C9277D;
+			remoteInfo = "Pods-Mapiz-SocketRocket";
+		};
+		645C4C2347194AB7B88E6701 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F44A57AF583E4D3A81FD065F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C60CEB93E4CA464B85C9277D;
+			remoteInfo = "Pods-Mapiz-SocketRocket";
+		};
+		93E2C6EC1E644577AF5E45F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F44A57AF583E4D3A81FD065F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E3F28D44D745FCAF9EDC66;
+			remoteInfo = "Pods-Mapiz-ObjectiveDDP";
+		};
+		B2403ACD610D45C2977BD329 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F44A57AF583E4D3A81FD065F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35313DD5626B47A0911C9606;
+			remoteInfo = "Pods-Mapiz-IQKeyboardManager";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00F93AB96D7A43E1828EF7D5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		0AF4D6AAD6524E2B8A916929 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+Hierarchy.h"; path = "KeyboardTextFieldDemo/IQKeyBoardManager/IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
+		103ADFE194E54426B583B5F7 /* base64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = base64.h; path = SocketRocket/base64.h; sourceTree = "<group>"; };
+		125716838BBC4C9E90ECC220 /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTitleBarButtonItem.m; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQTitleBarButtonItem.m; sourceTree = "<group>"; };
+		1A27119542E6415EA286EBCC /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+IQKeyboardToolbar.m"; path = "KeyboardTextFieldDemo/IQKeyBoardManager/IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
+		21EB796E10074CB1970EF459 /* IQNSArray+Sort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQNSArray+Sort.h"; path = "KeyboardTextFieldDemo/IQKeyBoardManager/IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		24F1082F11944051BAAD8364 /* Pods-Mapiz-IQKeyboardManager-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mapiz-IQKeyboardManager-Private.xcconfig"; sourceTree = "<group>"; };
+		25DB549B220F461FB9595E0E /* ObjectiveDDP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObjectiveDDP.m; path = ObjectiveDDP/ObjectiveDDP.m; sourceTree = "<group>"; };
+		26BDBC8BC7CD4787936CF7E5 /* Pods-Mapiz-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mapiz-resources.sh"; sourceTree = "<group>"; };
+		2839212F9B644D7F8C3C6D1E /* MeteorClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MeteorClient.m; path = ObjectiveDDP/MeteorClient.m; sourceTree = "<group>"; };
+		2861256D954C4E0AAAC78947 /* IQSegmentedNextPrevious.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQSegmentedNextPrevious.m; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQSegmentedNextPrevious.m; sourceTree = "<group>"; };
+		28F1C715F71C4B598CFAF0C8 /* IQNSArray+Sort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQNSArray+Sort.m"; path = "KeyboardTextFieldDemo/IQKeyBoardManager/IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		29EDB30279064C2189CC740B /* IQToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQToolbar.h; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQToolbar.h; sourceTree = "<group>"; };
+		2AC62F2C243648D8AE793087 /* Pods-Mapiz-ObjectiveDDP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mapiz-ObjectiveDDP-dummy.m"; sourceTree = "<group>"; };
+		2AF367D8166B41FBA39831CB /* MeteorClient+Parsing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MeteorClient+Parsing.m"; path = "ObjectiveDDP/MeteorClient+Parsing.m"; sourceTree = "<group>"; };
+		2F9071FF13F94C54901C5ED1 /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SRB64Additions.h"; path = "SocketRocket/NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		3A8474B906F946B490FA6C96 /* Pods-Mapiz-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mapiz-environment.h"; sourceTree = "<group>"; };
+		3AC29BAE6D244AACBDC72ABA /* BSONIdGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BSONIdGenerator.m; path = ObjectiveDDP/BSONIdGenerator.m; sourceTree = "<group>"; };
+		435975B3C61A434F91654C85 /* DependencyProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DependencyProvider.m; path = ObjectiveDDP/DependencyProvider.m; sourceTree = "<group>"; };
+		5099407480F445B2960650ED /* Pods-Mapiz-SocketRocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mapiz-SocketRocket-dummy.m"; sourceTree = "<group>"; };
+		51C67D8511EC44AAB9410486 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		59F82A9BDCD04748B4D7B78C /* Pods-Mapiz-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Mapiz-acknowledgements.markdown"; sourceTree = "<group>"; };
+		68089C67BB784BEAB24E545A /* ObjectiveDDP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectiveDDP.h; path = ObjectiveDDP/ObjectiveDDP.h; sourceTree = "<group>"; };
+		696DF9956B7F46468CE4BFF9 /* IQUIWindow+Hierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIWindow+Hierarchy.m"; path = "KeyboardTextFieldDemo/IQKeyBoardManager/IQUIWindow+Hierarchy.m"; sourceTree = "<group>"; };
+		71512AAA6C3146A0ACAFED3B /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7210433A92014D18B33A7EC4 /* Pods-Mapiz-ObjectiveDDP-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mapiz-ObjectiveDDP-Private.xcconfig"; sourceTree = "<group>"; };
+		769E2BFFA35B4647B917A53D /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstants.h; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
+		7BD4634108254814B7E7BEBF /* base64.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = base64.c; path = SocketRocket/base64.c; sourceTree = "<group>"; };
+		7CB64C7DF9084AE1932FD873 /* SRWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
+		802C5E3053F54BE28E3F269F /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstantsInternal.h; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
+		81BB1A31A7C949C5AB7E025A /* Pods-Mapiz-SocketRocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mapiz-SocketRocket.xcconfig"; sourceTree = "<group>"; };
+		8464FD18A4BB442990408D07 /* BSONIdGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BSONIdGenerator.h; path = ObjectiveDDP/BSONIdGenerator.h; sourceTree = "<group>"; };
+		87C8B448E3C348B1B696E471 /* Pods-Mapiz-ObjectiveDDP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mapiz-ObjectiveDDP-prefix.pch"; sourceTree = "<group>"; };
+		89FB27E4049F4CEE874EDC98 /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTitleBarButtonItem.h; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQTitleBarButtonItem.h; sourceTree = "<group>"; };
+		8CDE25539E724AA6891CABFF /* IQUIWindow+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIWindow+Hierarchy.h"; path = "KeyboardTextFieldDemo/IQKeyBoardManager/IQUIWindow+Hierarchy.h"; sourceTree = "<group>"; };
+		8E1E924621A94F6E88D8E40F /* libPods-Mapiz-IQKeyboardManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mapiz-IQKeyboardManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9778E2B6B3EE48FF94B582CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9DDF4D73D1444073ACAC124F /* IQKeyboardManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManager.h; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQKeyboardManager.h; sourceTree = "<group>"; };
+		A33024EC43F94ED9B3BC37A0 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		A6091EBD25EB43B585580E4A /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+IQKeyboardToolbar.h"; path = "KeyboardTextFieldDemo/IQKeyBoardManager/IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		AC04851AE4FD4708817F0A8F /* libPods-Mapiz-SocketRocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mapiz-SocketRocket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F9EF4D9D0C403E89CA5C3B /* IQTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTextView.h; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQTextView.h; sourceTree = "<group>"; };
+		B94D49345E9141A08E8AD0A7 /* Pods-Mapiz-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mapiz-acknowledgements.plist"; sourceTree = "<group>"; };
+		C003229A09FA4364B2EA7BDF /* Pods-Mapiz-IQKeyboardManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mapiz-IQKeyboardManager.xcconfig"; sourceTree = "<group>"; };
+		C0AC1506698B4DAB92FB9C1F /* IQKeyboardManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardManager.m; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQKeyboardManager.m; sourceTree = "<group>"; };
+		C15C6CFEE19C4885846ACFBE /* MeteorClient+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MeteorClient+Private.h"; path = "ObjectiveDDP/MeteorClient+Private.h"; sourceTree = "<group>"; };
+		C23226AFF1C24EE487A5719D /* Pods-Mapiz-SocketRocket-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mapiz-SocketRocket-Private.xcconfig"; sourceTree = "<group>"; };
+		C6952D29D0D74E729F729DA8 /* Pods-Mapiz-IQKeyboardManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mapiz-IQKeyboardManager-dummy.m"; sourceTree = "<group>"; };
+		CC98614588474BE0BD38BE1F /* MeteorClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MeteorClient.h; path = ObjectiveDDP/MeteorClient.h; sourceTree = "<group>"; };
+		D0621065C2F44B0990131489 /* IQToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQToolbar.m; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQToolbar.m; sourceTree = "<group>"; };
+		D1CB34094CEC41DDB18725DF /* Pods-Mapiz.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mapiz.xcconfig"; sourceTree = "<group>"; };
+		D211F91E88BB433E86DE0361 /* libPods-Mapiz-ObjectiveDDP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mapiz-ObjectiveDDP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56B9DB7989A48F6B1E0DE01 /* DependencyProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DependencyProvider.h; path = ObjectiveDDP/DependencyProvider.h; sourceTree = "<group>"; };
+		D6CBDA641DE149C6AE730037 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+SRB64Additions.m"; path = "SocketRocket/NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		D879117789974365AA00D9F3 /* Pods-Mapiz-ObjectiveDDP.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mapiz-ObjectiveDDP.xcconfig"; sourceTree = "<group>"; };
+		D9F3835C7D7841CDBB34D204 /* IQTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTextView.m; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQTextView.m; sourceTree = "<group>"; };
+		E0A272E61C0F4F2591259A91 /* Pods-Mapiz-SocketRocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mapiz-SocketRocket-prefix.pch"; sourceTree = "<group>"; };
+		E0EBD721B79640C785129014 /* SRWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
+		E85A57E582304527B95F5047 /* IQSegmentedNextPrevious.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQSegmentedNextPrevious.h; path = KeyboardTextFieldDemo/IQKeyBoardManager/IQSegmentedNextPrevious.h; sourceTree = "<group>"; };
+		F2976707D0FE4A06B1C34B3A /* libPods-Mapiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mapiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F405F4C0039140299E0324F7 /* Pods-Mapiz-IQKeyboardManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mapiz-IQKeyboardManager-prefix.pch"; sourceTree = "<group>"; };
+		F4E1B20BF4A34B47AB968435 /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+Hierarchy.m"; path = "KeyboardTextFieldDemo/IQKeyBoardManager/IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
+		FFA45579FFF34082830497D6 /* Pods-Mapiz-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mapiz-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E094C9FAE34471793978D20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3DB2185FBBE456AACD4B557 /* CFNetwork.framework in Frameworks */,
+				7F01E9C1C55B412F851DA89C /* Foundation.framework in Frameworks */,
+				11CE884D97204CFE89F5A543 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D07EFDB8B86E41A8AD978128 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03F9E2778AB54B57A02D4113 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4048494325A44019D7E28BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B6BED46ED644EDDAEF69429 /* Foundation.framework in Frameworks */,
+				34C581C572644DBDB2D04179 /* libPods-Mapiz-IQKeyboardManager.a in Frameworks */,
+				89645AA5978F4EF7BB8D1AD7 /* libPods-Mapiz-ObjectiveDDP.a in Frameworks */,
+				1C5088719D344648A9D8E472 /* libPods-Mapiz-SocketRocket.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC44E4613DF944ED9E4EF381 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462E8F961738413E840C369E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		012CBD261CAE4AEDBB424F61 /* IQKeyboardManager */ = {
+			isa = PBXGroup;
+			children = (
+				9DDF4D73D1444073ACAC124F /* IQKeyboardManager.h */,
+				C0AC1506698B4DAB92FB9C1F /* IQKeyboardManager.m */,
+				769E2BFFA35B4647B917A53D /* IQKeyboardManagerConstants.h */,
+				802C5E3053F54BE28E3F269F /* IQKeyboardManagerConstantsInternal.h */,
+				21EB796E10074CB1970EF459 /* IQNSArray+Sort.h */,
+				28F1C715F71C4B598CFAF0C8 /* IQNSArray+Sort.m */,
+				E85A57E582304527B95F5047 /* IQSegmentedNextPrevious.h */,
+				2861256D954C4E0AAAC78947 /* IQSegmentedNextPrevious.m */,
+				B3F9EF4D9D0C403E89CA5C3B /* IQTextView.h */,
+				D9F3835C7D7841CDBB34D204 /* IQTextView.m */,
+				89FB27E4049F4CEE874EDC98 /* IQTitleBarButtonItem.h */,
+				125716838BBC4C9E90ECC220 /* IQTitleBarButtonItem.m */,
+				29EDB30279064C2189CC740B /* IQToolbar.h */,
+				D0621065C2F44B0990131489 /* IQToolbar.m */,
+				0AF4D6AAD6524E2B8A916929 /* IQUIView+Hierarchy.h */,
+				F4E1B20BF4A34B47AB968435 /* IQUIView+Hierarchy.m */,
+				A6091EBD25EB43B585580E4A /* IQUIView+IQKeyboardToolbar.h */,
+				1A27119542E6415EA286EBCC /* IQUIView+IQKeyboardToolbar.m */,
+				8CDE25539E724AA6891CABFF /* IQUIWindow+Hierarchy.h */,
+				696DF9956B7F46468CE4BFF9 /* IQUIWindow+Hierarchy.m */,
+				A2715342D4F24CD396F8162B /* Resources */,
+				FD0F4170C7BD490C8E87D2CE /* Support Files */,
+			);
+			path = IQKeyboardManager;
+			sourceTree = "<group>";
+		};
+		0E7FB1C10B4D4E1F804C012A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2976707D0FE4A06B1C34B3A /* libPods-Mapiz.a */,
+				8E1E924621A94F6E88D8E40F /* libPods-Mapiz-IQKeyboardManager.a */,
+				D211F91E88BB433E86DE0361 /* libPods-Mapiz-ObjectiveDDP.a */,
+				AC04851AE4FD4708817F0A8F /* libPods-Mapiz-SocketRocket.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B6CD6E3E35E415B9E4EDF20 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D879117789974365AA00D9F3 /* Pods-Mapiz-ObjectiveDDP.xcconfig */,
+				7210433A92014D18B33A7EC4 /* Pods-Mapiz-ObjectiveDDP-Private.xcconfig */,
+				2AC62F2C243648D8AE793087 /* Pods-Mapiz-ObjectiveDDP-dummy.m */,
+				87C8B448E3C348B1B696E471 /* Pods-Mapiz-ObjectiveDDP-prefix.pch */,
+			);
+			name = "Support Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		7A80EF69A906414C812D665A = {
+			isa = PBXGroup;
+			children = (
+				71512AAA6C3146A0ACAFED3B /* Podfile */,
+				FF3F5C5D73F847E797C4CCFC /* Frameworks */,
+				9F6919D42502452F86BD5ED9 /* Pods */,
+				0E7FB1C10B4D4E1F804C012A /* Products */,
+				A7AA001988F74C3D871B94D3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9F6919D42502452F86BD5ED9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				012CBD261CAE4AEDBB424F61 /* IQKeyboardManager */,
+				E196AAF1C48D4C7888FD7E35 /* ObjectiveDDP */,
+				E703EA9256B94A42A6346585 /* SocketRocket */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2715342D4F24CD396F8162B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A33024EC43F94ED9B3BC37A0 /* IQKeyboardManager.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A7AA001988F74C3D871B94D3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC2CE1E710C04DBF860225B0 /* Pods-Mapiz */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B7060D0F36AA49CA82A368D2 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				51C67D8511EC44AAB9410486 /* CFNetwork.framework */,
+				9778E2B6B3EE48FF94B582CA /* Foundation.framework */,
+				00F93AB96D7A43E1828EF7D5 /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BC2CE1E710C04DBF860225B0 /* Pods-Mapiz */ = {
+			isa = PBXGroup;
+			children = (
+				D1CB34094CEC41DDB18725DF /* Pods-Mapiz.xcconfig */,
+				59F82A9BDCD04748B4D7B78C /* Pods-Mapiz-acknowledgements.markdown */,
+				B94D49345E9141A08E8AD0A7 /* Pods-Mapiz-acknowledgements.plist */,
+				FFA45579FFF34082830497D6 /* Pods-Mapiz-dummy.m */,
+				3A8474B906F946B490FA6C96 /* Pods-Mapiz-environment.h */,
+				26BDBC8BC7CD4787936CF7E5 /* Pods-Mapiz-resources.sh */,
+			);
+			name = "Pods-Mapiz";
+			sourceTree = "<group>";
+		};
+		CB9718A2EE274B459B6C5AE7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				81BB1A31A7C949C5AB7E025A /* Pods-Mapiz-SocketRocket.xcconfig */,
+				C23226AFF1C24EE487A5719D /* Pods-Mapiz-SocketRocket-Private.xcconfig */,
+				5099407480F445B2960650ED /* Pods-Mapiz-SocketRocket-dummy.m */,
+				E0A272E61C0F4F2591259A91 /* Pods-Mapiz-SocketRocket-prefix.pch */,
+			);
+			name = "Support Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		E196AAF1C48D4C7888FD7E35 /* ObjectiveDDP */ = {
+			isa = PBXGroup;
+			children = (
+				8464FD18A4BB442990408D07 /* BSONIdGenerator.h */,
+				3AC29BAE6D244AACBDC72ABA /* BSONIdGenerator.m */,
+				D56B9DB7989A48F6B1E0DE01 /* DependencyProvider.h */,
+				435975B3C61A434F91654C85 /* DependencyProvider.m */,
+				CC98614588474BE0BD38BE1F /* MeteorClient.h */,
+				2839212F9B644D7F8C3C6D1E /* MeteorClient.m */,
+				2AF367D8166B41FBA39831CB /* MeteorClient+Parsing.m */,
+				C15C6CFEE19C4885846ACFBE /* MeteorClient+Private.h */,
+				68089C67BB784BEAB24E545A /* ObjectiveDDP.h */,
+				25DB549B220F461FB9595E0E /* ObjectiveDDP.m */,
+				4B6CD6E3E35E415B9E4EDF20 /* Support Files */,
+			);
+			path = ObjectiveDDP;
+			sourceTree = "<group>";
+		};
+		E703EA9256B94A42A6346585 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				2F9071FF13F94C54901C5ED1 /* NSData+SRB64Additions.h */,
+				D6CBDA641DE149C6AE730037 /* NSData+SRB64Additions.m */,
+				E0EBD721B79640C785129014 /* SRWebSocket.h */,
+				7CB64C7DF9084AE1932FD873 /* SRWebSocket.m */,
+				7BD4634108254814B7E7BEBF /* base64.c */,
+				103ADFE194E54426B583B5F7 /* base64.h */,
+				CB9718A2EE274B459B6C5AE7 /* Support Files */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+		FD0F4170C7BD490C8E87D2CE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C003229A09FA4364B2EA7BDF /* Pods-Mapiz-IQKeyboardManager.xcconfig */,
+				24F1082F11944051BAAD8364 /* Pods-Mapiz-IQKeyboardManager-Private.xcconfig */,
+				C6952D29D0D74E729F729DA8 /* Pods-Mapiz-IQKeyboardManager-dummy.m */,
+				F405F4C0039140299E0324F7 /* Pods-Mapiz-IQKeyboardManager-prefix.pch */,
+			);
+			name = "Support Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		FF3F5C5D73F847E797C4CCFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7060D0F36AA49CA82A368D2 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3B8F7A191F644209BF299F20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C093741003CE4E91B56E93BD /* IQKeyboardManager.h in Headers */,
+				E989B36F7CDD4B8BA13B7A84 /* IQKeyboardManagerConstants.h in Headers */,
+				302C97E319334F6392A300E9 /* IQKeyboardManagerConstantsInternal.h in Headers */,
+				061ECFC7F8DA4752A1B37560 /* IQNSArray+Sort.h in Headers */,
+				A693B109E62A4C6496BCC2B1 /* IQSegmentedNextPrevious.h in Headers */,
+				E887D2AAFF5C434FBC9378CF /* IQTextView.h in Headers */,
+				C58240C530A14CCE8A73E100 /* IQTitleBarButtonItem.h in Headers */,
+				DBCEAC051FD946BB8E4CC0F3 /* IQToolbar.h in Headers */,
+				5585AA594D56468092E9F727 /* IQUIView+Hierarchy.h in Headers */,
+				B3921F6F6ACD4310B0A24C51 /* IQUIView+IQKeyboardToolbar.h in Headers */,
+				D2DC6FDA23E545B6AE718EBE /* IQUIWindow+Hierarchy.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C250F73EA4BD419DB072F549 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EF6CB59E0EF45218144CBAE /* NSData+SRB64Additions.h in Headers */,
+				5471F09AE6844A54963A803A /* SRWebSocket.h in Headers */,
+				DC3AA17D6BCB40479B4D61D7 /* base64.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C617BBCEC5274AE5AE36601A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EF484BEEE74440DBE8F581C /* BSONIdGenerator.h in Headers */,
+				3E4B35F92CCE43A6AE1B16AE /* DependencyProvider.h in Headers */,
+				F949121A87274D3E9EB9BB68 /* MeteorClient+Private.h in Headers */,
+				F6454DB37B3D4F57BFEEAE6E /* MeteorClient.h in Headers */,
+				0C1309F9A1A14267B38FA0F5 /* ObjectiveDDP.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		35313DD5626B47A0911C9606 /* Pods-Mapiz-IQKeyboardManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 768DC756B65E4672A5DCB100 /* Build configuration list for PBXNativeTarget "Pods-Mapiz-IQKeyboardManager" */;
+			buildPhases = (
+				51F113492EF44B54B7892F50 /* Sources */,
+				D07EFDB8B86E41A8AD978128 /* Frameworks */,
+				3B8F7A191F644209BF299F20 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Mapiz-IQKeyboardManager";
+			productName = "Pods-Mapiz-IQKeyboardManager";
+			productReference = 8E1E924621A94F6E88D8E40F /* libPods-Mapiz-IQKeyboardManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B9E3F28D44D745FCAF9EDC66 /* Pods-Mapiz-ObjectiveDDP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E0ACECE9620479BBD47321E /* Build configuration list for PBXNativeTarget "Pods-Mapiz-ObjectiveDDP" */;
+			buildPhases = (
+				3DEF93982DD4471BA858E89B /* Sources */,
+				FC44E4613DF944ED9E4EF381 /* Frameworks */,
+				C617BBCEC5274AE5AE36601A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F1AE7D6EB434028A6BACE85 /* PBXTargetDependency */,
+			);
+			name = "Pods-Mapiz-ObjectiveDDP";
+			productName = "Pods-Mapiz-ObjectiveDDP";
+			productReference = D211F91E88BB433E86DE0361 /* libPods-Mapiz-ObjectiveDDP.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C5DCD095A893440480D87BF9 /* Pods-Mapiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90B029B8702C46CBB586FD2F /* Build configuration list for PBXNativeTarget "Pods-Mapiz" */;
+			buildPhases = (
+				A3DC3FB985FD4E72BB1B9022 /* Sources */,
+				E4048494325A44019D7E28BB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BB406A6153C476293433B77 /* PBXTargetDependency */,
+				A618C3C6D3934FA9B2B38F63 /* PBXTargetDependency */,
+				F66965F1CF8245BA9D005A3A /* PBXTargetDependency */,
+			);
+			name = "Pods-Mapiz";
+			productName = "Pods-Mapiz";
+			productReference = F2976707D0FE4A06B1C34B3A /* libPods-Mapiz.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C60CEB93E4CA464B85C9277D /* Pods-Mapiz-SocketRocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71C84E1006594F87B075AD9C /* Build configuration list for PBXNativeTarget "Pods-Mapiz-SocketRocket" */;
+			buildPhases = (
+				BC739C72E20448B59DE18558 /* Sources */,
+				7E094C9FAE34471793978D20 /* Frameworks */,
+				C250F73EA4BD419DB072F549 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Mapiz-SocketRocket";
+			productName = "Pods-Mapiz-SocketRocket";
+			productReference = AC04851AE4FD4708817F0A8F /* libPods-Mapiz-SocketRocket.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F44A57AF583E4D3A81FD065F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = F65C2110C3F54A11806F313B /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7A80EF69A906414C812D665A;
+			productRefGroup = 0E7FB1C10B4D4E1F804C012A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5DCD095A893440480D87BF9 /* Pods-Mapiz */,
+				35313DD5626B47A0911C9606 /* Pods-Mapiz-IQKeyboardManager */,
+				B9E3F28D44D745FCAF9EDC66 /* Pods-Mapiz-ObjectiveDDP */,
+				C60CEB93E4CA464B85C9277D /* Pods-Mapiz-SocketRocket */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DEF93982DD4471BA858E89B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E6AB3F9F3024A6C8579DC03 /* BSONIdGenerator.m in Sources */,
+				4D0203C9CB7E4E66A771A367 /* DependencyProvider.m in Sources */,
+				9A6059349E694468919E15DD /* MeteorClient+Parsing.m in Sources */,
+				9BFA78D9C2064AE1BDF415C2 /* MeteorClient.m in Sources */,
+				EF38DEB59D5440AF91078DEC /* ObjectiveDDP.m in Sources */,
+				81AEDB36B09B4D0F9704F816 /* Pods-Mapiz-ObjectiveDDP-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51F113492EF44B54B7892F50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D02906AAE3D49F3BA4C70B1 /* IQKeyboardManager.m in Sources */,
+				78CBC9F38AB54D46A5189D2E /* IQNSArray+Sort.m in Sources */,
+				4602AD4046834CBA91F90F13 /* IQSegmentedNextPrevious.m in Sources */,
+				7A40A20B9A3C46C0842A6FBE /* IQTextView.m in Sources */,
+				4E4E629E868E419AB11D5F24 /* IQTitleBarButtonItem.m in Sources */,
+				611F794B33984BABAF0B158A /* IQToolbar.m in Sources */,
+				87AD8B60FBBD4A8A8697FCE1 /* IQUIView+Hierarchy.m in Sources */,
+				E4865F903E0C4F6CB607C1A4 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				7E12FB78DB4F435B8357B1C4 /* IQUIWindow+Hierarchy.m in Sources */,
+				7922D76EB5CF4118B8B5B2D0 /* Pods-Mapiz-IQKeyboardManager-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3DC3FB985FD4E72BB1B9022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FE0227B87D41FE826D96AA /* Pods-Mapiz-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC739C72E20448B59DE18558 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B383479C4474316A09D81AA /* NSData+SRB64Additions.m in Sources */,
+				E0542BD428804708BF6FCABB /* Pods-Mapiz-SocketRocket-dummy.m in Sources */,
+				7108E5A6204D4BCC808A1679 /* SRWebSocket.m in Sources */,
+				7DB43EE8BECB490CA76CAFFC /* base64.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F1AE7D6EB434028A6BACE85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C60CEB93E4CA464B85C9277D /* Pods-Mapiz-SocketRocket */;
+			targetProxy = 645C4C2347194AB7B88E6701 /* PBXContainerItemProxy */;
+		};
+		3BB406A6153C476293433B77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35313DD5626B47A0911C9606 /* Pods-Mapiz-IQKeyboardManager */;
+			targetProxy = B2403ACD610D45C2977BD329 /* PBXContainerItemProxy */;
+		};
+		A618C3C6D3934FA9B2B38F63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E3F28D44D745FCAF9EDC66 /* Pods-Mapiz-ObjectiveDDP */;
+			targetProxy = 93E2C6EC1E644577AF5E45F6 /* PBXContainerItemProxy */;
+		};
+		F66965F1CF8245BA9D005A3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C60CEB93E4CA464B85C9277D /* Pods-Mapiz-SocketRocket */;
+			targetProxy = 37F6D8D967794801A7552362 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		037783FE6A16483792CE2455 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1CB34094CEC41DDB18725DF /* Pods-Mapiz.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0BCC269F9B494896B0B35209 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0C653F04B8054BAE8E55B1FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C23226AFF1C24EE487A5719D /* Pods-Mapiz-SocketRocket-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Mapiz-SocketRocket-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2CD067064FA24FD1BCD718B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F1082F11944051BAAD8364 /* Pods-Mapiz-IQKeyboardManager-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Mapiz-IQKeyboardManager-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		34DFD15D794D4A6AAC32C545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F1082F11944051BAAD8364 /* Pods-Mapiz-IQKeyboardManager-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Mapiz-IQKeyboardManager-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3CC9BCACF72848A1BC444A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7210433A92014D18B33A7EC4 /* Pods-Mapiz-ObjectiveDDP-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Mapiz-ObjectiveDDP-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D8AD2A22A5048E893B880FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7210433A92014D18B33A7EC4 /* Pods-Mapiz-ObjectiveDDP-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Mapiz-ObjectiveDDP-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		85092E6A7E1B48689A7F6450 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1CB34094CEC41DDB18725DF /* Pods-Mapiz.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8FA91AC3CEC84768979AC4F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C23226AFF1C24EE487A5719D /* Pods-Mapiz-SocketRocket-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Mapiz-SocketRocket-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D10AFD20C97747548E3C9CAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E0ACECE9620479BBD47321E /* Build configuration list for PBXNativeTarget "Pods-Mapiz-ObjectiveDDP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D8AD2A22A5048E893B880FC /* Debug */,
+				3CC9BCACF72848A1BC444A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71C84E1006594F87B075AD9C /* Build configuration list for PBXNativeTarget "Pods-Mapiz-SocketRocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C653F04B8054BAE8E55B1FB /* Debug */,
+				8FA91AC3CEC84768979AC4F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		768DC756B65E4672A5DCB100 /* Build configuration list for PBXNativeTarget "Pods-Mapiz-IQKeyboardManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CD067064FA24FD1BCD718B6 /* Debug */,
+				34DFD15D794D4A6AAC32C545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90B029B8702C46CBB586FD2F /* Build configuration list for PBXNativeTarget "Pods-Mapiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				037783FE6A16483792CE2455 /* Debug */,
+				85092E6A7E1B48689A7F6450 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F65C2110C3F54A11806F313B /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D10AFD20C97747548E3C9CAE /* Debug */,
+				0BCC269F9B494896B0B35209 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F44A57AF583E4D3A81FD065F /* Project object */;
+}

@@ -29,6 +29,7 @@
 @synthesize meetupButton;
 @synthesize tabsView;
 @synthesize submitButton;
+@synthesize navigationBar;
 
 int const MODE_IM_HERE = 0;
 int const MODE_WHERE_ARE_YOU = 1;
@@ -46,6 +47,11 @@ CGRect tabFrame;
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  if(![self.navigationController.navigationBar respondsToSelector:@selector(barTintColor)]) {
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:208/255 green:66/255 blue:76/255 alpha:1.0];
+  }
+  
   self.scrollView.delegate = self;
   
   mode = MODE_WHERE_ARE_YOU;
@@ -66,6 +72,11 @@ CGRect tabFrame;
   [submitButton.titleLabel setFont: [UIFont fontWithName:@"Glyphicons" size:20]];
   [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
   
+  [rightNavButton setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                           [UIFont fontWithName:@"FontAwesome" size:16.0f],UITextAttributeFont, nil] forState:UIControlStateNormal];
+  [leftNavButton setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                           [UIFont fontWithName:@"FontAwesome" size:16.0f],UITextAttributeFont, nil] forState:UIControlStateNormal];
+  
   
 }
 
@@ -75,7 +86,7 @@ CGRect tabFrame;
   
   self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * TOTAL_SECTIONS, self.scrollView.frame.size.height);
   
-  CGSize size = self.scrollView.layer.frame.size;
+  CGSize size = self.scrollView.frame.size;
   
   CGRect mapFrame;
   mapFrame.size = size;
@@ -102,7 +113,7 @@ CGRect tabFrame;
   
   tabFrame = tabsView.frame;
   
-  [self moveToPosition: INDEX_SECTION_MAP];
+  [self goToPosition: INDEX_SECTION_MAP];
   
   [self.view layoutIfNeeded];
   
@@ -149,6 +160,14 @@ CGRect tabFrame;
   [self.scrollView scrollRectToVisible:frame animated:YES];
 }
 
+- (void)goToPosition: (int)i {
+  CGRect frame;
+  frame.origin.x = self.scrollView.frame.size.width * i;
+  frame.origin.y = 0;
+  frame.size = self.scrollView.frame.size;
+  [self.scrollView scrollRectToVisible:frame animated:NO];
+}
+
 - (void)setMode: (int) modeValue {
   mode = modeValue;
   switch(mode) {
@@ -193,17 +212,22 @@ CGRect tabFrame;
       break;
   }
   
+  [UIView performWithoutAnimation:^{
   switch(position) {
     case INDEX_SECTION_MAP:
-      leftNavButton.title = @"Inbox";
+//      leftNavButton.title = @"Inbox";
+      leftNavButton.title = @"\uf0e0";
       break;
     case INDEX_SECTION_INBOX:
-      leftNavButton.title = @"Settings";
+//      leftNavButton.title = @"Settings";
+      leftNavButton.title = @"\uf013";
       break;
     case INDEX_SECTION_FRIENDS:
-      leftNavButton.title = @"Back";
+//      leftNavButton.title = @"Back";
+      leftNavButton.title = @"\uf054";
       break;
   }
+  }];
 }
 
 - (void)setModeImHere {
@@ -291,24 +315,30 @@ CGRect tabFrame;
   
   tabsView.frame = newTabFrame;
   
+  [UIView performWithoutAnimation:^{
   switch(position) {
     case INDEX_SECTION_MAP:
       switch (mode) {
         case MODE_IM_HERE:
-          leftNavButton.title = @"Cancel";
+//          leftNavButton.title = @"Cancel";
+          leftNavButton.title = @"\uf00d";
           break;
         case MODE_WHERE_ARE_YOU:
-          leftNavButton.title = @"Inbox";
+          leftNavButton.title = @"\uf0e0";
+//          leftNavButton.title = @"Inbox";
           break;
       }
       
-      rightNavButton.title = @"Friends";
+//      rightNavButton.title = @"Friends";
+      rightNavButton.title = @"\uf0c0";
       self.navigationBar.topItem.title = @"Mapiz";
       
       if([self isInModeImHere]) {
-        [submitButton setTitle:@"\ue224" forState:UIControlStateNormal];
+        submitButton.titleLabel.text = @"\ue224";
+        //        [submitButton setTitle:@"\ue224" forState:UIControlStateNormal];
       } else {
-        [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
+        submitButton.titleLabel.text = @"\ue422";
+        //        [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
       }
       
       break;
@@ -316,39 +346,48 @@ CGRect tabFrame;
       
       switch (mode) {
         case MODE_IM_HERE:
-          leftNavButton.title = @"Cancel";
+          leftNavButton.title = @"\uf00d";
+//          leftNavButton.title = @"Cancel";
           break;
         case MODE_WHERE_ARE_YOU:
-          leftNavButton.title = @"Settings";
+//            leftNavButton.title = @"Settings";
+          leftNavButton.title = @"\uf013";
           break;
       }
       
-      rightNavButton.title = @"Back";
+      rightNavButton.title = @"\uf054";
+//      rightNavButton.title = @"Back";
       self.navigationBar.topItem.title = @"Inbox";
       
       if([self isInModeImHere]) {
-        [submitButton setTitle:@"\ue224" forState:UIControlStateNormal];
+        submitButton.titleLabel.text = @"\ue224";
+//        [submitButton setTitle:@"\ue224" forState:UIControlStateNormal];
       } else {
-        [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
+        submitButton.titleLabel.text = @"\ue422";
+//        [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
       }
       
       break;
     case INDEX_SECTION_FRIENDS:
       switch (mode) {
         case MODE_IM_HERE:
-          leftNavButton.title = @"Cancel";
+          leftNavButton.title = @"\uf00d";
+//          leftNavButton.title = @"Cancel";
           break;
         case MODE_WHERE_ARE_YOU:
-          leftNavButton.title = @"Back";
+//          leftNavButton.title = @"Back";
+          leftNavButton.title = @"\uf053";
           break;
       }
       
-      [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
+      submitButton.titleLabel.text = @"\ue422";
       
-      rightNavButton.title = @"Search";
+//      rightNavButton.title = @"Search";
+      rightNavButton.title = @"\uf002";
       self.navigationBar.topItem.title = @"Friends";
       break;
   }
+  }];
 }
 
 -(int)getCurrentPosition

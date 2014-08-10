@@ -1,0 +1,16 @@
+PODS:
+  - IQKeyboardManager (3.0.6)
+  - ObjectiveDDP (0.1.5):
+    - SocketRocket (= 0.3.1-beta2)
+  - SocketRocket (0.3.1-beta2)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - ObjectiveDDP (~> 0.1.5)
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: 3381092a6728e3565a6ad5051c44386be36bd990
+  ObjectiveDDP: d3d7705dfa5fc082e8e81c7b9c14e514065f418e
+  SocketRocket: 79a68ae186063c65e1fe6f638b1ae2927aa5f304
+
+COCOAPODS: 0.33.1

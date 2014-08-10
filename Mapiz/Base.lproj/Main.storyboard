@@ -36,10 +36,14 @@
                         <color key="backgroundColor" red="0.9490196704864502" green="0.9490196704864502" blue="0.9490196704864502" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <segue destination="oBu-zC-9W6" kind="modal" identifier="showAuth" modalTransitionStyle="coverVertical" id="eC9-IV-NGu"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="showMain" id="K5g-6F-SL3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8h3-Uv-ItH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173" y="-23"/>
+            <point key="canvasLocation" x="-441" y="205"/>
         </scene>
         <!--Mapiz Auth View Controller-->
         <scene sceneID="5Qw-g2-DQr">
@@ -53,31 +57,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0g-cy-i0P">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0g-cy-i0P">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94901967050000002" green="0.94901967050000002" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="ief-Fx-Z0Z" firstAttribute="top" secondItem="b0g-cy-i0P" secondAttribute="bottom" id="DAU-HP-McO"/>
                             <constraint firstAttribute="centerY" secondItem="b0g-cy-i0P" secondAttribute="centerY" id="RqR-fh-BfR"/>
+                            <constraint firstItem="b0g-cy-i0P" firstAttribute="width" secondItem="q7B-w9-A7P" secondAttribute="width" id="VVx-DI-Yfd"/>
                             <constraint firstAttribute="centerX" secondItem="b0g-cy-i0P" secondAttribute="centerX" id="aX8-ET-pb3"/>
-                            <constraint firstItem="b0g-cy-i0P" firstAttribute="top" secondItem="KTV-Ok-Zzg" secondAttribute="bottom" constant="-20" id="ck4-8a-1pB"/>
-                            <constraint firstItem="b0g-cy-i0P" firstAttribute="leading" secondItem="q7B-w9-A7P" secondAttribute="leading" id="gb9-k5-EcQ"/>
-                            <constraint firstAttribute="trailing" secondItem="b0g-cy-i0P" secondAttribute="trailing" id="pTh-aF-TF3"/>
+                            <constraint firstItem="b0g-cy-i0P" firstAttribute="height" secondItem="q7B-w9-A7P" secondAttribute="height" id="tOA-fz-XaT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FYQ-Cp-uIL"/>
+                    <connections>
+                        <outlet property="scrollView" destination="b0g-cy-i0P" id="H14-Hx-B8j"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="showMain" id="Pvj-hw-tb8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cai-SE-WC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="-309"/>
+            <point key="canvasLocation" x="98" y="-413"/>
         </scene>
         <!--Mapiz Login View Controller-->
         <scene sceneID="t6p-b9-YVq">
             <objects>
-                <viewController id="zaQ-m1-cym" customClass="MapizLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapizLoginViewController" id="zaQ-m1-cym" customClass="MapizLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nWM-X3-Ave"/>
                         <viewControllerLayoutGuide type="bottom" id="QfE-l9-Wv2"/>
@@ -86,7 +92,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOu-Qr-HEX">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOu-Qr-HEX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -101,22 +107,22 @@
                                         <color key="textColor" red="0.5647059083" green="0.5176470876" blue="0.5176470876" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email or username" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ufG-fg-sHC">
-                                        <rect key="frame" x="69" y="271" width="182" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email or username" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ufG-fg-sHC">
+                                        <rect key="frame" x="61" y="271" width="199" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1N-hL-hK7">
-                                        <rect key="frame" x="69" y="309" width="182" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1N-hL-hK7">
+                                        <rect key="frame" x="61" y="309" width="199" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8g-hY-X6A" customClass="MapizPrimaryImportantButton">
-                                        <rect key="frame" x="69" y="347" width="84" height="42"/>
+                                        <rect key="frame" x="61" y="347" width="94" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="tintColor" red="0.88627457620000005" green="0.25490197539999998" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
@@ -127,7 +133,24 @@
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="login:" destination="zaQ-m1-cym" eventType="touchUpInside" id="u4X-Ea-Pgu"/>
                                             <action selector="submitImHere:" destination="Lr9-HP-BJ8" eventType="touchUpInside" id="sZ1-Ia-UPh"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeW-qI-EdU" customClass="MapizDangerImportantButton">
+                                        <rect key="frame" x="163" y="347" width="97" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="tintColor" red="0.88627457620000005" green="0.25490197539999998" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                        <inset key="imageEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToSignup:" destination="zaQ-m1-cym" eventType="touchUpInside" id="BwU-8w-Zaw"/>
+                                            <action selector="submitImHere:" destination="Lr9-HP-BJ8" eventType="touchUpInside" id="3MI-td-KFu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -135,16 +158,26 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" secondItem="YOu-Qr-HEX" secondAttribute="height" id="N2H-vV-tOx"/>
+                            <constraint firstAttribute="width" secondItem="YOu-Qr-HEX" secondAttribute="width" id="lLF-Cb-xDF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="u8g-hY-X6A" id="8KK-B3-Vwp"/>
+                        <outlet property="loginTextField" destination="ufG-fg-sHC" id="5ws-Lb-QsI"/>
+                        <outlet property="passwordTextField" destination="F1N-hL-hK7" id="Q8I-HE-P4w"/>
+                        <outlet property="signupButton" destination="xeW-qI-EdU" id="DJw-Jq-kuq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdy-1l-5Bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-309"/>
+            <point key="canvasLocation" x="98" y="-965"/>
         </scene>
         <!--Mapiz Signup View Controller-->
         <scene sceneID="uCr-h0-PXj">
             <objects>
-                <viewController id="apy-RF-Sbj" customClass="MapizSignupViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapizSignupViewController" id="apy-RF-Sbj" customClass="MapizSignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JRU-UW-cnN"/>
                         <viewControllerLayoutGuide type="bottom" id="K2z-UM-qRb"/>
@@ -164,28 +197,28 @@
                                 <color key="textColor" red="0.5647059083" green="0.5176470876" blue="0.5176470876" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uxb-m9-UeT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="uxb-m9-UeT">
                                 <rect key="frame" x="69" y="249" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="QnX-nH-4ES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="QnX-nH-4ES">
                                 <rect key="frame" x="69" y="287" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRr-6u-nqe">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRr-6u-nqe">
                                 <rect key="frame" x="69" y="325" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt1-ou-Nwb" customClass="MapizPrimaryImportantButton">
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt1-ou-Nwb" customClass="MapizDangerImportantButton">
                                 <rect key="frame" x="157" y="363" width="94" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -197,16 +230,40 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="signup:" destination="apy-RF-Sbj" eventType="touchUpInside" id="ufz-aC-3Og"/>
                                     <action selector="submitImHere:" destination="Lr9-HP-BJ8" eventType="touchUpInside" id="StY-16-Dt5"/>
+                                </connections>
+                            </button>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXs-FM-0hq" customClass="MapizSecondaryImportantButton">
+                                <rect key="frame" x="69" y="363" width="80" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.88627457620000005" green="0.25490197539999998" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="apy-RF-Sbj" eventType="touchUpInside" id="WlZ-vu-T1B"/>
+                                    <action selector="submitImHere:" destination="Lr9-HP-BJ8" eventType="touchUpInside" id="odA-3N-M8Q"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94901967050000002" green="0.94901967050000002" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="JXs-FM-0hq" id="Wuk-Ad-awu"/>
+                        <outlet property="emailTextField" destination="QnX-nH-4ES" id="LEU-Wu-w4S"/>
+                        <outlet property="passwordTextField" destination="fRr-6u-nqe" id="F5x-rj-v7W"/>
+                        <outlet property="signupButton" destination="Vt1-ou-Nwb" id="stm-Ov-q70"/>
+                        <outlet property="usernameTextField" destination="uxb-m9-UeT" id="x17-f2-dad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vY6-ny-Jzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="-309"/>
+            <point key="canvasLocation" x="98" y="-1531"/>
         </scene>
         <!--Mapiz View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -235,13 +292,13 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Mapiz" id="W8V-T3-zgP">
-                                        <barButtonItem key="leftBarButtonItem" title="Inbox" style="plain" id="50Q-Qy-rtK">
+                                        <barButtonItem key="leftBarButtonItem" title="Inbox" width="60" style="plain" id="50Q-Qy-rtK">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="goToLeft:" destination="vXZ-lx-hvc" id="Fx0-nx-X0a"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Friends" style="plain" id="EgY-tB-sTW">
+                                        <barButtonItem key="rightBarButtonItem" title="Friends" width="60" style="plain" id="EgY-tB-sTW">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="goToRight:" destination="vXZ-lx-hvc" id="EEL-71-tyo"/>
@@ -273,9 +330,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtI-by-KEF">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtI-by-KEF">
                                                 <rect key="frame" x="108" y="0.0" width="112" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.81568634510000004" green="0.2588235438" blue="0.29803922770000002" alpha="1" colorSpace="deviceRGB"/>
                                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                                 <state key="normal" title="Find me">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -285,18 +343,20 @@
                                                     <action selector="findMe:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pV2-Te-yaM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ica-uS-4Sp">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ica-uS-4Sp">
                                                 <rect key="frame" x="0.0" y="0.0" width="112" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.81568634510000004" green="0.2588235438" blue="0.29803922770000002" alpha="1" colorSpace="deviceRGB"/>
                                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                                 <state key="normal" title="Meetup">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rj1-eo-0tT">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rj1-eo-0tT">
                                                 <rect key="frame" x="220" y="0.0" width="112" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.81568634510000004" green="0.2588235438" blue="0.29803922770000002" alpha="1" colorSpace="deviceRGB"/>
                                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                                 <state key="normal" title="Unlock">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -324,12 +384,16 @@
                                     </view>
                                 </subviews>
                             </view>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4w-QW-t92">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="6dm-Hr-m8V" secondAttribute="height" id="ES1-Wq-gXz"/>
                             <constraint firstItem="xT5-Rt-Dbh" firstAttribute="top" secondItem="oaD-Lu-Uy3" secondAttribute="bottom" constant="100" id="qhM-1H-D86"/>
-                            <constraint firstItem="6dm-Hr-m8V" firstAttribute="top" secondItem="9Ax-vI-wIg" secondAttribute="bottom" constant="44" id="zh0-aI-rNg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -347,7 +411,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="rOO-RT-WPi"/>
             </objects>
-            <point key="canvasLocation" x="604" y="281"/>
+            <point key="canvasLocation" x="636" y="205"/>
         </scene>
         <!--Inbox View Controller-->
         <scene sceneID="mH9-rT-Kqg">
@@ -375,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yw-yM-iaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="281"/>
+            <point key="canvasLocation" x="636" y="-351"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Cm6-0b-Oin">
@@ -464,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wji-n7-WJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="281"/>
+            <point key="canvasLocation" x="636" y="-915"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="K8Q-3D-Af3">
@@ -538,7 +602,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxC-lK-yLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="281"/>
+            <point key="canvasLocation" x="636" y="-1483"/>
         </scene>
     </scenes>
     <resources>
@@ -550,4 +614,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pvj-hw-tb8"/>
+    </inferredMetricsTieBreakers>
 </document>

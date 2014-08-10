@@ -57,7 +57,7 @@ int pinColour;
   trackingUser = YES;
   [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:NO];
   [self.mapView setShowsUserLocation: YES];
-  [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+  [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
 }
 
 - (void)stopTracking {

@@ -8,11 +8,16 @@
 
 #import "MapizSignupViewController.h"
 
-@interface MapizSignupViewController ()
-
-@end
-
 @implementation MapizSignupViewController
+
+@synthesize authViewController;
+@synthesize usernameTextField;
+@synthesize emailTextField;
+@synthesize passwordTextField;
+@synthesize signupButton;
+@synthesize backButton;
+
+MeteorClient *meteorClient;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,25 +30,41 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  meteorClient = self.authViewController.meteorClient;
+}
+- (IBAction)goBack:(id)sender {
+  [authViewController goToSignin];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)signup:(id)sender {
+  NSString *username = [usernameTextField.text lowercaseString];
+  NSString *email = [emailTextField.text lowercaseString];
+  NSString *password = passwordTextField.text;
+  
+  if([password length] < 6) {
+    [self handleSignupError: @"Password required. Should be at least 6 characters long"];
+    return;
+  }
+  
+  [meteorClient signupWithUsernameAndEmail:username email:email password:password fullname:@"" responseCallback:^(NSDictionary *response, NSError *error) {
+    
+    if(error) {
+      [self handleSignupError: [error localizedDescription]];
+    } else {
+      [self.authViewController handleAuth];
+    }
+    
+  }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) handleSignupError: (NSString*) description {
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup error"
+                                                              message: description
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil];
+  [alert show];
 }
-*/
 
 @end

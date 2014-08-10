@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapizAuthViewController.h"
 
-@interface MapizSignupViewController : UIViewController
-
+@interface MapizSignupViewController : UIViewController {
+  
+  IBOutlet UIButton *backButton;
+  IBOutlet UIButton *signupButton;
+  IBOutlet UITextField *usernameTextField;
+  IBOutlet UITextField *emailTextField;
+  IBOutlet UITextField *passwordTextField;
+}
+@property (nonatomic, weak) MapizAuthViewController* authViewController;
+@property (nonatomic, retain) IBOutlet UIButton *backButton;
+@property (nonatomic, retain) IBOutlet UIButton *signupButton;
+@property (nonatomic, retain) IBOutlet UITextField *usernameTextField;
+@property (nonatomic, retain) IBOutlet UITextField *emailTextField;
+@property (nonatomic, retain) IBOutlet UITextField *passwordTextField;
 @end

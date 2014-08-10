@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79B01DE0F56B48A58F9CDFAE /* libPods-Mapiz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9D8A34316E4AEAB82DC150 /* libPods-Mapiz.a */; };
 		7E7BA19D199424010090D9ED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7BA19C199424010090D9ED /* MapKit.framework */; };
 		7E7BA1A319952A770090D9ED /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1A219952A770090D9ED /* MapViewController.m */; };
 		7E7BA1A619953D430090D9ED /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1A519953D430090D9ED /* InboxViewController.m */; };
@@ -33,6 +34,8 @@
 		7E7BA1DC19964E990090D9ED /* MapizLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1DB19964E990090D9ED /* MapizLoginViewController.m */; };
 		7E7BA1DF19964EF20090D9ED /* MapizSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1DE19964EF20090D9ED /* MapizSignupViewController.m */; };
 		7E7BA1E119964F3F0090D9ED /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BA1E019964F3F0090D9ED /* ic_launcher.png */; };
+		7E7BA1E41996A3800090D9ED /* MapizSecondaryImportantButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1E31996A3800090D9ED /* MapizSecondaryImportantButton.m */; };
+		7E7BA1E71996A4DC0090D9ED /* MapizDangerImportantButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BA1E61996A4DC0090D9ED /* MapizDangerImportantButton.m */; };
 		7EAA9D531994122A000A8588 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D521994122A000A8588 /* Foundation.framework */; };
 		7EAA9D551994122A000A8588 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D541994122A000A8588 /* CoreGraphics.framework */; };
 		7EAA9D571994122A000A8588 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D561994122A000A8588 /* UIKit.framework */; };
@@ -60,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AD132EAA6F74C6C9AAEDB3C /* Pods-Mapiz.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mapiz.xcconfig"; path = "Pods/Pods-Mapiz.xcconfig"; sourceTree = "<group>"; };
 		7E7BA19C199424010090D9ED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7E7BA1A119952A770090D9ED /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		7E7BA1A219952A770090D9ED /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -95,7 +99,11 @@
 		7E7BA1DB19964E990090D9ED /* MapizLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizLoginViewController.m; sourceTree = "<group>"; };
 		7E7BA1DD19964EF20090D9ED /* MapizSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizSignupViewController.h; sourceTree = "<group>"; };
 		7E7BA1DE19964EF20090D9ED /* MapizSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizSignupViewController.m; sourceTree = "<group>"; };
-		7E7BA1E019964F3F0090D9ED /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
+		7E7BA1E019964F3F0090D9ED /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_launcher.png; path = Mapiz/ic_launcher.png; sourceTree = "<group>"; };
+		7E7BA1E21996A3800090D9ED /* MapizSecondaryImportantButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizSecondaryImportantButton.h; sourceTree = "<group>"; };
+		7E7BA1E31996A3800090D9ED /* MapizSecondaryImportantButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizSecondaryImportantButton.m; sourceTree = "<group>"; };
+		7E7BA1E51996A4DC0090D9ED /* MapizDangerImportantButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizDangerImportantButton.h; sourceTree = "<group>"; };
+		7E7BA1E61996A4DC0090D9ED /* MapizDangerImportantButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizDangerImportantButton.m; sourceTree = "<group>"; };
 		7EAA9D4F1994122A000A8588 /* Mapiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mapiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAA9D521994122A000A8588 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EAA9D541994122A000A8588 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +123,8 @@
 		7EAA9D791994122A000A8588 /* MapizTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MapizTests-Info.plist"; sourceTree = "<group>"; };
 		7EAA9D7B1994122A000A8588 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EAA9D7D1994122A000A8588 /* MapizTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapizTests.m; sourceTree = "<group>"; };
+		7EDB96141996E55B005107D1 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = Pods/IQKeyboardManager/KeyboardTextFieldDemo/IQKeyBoardManager/IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		9D9D8A34316E4AEAB82DC150 /* libPods-Mapiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mapiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +136,7 @@
 				7EAA9D571994122A000A8588 /* UIKit.framework in Frameworks */,
 				7E7BA19D199424010090D9ED /* MapKit.framework in Frameworks */,
 				7EAA9D531994122A000A8588 /* Foundation.framework in Frameworks */,
+				79B01DE0F56B48A58F9CDFAE /* libPods-Mapiz.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +166,7 @@
 		7E7BA1AD19958B0A0090D9ED /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7E7BA1E019964F3F0090D9ED /* ic_launcher.png */,
 				7E7BA1B819958F540090D9ED /* ic_marker_yellow.png */,
 				7E7BA1AE19958ECE0090D9ED /* ic_marker_black.png */,
 				7E7BA1AF19958ECE0090D9ED /* ic_marker_green.png */,
@@ -196,6 +208,10 @@
 				7E7BA1CF1995B6980090D9ED /* MapizPrimaryImportantButton.m */,
 				7E7BA1D119961DF90090D9ED /* MapizPrimaryImportantCircleButton.h */,
 				7E7BA1D219961DF90090D9ED /* MapizPrimaryImportantCircleButton.m */,
+				7E7BA1E21996A3800090D9ED /* MapizSecondaryImportantButton.h */,
+				7E7BA1E31996A3800090D9ED /* MapizSecondaryImportantButton.m */,
+				7E7BA1E51996A4DC0090D9ED /* MapizDangerImportantButton.h */,
+				7E7BA1E61996A4DC0090D9ED /* MapizDangerImportantButton.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -207,6 +223,7 @@
 				7EAA9D771994122A000A8588 /* MapizTests */,
 				7EAA9D511994122A000A8588 /* Frameworks */,
 				7EAA9D501994122A000A8588 /* Products */,
+				1AD132EAA6F74C6C9AAEDB3C /* Pods-Mapiz.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,11 +239,13 @@
 		7EAA9D511994122A000A8588 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EDB96141996E55B005107D1 /* IQKeyboardManager.bundle */,
 				7E7BA19C199424010090D9ED /* MapKit.framework */,
 				7EAA9D521994122A000A8588 /* Foundation.framework */,
 				7EAA9D541994122A000A8588 /* CoreGraphics.framework */,
 				7EAA9D561994122A000A8588 /* UIKit.framework */,
 				7EAA9D711994122A000A8588 /* XCTest.framework */,
+				9D9D8A34316E4AEAB82DC150 /* libPods-Mapiz.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,7 +253,6 @@
 		7EAA9D581994122A000A8588 /* Mapiz */ = {
 			isa = PBXGroup;
 			children = (
-				7E7BA1E019964F3F0090D9ED /* ic_launcher.png */,
 				7E7BA1CD1995B6690090D9ED /* UI */,
 				7E7BA1BA19958FD20090D9ED /* Models */,
 				7E7BA1AC19958AD50090D9ED /* Resources */,
@@ -299,9 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EAA9D811994122A000A8588 /* Build configuration list for PBXNativeTarget "Mapiz" */;
 			buildPhases = (
+				62CF5116B7F945E68827DF9F /* Check Pods Manifest.lock */,
 				7EAA9D4B1994122A000A8588 /* Sources */,
 				7EAA9D4C1994122A000A8588 /* Frameworks */,
 				7EAA9D4D1994122A000A8588 /* Resources */,
+				A0AED856ED554514A6AAE338 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +361,7 @@
 				ORGANIZATIONNAME = Mapiz;
 				TargetAttributes = {
 					7EAA9D4E1994122A000A8588 = {
+						DevelopmentTeam = 5RAFL74D5E;
 						SystemCapabilities = {
 							com.apple.iOS = {
 								enabled = 1;
@@ -407,6 +428,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62CF5116B7F945E68827DF9F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A0AED856ED554514A6AAE338 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Mapiz-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7EAA9D4B1994122A000A8588 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -415,8 +469,10 @@
 				7E7BA1A919954B500090D9ED /* FriendsViewController.m in Sources */,
 				7EAA9D631994122A000A8588 /* MapizAppDelegate.m in Sources */,
 				7EAA9D691994122A000A8588 /* MapizViewController.m in Sources */,
+				7E7BA1E41996A3800090D9ED /* MapizSecondaryImportantButton.m in Sources */,
 				7E7BA1D619964DF90090D9ED /* MapizSplashViewController.m in Sources */,
 				7E7BA1A619953D430090D9ED /* InboxViewController.m in Sources */,
+				7E7BA1E71996A4DC0090D9ED /* MapizDangerImportantButton.m in Sources */,
 				7EAA9D5F1994122A000A8588 /* main.m in Sources */,
 				7E7BA1D01995B6980090D9ED /* MapizPrimaryImportantButton.m in Sources */,
 				7E7BA1D919964E2B0090D9ED /* MapizAuthViewController.m in Sources */,
@@ -546,28 +602,36 @@
 		};
 		7EAA9D821994122A000A8588 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AD132EAA6F74C6C9AAEDB3C /* Pods-Mapiz.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mapiz/Mapiz-Prefix.pch";
 				INFOPLIST_FILE = "Mapiz/Mapiz-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		7EAA9D831994122A000A8588 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AD132EAA6F74C6C9AAEDB3C /* Pods-Mapiz.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mapiz/Mapiz-Prefix.pch";
 				INFOPLIST_FILE = "Mapiz/Mapiz-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
