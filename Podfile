@@ -2,7 +2,8 @@
 platform :ios, "7.0"
 
 target "Mapiz" do
-  pod 'ObjectiveDDP', '~> 0.1.5'	
+  pod 'ObjectiveDDP', '~> 0.1.5'
+  pod 'AWPagedArray', '~> 0.1'
   pod 'IQKeyboardManager'
 end
 

@@ -30,6 +30,7 @@
 @synthesize tabsView;
 @synthesize submitButton;
 @synthesize navigationBar;
+@synthesize meteorClient;
 
 int const MODE_IM_HERE = 0;
 int const MODE_WHERE_ARE_YOU = 1;
@@ -47,6 +48,8 @@ CGRect tabFrame;
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  [self initMeteorClient];
   
   if(![self.navigationController.navigationBar respondsToSelector:@selector(barTintColor)]) {
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:208/255 green:66/255 blue:76/255 alpha:1.0];
@@ -76,8 +79,13 @@ CGRect tabFrame;
                                            [UIFont fontWithName:@"FontAwesome" size:16.0f],UITextAttributeFont, nil] forState:UIControlStateNormal];
   [leftNavButton setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                            [UIFont fontWithName:@"FontAwesome" size:16.0f],UITextAttributeFont, nil] forState:UIControlStateNormal];
-  
-  
+}
+
+-(void)initMeteorClient {
+  meteorClient = [[MeteorClient alloc] initWithDDPVersion:@"pre2"];
+  ObjectiveDDP *ddp = [[ObjectiveDDP alloc] initWithURLString:@"ws://192.168.1.65:3000/websocket" delegate:meteorClient];
+  meteorClient.ddp = ddp;
+  [meteorClient.ddp connectWebSocket];
 }
 
 -(void)viewDidLayoutSubviews
@@ -215,15 +223,12 @@ CGRect tabFrame;
   [UIView performWithoutAnimation:^{
   switch(position) {
     case INDEX_SECTION_MAP:
-//      leftNavButton.title = @"Inbox";
       leftNavButton.title = @"\uf0e0";
       break;
     case INDEX_SECTION_INBOX:
-//      leftNavButton.title = @"Settings";
       leftNavButton.title = @"\uf013";
       break;
     case INDEX_SECTION_FRIENDS:
-//      leftNavButton.title = @"Back";
       leftNavButton.title = @"\uf054";
       break;
   }
@@ -320,25 +325,20 @@ CGRect tabFrame;
     case INDEX_SECTION_MAP:
       switch (mode) {
         case MODE_IM_HERE:
-//          leftNavButton.title = @"Cancel";
           leftNavButton.title = @"\uf00d";
           break;
         case MODE_WHERE_ARE_YOU:
           leftNavButton.title = @"\uf0e0";
-//          leftNavButton.title = @"Inbox";
           break;
       }
       
-//      rightNavButton.title = @"Friends";
       rightNavButton.title = @"\uf0c0";
       self.navigationBar.topItem.title = @"Mapiz";
       
       if([self isInModeImHere]) {
         submitButton.titleLabel.text = @"\ue224";
-        //        [submitButton setTitle:@"\ue224" forState:UIControlStateNormal];
       } else {
         submitButton.titleLabel.text = @"\ue422";
-        //        [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
       }
       
       break;
@@ -347,24 +347,19 @@ CGRect tabFrame;
       switch (mode) {
         case MODE_IM_HERE:
           leftNavButton.title = @"\uf00d";
-//          leftNavButton.title = @"Cancel";
           break;
         case MODE_WHERE_ARE_YOU:
-//            leftNavButton.title = @"Settings";
           leftNavButton.title = @"\uf013";
           break;
       }
       
       rightNavButton.title = @"\uf054";
-//      rightNavButton.title = @"Back";
       self.navigationBar.topItem.title = @"Inbox";
       
       if([self isInModeImHere]) {
         submitButton.titleLabel.text = @"\ue224";
-//        [submitButton setTitle:@"\ue224" forState:UIControlStateNormal];
       } else {
         submitButton.titleLabel.text = @"\ue422";
-//        [submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
       }
       
       break;
@@ -372,17 +367,13 @@ CGRect tabFrame;
       switch (mode) {
         case MODE_IM_HERE:
           leftNavButton.title = @"\uf00d";
-//          leftNavButton.title = @"Cancel";
           break;
         case MODE_WHERE_ARE_YOU:
-//          leftNavButton.title = @"Back";
           leftNavButton.title = @"\uf053";
           break;
       }
       
       submitButton.titleLabel.text = @"\ue422";
-      
-//      rightNavButton.title = @"Search";
       rightNavButton.title = @"\uf002";
       self.navigationBar.topItem.title = @"Friends";
       break;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MapizPrimaryImportantCircleButton.h"
+#import <ObjectiveDDP/MeteorClient.h>
 
 @class MapViewController;
 @class InboxViewController;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *meetupButton;
 @property (nonatomic, retain) IBOutlet UIView *tabsView;
 @property (nonatomic, retain) IBOutlet MapizPrimaryImportantCircleButton *submitButton;
+@property (nonatomic, strong) MeteorClient *meteorClient;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)setModeImHere;

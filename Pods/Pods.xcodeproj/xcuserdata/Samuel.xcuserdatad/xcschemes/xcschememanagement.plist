@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Mapiz-AWPagedArray.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Mapiz-IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>35313DD5626B47A0911C9606</key>
+		<key>0EC68F9EB0B64C54B50A3D37</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9E3F28D44D745FCAF9EDC66</key>
+		<key>1E65318EB34B48498985E801</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5DCD095A893440480D87BF9</key>
+		<key>6CAD79159B824B759BD0CEA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C60CEB93E4CA464B85C9277D</key>
+		<key>6F24E49C020A4C149E5926D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC9AAB664C644778A7239D07</key>
 		<dict>
 			<key>primary</key>
 			<true/>

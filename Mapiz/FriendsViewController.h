@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FriendsViewController : UIViewController {
+@interface FriendsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
   IBOutlet UIButton *submitButton;
+  IBOutlet UITableView *tableView;
 }
 
 @property (nonatomic, retain) IBOutlet UIButton *submitButton;

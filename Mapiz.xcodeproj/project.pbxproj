@@ -50,6 +50,7 @@
 		7EAA9D741994122A000A8588 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAA9D561994122A000A8588 /* UIKit.framework */; };
 		7EAA9D7C1994122A000A8588 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA9D7A1994122A000A8588 /* InfoPlist.strings */; };
 		7EAA9D7E1994122A000A8588 /* MapizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9D7D1994122A000A8588 /* MapizTests.m */; };
+		7EDB961819978FF9005107D1 /* MapizUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB961719978FF9005107D1 /* MapizUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,8 @@
 		7EAA9D7B1994122A000A8588 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EAA9D7D1994122A000A8588 /* MapizTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapizTests.m; sourceTree = "<group>"; };
 		7EDB96141996E55B005107D1 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = Pods/IQKeyboardManager/KeyboardTextFieldDemo/IQKeyBoardManager/IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		7EDB961619978FF9005107D1 /* MapizUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizUser.h; sourceTree = "<group>"; };
+		7EDB961719978FF9005107D1 /* MapizUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizUser.m; sourceTree = "<group>"; };
 		9D9D8A34316E4AEAB82DC150 /* libPods-Mapiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mapiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -183,6 +186,8 @@
 			children = (
 				7E7BA1BB199590700090D9ED /* MapizPin.h */,
 				7E7BA1BC199590700090D9ED /* MapizPin.m */,
+				7EDB961619978FF9005107D1 /* MapizUser.h */,
+				7EDB961719978FF9005107D1 /* MapizUser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				7E7BA1E41996A3800090D9ED /* MapizSecondaryImportantButton.m in Sources */,
 				7E7BA1D619964DF90090D9ED /* MapizSplashViewController.m in Sources */,
 				7E7BA1A619953D430090D9ED /* InboxViewController.m in Sources */,
+				7EDB961819978FF9005107D1 /* MapizUser.m in Sources */,
 				7E7BA1E71996A4DC0090D9ED /* MapizDangerImportantButton.m in Sources */,
 				7EAA9D5F1994122A000A8588 /* main.m in Sources */,
 				7E7BA1D01995B6980090D9ED /* MapizPrimaryImportantButton.m in Sources */,
