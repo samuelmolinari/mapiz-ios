@@ -16,7 +16,7 @@
 @synthesize passwordTextField;
 @synthesize loginButton;
 
-MeteorClient *meteorClient;
+MapizDDPClient *mapizDDPClient;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,8 +29,8 @@ MeteorClient *meteorClient;
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-  meteorClient = authViewController.meteorClient;
+  [super viewDidLoad];
+  mapizDDPClient = authViewController.mapizDDPClient;
 }
 
 - (IBAction)goToSignup:(id)sender {
@@ -41,7 +41,7 @@ MeteorClient *meteorClient;
   NSString *login = [loginTextField.text lowercaseString];
   NSString *password = passwordTextField.text;
   
-  if (!meteorClient.websocketReady) {
+  if (!mapizDDPClient.websocketReady) {
     UIAlertView *notConnectedAlert = [[UIAlertView alloc] initWithTitle:@"Connection Error"
                                                                 message:@"Looks like we were unable to access our servers."
                                                                delegate:nil
@@ -50,7 +50,7 @@ MeteorClient *meteorClient;
     [notConnectedAlert show];
   }
   
-  [meteorClient logonWithUsernameOrEmail:login password:password responseCallback:^(NSDictionary *response, NSError *error){
+  [mapizDDPClient logonWithUsernameOrEmail:login password:password responseCallback:^(NSDictionary *response, NSError *error){
     if (error) {
       UIAlertView *notConnectedAlert = [[UIAlertView alloc] initWithTitle:@"Login error"
                                                                   message:@"Make sure your login details are right or sign up!"
@@ -61,7 +61,7 @@ MeteorClient *meteorClient;
       return;
     }
     
-    [self.authViewController handleAuth];
+    [self.authViewController handleAuth: response];
   }];
 
 }

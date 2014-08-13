@@ -13,15 +13,19 @@
 @class MapizViewController;
 @class MapizPrimaryImportantButton;
 
-@interface MapViewController : UIViewController<MKMapViewDelegate> {
+@interface MapViewController : UIViewController<MKMapViewDelegate, MapizDDPDelegate> {
   IBOutlet MKMapView *mapView;
   IBOutlet UIButton *pinButton;
   IBOutlet UIButton *submitButton;
+  IBOutlet UILabel *pinLabel;
+  IBOutlet UIButton *dateLabel;
 }
 
 @property (nonatomic, retain) IBOutlet MKMapView* mapView;
 @property (nonatomic, retain) IBOutlet UIButton* pinButton;
 @property (nonatomic, retain) IBOutlet UIButton* submitButton;
+@property (nonatomic, retain) IBOutlet UILabel* pinLabel;
+@property (nonatomic, retain) IBOutlet UIButton* dateLabel;
 @property (nonatomic, weak) MapizViewController* mapizViewController;
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation;
@@ -30,6 +34,8 @@
 
 - (void)stopTracking;
 
+- (void)stopTrackingNow;
+
 - (BOOL)isTracking;
 
 - (void)lockMap;
@@ -37,5 +43,9 @@
 - (void)unlockMap;
 
 - (MapizViewController*) getMapizViewController;
+
+- (void)didReceiveAuthUserDetails:(MapizUser *)user;
+- (void)didConnect;
+- (void)didAuth;
 
 @end

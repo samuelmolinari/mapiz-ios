@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "MapizPrimaryImportantCircleButton.h"
-#import <ObjectiveDDP/MeteorClient.h>
+#import "MapizDDPClient.h"
+#import "MapizUser.h"
+#import "ILTranslucentView.h"
 
 @class MapViewController;
 @class InboxViewController;
 @class FriendsViewController;
 
-@interface MapizViewController : UIViewController<UIScrollViewDelegate> {
+@interface MapizViewController : UIViewController<UIScrollViewDelegate, MapizDDPDelegate,UISearchBarDelegate> {
   IBOutlet UIScrollView *scrollView;
   IBOutlet UIBarButtonItem *rightNavButton;
   IBOutlet UIBarButtonItem *leftNavButton;
@@ -22,8 +25,13 @@
   IBOutlet UIButton *lockUnlockButton;
   IBOutlet UIButton *findMeButton;
   IBOutlet UIButton *meetupButton;
+  IBOutlet UIView *tabsViewContainer;
   IBOutlet UIView *tabsView;
+  IBOutlet UITabBar *tabsBackground;
   IBOutlet MapizPrimaryImportantCircleButton *submitButton;
+  IBOutlet UISearchBar *searchBar;
+  IBOutlet ILTranslucentView *meetupSetupView;
+  IBOutlet UIDatePicker *datePicker;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
@@ -37,10 +45,20 @@
 @property (nonatomic, retain) IBOutlet UIButton *findMeButton;
 @property (nonatomic, retain) IBOutlet UIButton *meetupButton;
 @property (nonatomic, retain) IBOutlet UIView *tabsView;
+@property (nonatomic, retain) IBOutlet UIView *tabsViewContainer;
+@property (nonatomic, retain) IBOutlet UIView *tabsBackground;
+@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, retain) IBOutlet ILTranslucentView *meetupSetupView;
+@property (nonatomic, retain) IBOutlet UIDatePicker *datePicker;
 @property (nonatomic, retain) IBOutlet MapizPrimaryImportantCircleButton *submitButton;
-@property (nonatomic, strong) MeteorClient *meteorClient;
+@property (nonatomic, strong) MapizDDPClient *mapizDDPClient;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView;
-- (void)setModeImHere;
+- (void)setModeImHere:(CLLocation *)location;
+- (void)setModeMeetMeThere:(CLLocation *)location;
+
+- (void)didReceiveAuthUserDetails:(MapizUser *)user;
+- (void)didConnect;
+- (void)didAuth;
 
 @end

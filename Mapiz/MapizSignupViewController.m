@@ -17,7 +17,7 @@
 @synthesize signupButton;
 @synthesize backButton;
 
-MeteorClient *meteorClient;
+MapizDDPClient *mapizDDPClient;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +31,7 @@ MeteorClient *meteorClient;
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  meteorClient = self.authViewController.meteorClient;
+  mapizDDPClient = self.authViewController.mapizDDPClient;
 }
 - (IBAction)goBack:(id)sender {
   [authViewController goToSignin];
@@ -47,12 +47,12 @@ MeteorClient *meteorClient;
     return;
   }
   
-  [meteorClient signupWithUsernameAndEmail:username email:email password:password fullname:@"" responseCallback:^(NSDictionary *response, NSError *error) {
+  [mapizDDPClient signupWithUsernameAndEmail:username email:email password:password fullname:@"" responseCallback:^(NSDictionary *response, NSError *error) {
     
     if(error) {
       [self handleSignupError: [error localizedDescription]];
     } else {
-      [self.authViewController handleAuth];
+      [self.authViewController handleAuth: response];
     }
     
   }];

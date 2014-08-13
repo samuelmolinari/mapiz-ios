@@ -25,18 +25,18 @@
 
 - (void)viewDidLoad
 {
+//  [MapizUser clearAuthUser];
   [self performSelector:@selector(showAuth) withObject:nil afterDelay:2.0];
   [super viewDidLoad];
 }
 
 - (void)showAuth {
-  [self performSegueWithIdentifier:@"showAuth" sender:self];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  
+  if(![MapizUser isLoggedIn]) {
+    [self performSegueWithIdentifier:@"showAuth" sender:self];
+  } else {
+    [self performSegueWithIdentifier:@"showMain" sender:self];
+  }
 }
 
 @end

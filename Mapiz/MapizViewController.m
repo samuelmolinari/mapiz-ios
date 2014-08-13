@@ -28,12 +28,15 @@
 @synthesize findMeButton;
 @synthesize meetupButton;
 @synthesize tabsView;
+@synthesize tabsViewContainer;
+@synthesize tabsBackground;
 @synthesize submitButton;
 @synthesize navigationBar;
-@synthesize meteorClient;
+@synthesize mapizDDPClient;
 
 int const MODE_IM_HERE = 0;
 int const MODE_WHERE_ARE_YOU = 1;
+int const MODE_MEET_ME_THERE = 2;
 
 int const TOTAL_SECTIONS = 3;
 int const INDEX_SECTION_INBOX = 0;
@@ -44,16 +47,39 @@ int mode;
 int position;
 
 CGRect tabFrame;
+CLLocation *savedLocation;
+NSDate *locationSavedAt;
+MapizUser *authUser;
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
-  [self initMeteorClient];
+  self.mapizDDPClient = [MapizDDPClient getInstance];
+  self.mapizDDPClient.delegate = self;
   
   if(![self.navigationController.navigationBar respondsToSelector:@selector(barTintColor)]) {
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:208/255 green:66/255 blue:76/255 alpha:1.0];
   }
+  
+  [_datePicker setMinimumDate:[[NSDate alloc] init]];
+  
+  [[UIBarButtonItem appearanceWhenContainedIn: [UISearchBar class], nil] setTintColor:[UIColor whiteColor]];
+  CGSize size = CGSizeMake(30, 30);
+  // create context with transparent background
+  UIGraphicsBeginImageContextWithOptions(size, NO, 1);
+  
+  // Add a clip before drawing anything, in the shape of an rounded rect
+  [[UIBezierPath bezierPathWithRoundedRect:CGRectMake(0,0,30,30)
+                              cornerRadius:5.0] addClip];
+  [[UIColor whiteColor] setFill];
+  
+  UIRectFill(CGRectMake(0, 0, size.width, size.height));
+  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  
+  [self.searchBar setSearchFieldBackgroundImage:image forState:UIControlStateNormal];
+  self.searchBar.delegate = self;
   
   self.scrollView.delegate = self;
   
@@ -79,13 +105,6 @@ CGRect tabFrame;
                                            [UIFont fontWithName:@"FontAwesome" size:16.0f],UITextAttributeFont, nil] forState:UIControlStateNormal];
   [leftNavButton setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                            [UIFont fontWithName:@"FontAwesome" size:16.0f],UITextAttributeFont, nil] forState:UIControlStateNormal];
-}
-
--(void)initMeteorClient {
-  meteorClient = [[MeteorClient alloc] initWithDDPVersion:@"pre2"];
-  ObjectiveDDP *ddp = [[ObjectiveDDP alloc] initWithURLString:@"ws://192.168.1.65:3000/websocket" delegate:meteorClient];
-  meteorClient.ddp = ddp;
-  [meteorClient.ddp connectWebSocket];
 }
 
 -(void)viewDidLayoutSubviews
@@ -137,6 +156,7 @@ CGRect tabFrame;
       [self moveToPosition:INDEX_SECTION_MAP];
       break;
     case INDEX_SECTION_FRIENDS:
+      [self showSearchBar];
       break;
   }
 }
@@ -160,6 +180,25 @@ CGRect tabFrame;
   
 }
 
+- (void)hideSearchBar {
+  [self.searchBar setHidden:YES];
+}
+
+- (void)showSearchBar {
+  [self.searchBar setHidden:NO];
+  [self.searchBar becomeFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+  [self.searchBar resignFirstResponder];
+  [self hideSearchBar];
+  [self.friendsViewController searchBar:searchBar textDidChange:@""];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+  [self.friendsViewController searchBar:searchBar textDidChange:searchText];
+}
+
 - (void)moveToPosition: (int)i {
   CGRect frame;
   frame.origin.x = self.scrollView.frame.size.width * i;
@@ -180,6 +219,7 @@ CGRect tabFrame;
   mode = modeValue;
   switch(mode) {
     case MODE_IM_HERE:
+    case MODE_MEET_ME_THERE:
       [self moveToPosition:INDEX_SECTION_FRIENDS];
       [self lockMap];
       [submitButton setHidden: NO];
@@ -200,7 +240,7 @@ CGRect tabFrame;
 }
 
 - (IBAction)submit:(id)sender {
-  if([self isInModeImHere]) {
+  if([self isInModeImHere] || [self isInModeMeetMeThere]) {
     switch (position) {
       case INDEX_SECTION_INBOX:
       case INDEX_SECTION_MAP:
@@ -208,6 +248,39 @@ CGRect tabFrame;
         [self lockMap];
         break;
       default:
+        [self.submitButton setUserInteractionEnabled: NO];
+        int pinType;
+        if([self isInModeImHere]) {
+          pinType = PinTypeImHere;
+//          [MapizPin callImHere: self.friendsViewController.selectedFriends
+//                   coordinates: savedLocation
+//                        hereAt: locationSavedAt
+//              responseCallback:^(NSDictionary *response, NSError *error) {
+//                [self.submitButton setUserInteractionEnabled: YES];
+//                if(error) {
+//                
+//                } else {
+//                  [self cancelMode];
+//                }
+//              }];
+        } else if([self isInModeMeetMeThere]) {
+          pinType = PinTypeMeetMeThere;
+        }
+        
+        [MapizPin callSubmitPinOfType:pinType
+                         toRecipients:self.friendsViewController.selectedFriends
+                      withCoordinates:savedLocation
+                                   at:locationSavedAt
+                     responseCallback:^(NSDictionary *response, NSError *error) {
+          
+                       [self.submitButton setUserInteractionEnabled: YES];
+                       if(error) {
+                       
+                       } else {
+                         [self cancelMode];
+                       }
+        }];
+        
         break;
     }
   }
@@ -216,10 +289,12 @@ CGRect tabFrame;
 - (void)cancelMode {
   switch(mode) {
     case MODE_IM_HERE:
+    case MODE_MEET_ME_THERE:
       [self setModeWhereAreYou];
+      [self.mapViewController.submitButton setTitle:@"I'm here!" forState:UIControlStateNormal];
+      [self.friendsViewController resetSelections];
       break;
   }
-  
   [UIView performWithoutAnimation:^{
   switch(position) {
     case INDEX_SECTION_MAP:
@@ -229,7 +304,7 @@ CGRect tabFrame;
       leftNavButton.title = @"\uf013";
       break;
     case INDEX_SECTION_FRIENDS:
-      leftNavButton.title = @"\uf054";
+      leftNavButton.title = @"\uf053";
       break;
   }
   }];
@@ -237,6 +312,22 @@ CGRect tabFrame;
 
 - (void)setModeImHere {
   [self setMode: MODE_IM_HERE];
+}
+
+- (void)setModeMeetMeThere {
+  [self setMode: MODE_MEET_ME_THERE];
+}
+
+- (void) setModeImHere:(CLLocation *)location {
+  [self setModeImHere];
+  savedLocation = location;
+  locationSavedAt = [[NSDate alloc] init];
+}
+
+- (void) setModeMeetMeThere:(CLLocation *)location {
+  [self setModeMeetMeThere];
+  savedLocation = location;
+  // locationSavedAt value already set
 }
 
 - (void)setModeWhereAreYou {
@@ -247,14 +338,12 @@ CGRect tabFrame;
   return mode == MODE_IM_HERE;
 }
 
-- (BOOL) isInModeWhereAreYou {
-  return mode == MODE_WHERE_ARE_YOU;
+- (BOOL) isInModeMeetMeThere {
+  return mode == MODE_MEET_ME_THERE;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL) isInModeWhereAreYou {
+  return mode == MODE_WHERE_ARE_YOU;
 }
 
 - (void)viewDidUnload
@@ -310,7 +399,7 @@ CGRect tabFrame;
   marginTopPercentage = ref + (sign * (x / width));
   marginTopPercentage = fmaxf(marginTopPercentage, 0);
   marginTopPercentage = fminf(marginTopPercentage, 1);
-  marginTop = tabsView.frame.size.height * (-1 * marginTopPercentage);
+  marginTop = tabsView.frame.size.height * (1 * marginTopPercentage);
   
   CGRect newTabFrame;
   
@@ -319,12 +408,15 @@ CGRect tabFrame;
   newTabFrame.origin.y = tabFrame.origin.y + marginTop;
   
   tabsView.frame = newTabFrame;
+  tabsBackground.frame = newTabFrame;
   
   [UIView performWithoutAnimation:^{
   switch(position) {
     case INDEX_SECTION_MAP:
+      [tabsViewContainer setUserInteractionEnabled:YES];
       switch (mode) {
         case MODE_IM_HERE:
+        case MODE_MEET_ME_THERE:
           leftNavButton.title = @"\uf00d";
           break;
         case MODE_WHERE_ARE_YOU:
@@ -335,7 +427,7 @@ CGRect tabFrame;
       rightNavButton.title = @"\uf0c0";
       self.navigationBar.topItem.title = @"Mapiz";
       
-      if([self isInModeImHere]) {
+      if([self isInModeImHere] || [self isInModeMeetMeThere]) {
         submitButton.titleLabel.text = @"\ue224";
       } else {
         submitButton.titleLabel.text = @"\ue422";
@@ -343,9 +435,10 @@ CGRect tabFrame;
       
       break;
     case INDEX_SECTION_INBOX:
-      
+      [tabsViewContainer setUserInteractionEnabled:NO];
       switch (mode) {
         case MODE_IM_HERE:
+        case MODE_MEET_ME_THERE:
           leftNavButton.title = @"\uf00d";
           break;
         case MODE_WHERE_ARE_YOU:
@@ -356,7 +449,7 @@ CGRect tabFrame;
       rightNavButton.title = @"\uf054";
       self.navigationBar.topItem.title = @"Inbox";
       
-      if([self isInModeImHere]) {
+      if([self isInModeImHere] || [self isInModeMeetMeThere]) {
         submitButton.titleLabel.text = @"\ue224";
       } else {
         submitButton.titleLabel.text = @"\ue422";
@@ -364,6 +457,7 @@ CGRect tabFrame;
       
       break;
     case INDEX_SECTION_FRIENDS:
+      [tabsViewContainer setUserInteractionEnabled:NO];
       switch (mode) {
         case MODE_IM_HERE:
           leftNavButton.title = @"\uf00d";
@@ -381,6 +475,14 @@ CGRect tabFrame;
   }];
 }
 
+- (IBAction)setupMeetup:(id)sender {
+  if([_meetupSetupView isHidden]) {
+    [_meetupSetupView setHidden:NO];
+  } else {
+    [_meetupSetupView setHidden:YES];
+  }
+}
+
 -(int)getCurrentPosition
 {
   CGFloat offset = self.scrollView.contentOffset.x;
@@ -389,6 +491,36 @@ CGRect tabFrame;
   CGFloat val = (percentage/(float)100) * TOTAL_SECTIONS;
   
   return roundf(val);
+}
+- (IBAction)cancelMeetupSetup:(id)sender {
+  [_meetupSetupView setHidden:YES];
+}
+
+- (IBAction)setMeetup:(id)sender {
+  [_meetupSetupView setHidden:YES];
+  locationSavedAt = [_datePicker date];
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  dateFormatter.doesRelativeDateFormatting = YES;
+  dateFormatter.locale = [NSLocale currentLocale];
+  dateFormatter.dateStyle = NSDateFormatterShortStyle;
+  dateFormatter.timeStyle = NSDateFormatterShortStyle;
+  [self.mapViewController.dateLabel setTitle:[dateFormatter stringFromDate:locationSavedAt] forState:UIControlStateNormal];
+  [self.mapViewController.dateLabel setHidden:NO];
+  [self.mapViewController.submitButton setTitle:@"Meet me there!" forState:UIControlStateNormal];
+  
+}
+
+-(void)didReceiveAuthUserDetails:(MapizUser *)user {
+  [self.mapViewController didReceiveAuthUserDetails:user];
+}
+
+-(void)didConnect {
+  
+}
+
+- (void)didAuth {
+  [self.friendsViewController didAuth];
+  [self.inboxViewController didAuth];
 }
 
 @end

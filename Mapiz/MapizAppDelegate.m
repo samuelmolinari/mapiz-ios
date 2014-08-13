@@ -15,11 +15,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   
-//  self.meteorClient = [[MeteorClient alloc] init];
-//  ObjectiveDDP *ddp = [[ObjectiveDDP alloc] initWithURLString:@"ws://192.168.0.65:3000/websocket" delegate:self.meteorClient];
-//  self.meteorClient.ddp = ddp;
-//  [self.meteorClient.ddp connectWebSocket];
-  
   return YES;
 }
 							

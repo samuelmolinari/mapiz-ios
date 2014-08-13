@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ObjectiveDDP/MeteorClient.h>
+#import "MapizDDPClient.h"
+#import "MapizUser.h"
 
 @class MapizLoginViewController;
 @class MapizSignupViewController;
@@ -20,10 +21,10 @@
 @property (nonatomic, retain) MapizLoginViewController *loginViewController;
 @property (nonatomic, retain) MapizSignupViewController *signupViewController;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) MeteorClient *meteorClient;
+@property (nonatomic, strong) MapizDDPClient *mapizDDPClient;
 
 -(void)goToSignin;
 -(void)goToSignup;
--(void)handleAuth;
+-(void)handleAuth: (NSDictionary *) response;
 
 @end

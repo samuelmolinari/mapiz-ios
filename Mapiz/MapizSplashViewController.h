@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MapizAuthViewController.h"
+#import "MapizUser.h"
 
 @interface MapizSplashViewController : UIViewController
 

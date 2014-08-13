@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapizUser.h"
+#import "MapizPin.h"
 
-@interface InboxViewController : UIViewController
+@interface InboxViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, MapizDDPDelegate> {
+  
+  IBOutlet UITableView *tableView;
+  
+}
+
+@property (atomic,retain) IBOutlet UITableView *tableView;
+
+- (void)didReceiveAuthUserDetails:(MapizUser *)user;
+- (void)didConnect;
+- (void)didAuth;
 
 @end

@@ -51,6 +51,16 @@
 		7EAA9D7C1994122A000A8588 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EAA9D7A1994122A000A8588 /* InfoPlist.strings */; };
 		7EAA9D7E1994122A000A8588 /* MapizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAA9D7D1994122A000A8588 /* MapizTests.m */; };
 		7EDB961819978FF9005107D1 /* MapizUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB961719978FF9005107D1 /* MapizUser.m */; };
+		7EDB961A1997F3A9005107D1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDB96191997F3A9005107D1 /* libsqlite3.dylib */; };
+		7EDB961D1997F3C8005107D1 /* MapizDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB961C1997F3C8005107D1 /* MapizDBManager.m */; };
+		7EDB961F199801AA005107D1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDB961E199801AA005107D1 /* Security.framework */; };
+		7EDB96251998071C005107D1 /* JNKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB96241998071C005107D1 /* JNKeychain.m */; };
+		7EDB962819980E02005107D1 /* MapizToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB962719980E02005107D1 /* MapizToken.m */; };
+		7EDB9631199854DE005107D1 /* MapizDDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB9630199854DE005107D1 /* MapizDDPClient.m */; };
+		7EDB96341999729A005107D1 /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB96331999729A005107D1 /* ToastView.m */; };
+		7EDB9637199A2CEC005107D1 /* ILTranslucentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB9636199A2CEC005107D1 /* ILTranslucentView.m */; };
+		7EDB963D199C21C6005107D1 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB963C199C21C6005107D1 /* UIColor+CustomColors.m */; };
+		7EDB9640199C2A4B005107D1 /* MapizPinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB963F199C2A4B005107D1 /* MapizPinTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +137,24 @@
 		7EDB96141996E55B005107D1 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = Pods/IQKeyboardManager/KeyboardTextFieldDemo/IQKeyBoardManager/IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		7EDB961619978FF9005107D1 /* MapizUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizUser.h; sourceTree = "<group>"; };
 		7EDB961719978FF9005107D1 /* MapizUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizUser.m; sourceTree = "<group>"; };
+		7EDB96191997F3A9005107D1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7EDB961B1997F3C8005107D1 /* MapizDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizDBManager.h; sourceTree = "<group>"; };
+		7EDB961C1997F3C8005107D1 /* MapizDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizDBManager.m; sourceTree = "<group>"; };
+		7EDB961E199801AA005107D1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7EDB96231998071C005107D1 /* JNKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNKeychain.h; sourceTree = "<group>"; };
+		7EDB96241998071C005107D1 /* JNKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNKeychain.m; sourceTree = "<group>"; };
+		7EDB962619980E02005107D1 /* MapizToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizToken.h; sourceTree = "<group>"; };
+		7EDB962719980E02005107D1 /* MapizToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizToken.m; sourceTree = "<group>"; };
+		7EDB962F199854DE005107D1 /* MapizDDPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizDDPClient.h; sourceTree = "<group>"; };
+		7EDB9630199854DE005107D1 /* MapizDDPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizDDPClient.m; sourceTree = "<group>"; };
+		7EDB96321999729A005107D1 /* ToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastView.h; sourceTree = "<group>"; };
+		7EDB96331999729A005107D1 /* ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastView.m; sourceTree = "<group>"; };
+		7EDB9635199A2CEC005107D1 /* ILTranslucentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTranslucentView.h; sourceTree = "<group>"; };
+		7EDB9636199A2CEC005107D1 /* ILTranslucentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTranslucentView.m; sourceTree = "<group>"; };
+		7EDB963B199C21C6005107D1 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		7EDB963C199C21C6005107D1 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
+		7EDB963E199C2A4B005107D1 /* MapizPinTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapizPinTableViewCell.h; sourceTree = "<group>"; };
+		7EDB963F199C2A4B005107D1 /* MapizPinTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapizPinTableViewCell.m; sourceTree = "<group>"; };
 		9D9D8A34316E4AEAB82DC150 /* libPods-Mapiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mapiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +163,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDB961F199801AA005107D1 /* Security.framework in Frameworks */,
+				7EDB961A1997F3A9005107D1 /* libsqlite3.dylib in Frameworks */,
 				7EAA9D551994122A000A8588 /* CoreGraphics.framework in Frameworks */,
 				7EAA9D571994122A000A8588 /* UIKit.framework in Frameworks */,
 				7E7BA19D199424010090D9ED /* MapKit.framework in Frameworks */,
@@ -217,6 +247,12 @@
 				7E7BA1E31996A3800090D9ED /* MapizSecondaryImportantButton.m */,
 				7E7BA1E51996A4DC0090D9ED /* MapizDangerImportantButton.h */,
 				7E7BA1E61996A4DC0090D9ED /* MapizDangerImportantButton.m */,
+				7EDB96321999729A005107D1 /* ToastView.h */,
+				7EDB96331999729A005107D1 /* ToastView.m */,
+				7EDB9635199A2CEC005107D1 /* ILTranslucentView.h */,
+				7EDB9636199A2CEC005107D1 /* ILTranslucentView.m */,
+				7EDB963B199C21C6005107D1 /* UIColor+CustomColors.h */,
+				7EDB963C199C21C6005107D1 /* UIColor+CustomColors.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -244,6 +280,8 @@
 		7EAA9D511994122A000A8588 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EDB961E199801AA005107D1 /* Security.framework */,
+				7EDB96191997F3A9005107D1 /* libsqlite3.dylib */,
 				7EDB96141996E55B005107D1 /* IQKeyboardManager.bundle */,
 				7E7BA19C199424010090D9ED /* MapKit.framework */,
 				7EAA9D521994122A000A8588 /* Foundation.framework */,
@@ -282,6 +320,16 @@
 				7E7BA1DB19964E990090D9ED /* MapizLoginViewController.m */,
 				7E7BA1DD19964EF20090D9ED /* MapizSignupViewController.h */,
 				7E7BA1DE19964EF20090D9ED /* MapizSignupViewController.m */,
+				7EDB961B1997F3C8005107D1 /* MapizDBManager.h */,
+				7EDB961C1997F3C8005107D1 /* MapizDBManager.m */,
+				7EDB96231998071C005107D1 /* JNKeychain.h */,
+				7EDB96241998071C005107D1 /* JNKeychain.m */,
+				7EDB962619980E02005107D1 /* MapizToken.h */,
+				7EDB962719980E02005107D1 /* MapizToken.m */,
+				7EDB962F199854DE005107D1 /* MapizDDPClient.h */,
+				7EDB9630199854DE005107D1 /* MapizDDPClient.m */,
+				7EDB963E199C2A4B005107D1 /* MapizPinTableViewCell.h */,
+				7EDB963F199C2A4B005107D1 /* MapizPinTableViewCell.m */,
 			);
 			path = Mapiz;
 			sourceTree = "<group>";
@@ -471,20 +519,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDB962819980E02005107D1 /* MapizToken.m in Sources */,
+				7EDB96341999729A005107D1 /* ToastView.m in Sources */,
 				7E7BA1A919954B500090D9ED /* FriendsViewController.m in Sources */,
 				7EAA9D631994122A000A8588 /* MapizAppDelegate.m in Sources */,
+				7EDB9631199854DE005107D1 /* MapizDDPClient.m in Sources */,
 				7EAA9D691994122A000A8588 /* MapizViewController.m in Sources */,
 				7E7BA1E41996A3800090D9ED /* MapizSecondaryImportantButton.m in Sources */,
 				7E7BA1D619964DF90090D9ED /* MapizSplashViewController.m in Sources */,
 				7E7BA1A619953D430090D9ED /* InboxViewController.m in Sources */,
 				7EDB961819978FF9005107D1 /* MapizUser.m in Sources */,
 				7E7BA1E71996A4DC0090D9ED /* MapizDangerImportantButton.m in Sources */,
+				7EDB9637199A2CEC005107D1 /* ILTranslucentView.m in Sources */,
 				7EAA9D5F1994122A000A8588 /* main.m in Sources */,
+				7EDB96251998071C005107D1 /* JNKeychain.m in Sources */,
+				7EDB961D1997F3C8005107D1 /* MapizDBManager.m in Sources */,
 				7E7BA1D01995B6980090D9ED /* MapizPrimaryImportantButton.m in Sources */,
+				7EDB963D199C21C6005107D1 /* UIColor+CustomColors.m in Sources */,
 				7E7BA1D919964E2B0090D9ED /* MapizAuthViewController.m in Sources */,
 				7E7BA1DF19964EF20090D9ED /* MapizSignupViewController.m in Sources */,
 				7E7BA1D319961DF90090D9ED /* MapizPrimaryImportantCircleButton.m in Sources */,
 				7E7BA1A319952A770090D9ED /* MapViewController.m in Sources */,
+				7EDB9640199C2A4B005107D1 /* MapizPinTableViewCell.m in Sources */,
 				7E7BA1DC19964E990090D9ED /* MapizLoginViewController.m in Sources */,
 				7E7BA1BD199590700090D9ED /* MapizPin.m in Sources */,
 			);

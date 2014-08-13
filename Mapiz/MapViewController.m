@@ -14,6 +14,8 @@
 @synthesize pinButton;
 @synthesize mapizViewController;
 @synthesize submitButton;
+@synthesize pinLabel;
+@synthesize dateLabel;
 
 BOOL trackingUser = NO;
 int pinColour;
@@ -32,14 +34,25 @@ int pinColour;
 {
   [super viewDidLoad];
   
-  pinColour = PinColourBlue;
+  pinColour = [MapizUser getPinColour];
+  [self updatePinColour];
+  pinLabel.text = [[[MapizUser getUsername] substringToIndex:1] uppercaseString];
   self.mapView.delegate = self;
   [self startTracking];
+  
+  [dateLabel sizeToFit];
 }
 
-- (IBAction)submitImHere:(id)sender {
-  [mapizViewController setModeImHere];
+- (IBAction)submit:(id)sender {
+  CLLocation *location = [[CLLocation alloc] initWithLatitude:mapView.region.center.latitude longitude:mapView.region.center.longitude];
+  if([dateLabel isHidden]) {
+    [mapizViewController setModeImHere: location];
+  } else {
+    [mapizViewController setModeMeetMeThere:location];
+  }
+  [self stopTracking];
   [submitButton setHidden: YES];
+  [dateLabel setHidden: YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,8 +62,13 @@ int pinColour;
 }
 - (IBAction)changePinColor:(id)sender {
   pinColour = (pinColour + 1) % 7;
+  [self updatePinColour];
+}
+
+- (void) updatePinColour {
   UIImage *uiImage = [UIImage imageNamed: [MapizPin pinImage: pinColour]];
   [pinButton setImage: uiImage forState: UIControlStateNormal];
+  [MapizUser savePinColour:pinColour];
 }
 
 - (void)startTracking {
@@ -61,18 +79,30 @@ int pinColour;
 }
 
 - (void)stopTracking {
-  [NSThread sleepForTimeInterval:3];
-  [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
-  [self.mapView setShowsUserLocation: NO];
-  trackingUser = NO;
+  [self performSelector:@selector(stopTrackingNow) withObject:nil afterDelay:3.0];
+}
+
+- (void)stopTrackingNow {
+  [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+    [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:NO];
+    [self.mapView setShowsUserLocation: NO];
+    trackingUser = NO;
+  }];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-  [self performSelectorInBackground:@selector(stopTracking) withObject:nil];
+  [self stopTracking];
 }
 
 -(BOOL)isTracking {
   return trackingUser;
+}
+
+- (IBAction)removeMeetup:(id)sender {
+  [self.mapizViewController.datePicker setDate:[[NSDate alloc] init]];
+  [self.dateLabel setTitle:@"" forState:UIControlStateNormal];
+  [self.dateLabel setHidden:YES];
+  [self.submitButton setTitle:@"I'm here!" forState:UIControlStateNormal];
 }
 
 -(void)lockMap {
@@ -85,6 +115,14 @@ int pinColour;
   [mapView setZoomEnabled: YES];
   [mapView setScrollEnabled: YES];
   [mapView setUserInteractionEnabled: YES];
+}
+
+- (void)didReceiveAuthUserDetails:(MapizUser *)user {
+  pinLabel.text = [[user.username substringToIndex:1] uppercaseString];
+}
+
+- (void)didAuth {
+  
 }
 
 @end

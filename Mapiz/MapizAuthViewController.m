@@ -10,7 +10,6 @@
 #import "MapizLoginViewController.h"
 #import "MapizSignupViewController.h"
 
-
 @interface MapizAuthViewController ()
 
 @end
@@ -19,7 +18,7 @@
 @synthesize loginViewController;
 @synthesize signupViewController;
 @synthesize scrollView;
-@synthesize meteorClient;
+@synthesize mapizDDPClient;
 
 int const TOTAL_AUTH_SECTIONS = 2;
 int const INDEX_SECTION_LOGIN = 0;
@@ -38,16 +37,14 @@ int const INDEX_SECTION_SIGNUP = 1;
 {
   [super viewDidLoad];
   
-  meteorClient = [[MeteorClient alloc] initWithDDPVersion:@"pre2"];
-  ObjectiveDDP *ddp = [[ObjectiveDDP alloc] initWithURLString:@"ws://192.168.1.65:3000/websocket" delegate:meteorClient];
-  meteorClient.ddp = ddp;
-  [meteorClient.ddp connectWebSocket];
+  mapizDDPClient = [MapizDDPClient getInstance];
   
   self.loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapizLoginViewController"];
   self.signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapizSignupViewController"];
   
   self.loginViewController.authViewController = self;
   self.signupViewController.authViewController = self;
+  
 }
 
 -(void)viewDidLayoutSubviews
@@ -93,7 +90,21 @@ int const INDEX_SECTION_SIGNUP = 1;
   [self.scrollView scrollRectToVisible:frame animated:YES];
 }
 
--(void)handleAuth {
+-(void)handleAuth: (NSDictionary *) response {
+  
+  NSDictionary *data = [response valueForKeyPath:@"result"];
+  NSString *_id = [data valueForKeyPath:@"id"];
+  NSString *email = NULL;
+  NSString *username = NULL;
+  NSString *displayName = NULL;
+  NSString *token = [data valueForKeyPath:@"token"];
+  NSDictionary *date = [data valueForKeyPath:@"tokenExpires"];
+  NSString *expiresStr = [date valueForKeyPath:@"$date"];
+  NSTimeInterval timeInterval = [expiresStr longLongValue] / 1000;
+  NSDate *expires = [[NSDate alloc] initWithTimeIntervalSince1970:timeInterval];
+  
+  [MapizUser saveAuthUserWithToken:token expires:expires _id:_id username:username email:email displayName:displayName];
+  
   [self performSegueWithIdentifier:@"showMain" sender:self];
 }
 
