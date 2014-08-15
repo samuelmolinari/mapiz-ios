@@ -11,6 +11,7 @@
 #import "MapizPrimaryImportantCircleButton.h"
 #import "MapizDDPClient.h"
 #import "MapizUser.h"
+#import "MapizPin.h"
 #import "ILTranslucentView.h"
 
 @class MapViewController;
@@ -52,10 +53,18 @@
 @property (nonatomic, retain) IBOutlet UIDatePicker *datePicker;
 @property (nonatomic, retain) IBOutlet MapizPrimaryImportantCircleButton *submitButton;
 @property (nonatomic, strong) MapizDDPClient *mapizDDPClient;
+@property (nonatomic, retain) MapizPin *replyTo;
+@property (nonatomic, retain) NSDate *locationSavedAt;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)setModeImHere:(CLLocation *)location;
 - (void)setModeMeetMeThere:(CLLocation *)location;
+
+- (void)setModeReplyTo:(MapizPin *)pin;
+
+- (BOOL)isInModeReplyTo;
+- (void)cancelMode;
+- (void)lockMap;
 
 - (void)didReceiveAuthUserDetails:(MapizUser *)user;
 - (void)didConnect;

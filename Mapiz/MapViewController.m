@@ -45,14 +45,33 @@ int pinColour;
 
 - (IBAction)submit:(id)sender {
   CLLocation *location = [[CLLocation alloc] initWithLatitude:mapView.region.center.latitude longitude:mapView.region.center.longitude];
-  if([dateLabel isHidden]) {
-    [mapizViewController setModeImHere: location];
+  if(![mapizViewController isInModeReplyTo]) {
+    if([dateLabel isHidden]) {
+      [mapizViewController setModeImHere: location];
+    } else {
+      [mapizViewController setModeMeetMeThere:location];
+    }
+    [submitButton setHidden: YES];
+    [dateLabel setHidden: YES];
   } else {
-    [mapizViewController setModeMeetMeThere:location];
+    NSDate *date;
+    int pinType;
+    if([dateLabel isHidden]) {
+      pinType = PinTypeImHere;
+      date = [[NSDate alloc] init];
+    } else {
+      pinType = PinTypeMeetMeThere;
+      date = mapizViewController.locationSavedAt;
+    }
+    [MapizPin callSubmitPinOfType:pinType
+                     toRecipients:@[mapizViewController.replyTo.sender._id]
+                  withCoordinates:location
+                               at:date responseCallback:^(NSDictionary *response, NSError *error) {
+                                 [mapizViewController cancelMode];
+                               }];
   }
   [self stopTracking];
-  [submitButton setHidden: YES];
-  [dateLabel setHidden: YES];
+  [self.mapizViewController lockMap];
 }
 
 - (void)didReceiveMemoryWarning

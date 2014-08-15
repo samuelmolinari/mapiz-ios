@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0EC68F9EB0B64C54B50A3D37"
+               BlueprintIdentifier = "26E3B1B12C9943379CDFE2E9"
                BuildableName = "libPods-Mapiz-ObjectiveDDP.a"
                BlueprintName = "Pods-Mapiz-ObjectiveDDP"
                ReferencedContainer = "container:Pods.xcodeproj">

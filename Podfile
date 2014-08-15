@@ -5,6 +5,7 @@ target "Mapiz" do
   pod 'ObjectiveDDP', '~> 0.1.5'
   pod 'AWPagedArray', '~> 0.1'
   pod 'IQKeyboardManager'
+  pod 'FormatterKit'
 end
 
 

@@ -14,9 +14,13 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+      
     }
     return self;
+}
+
+-(void) setSquareColour: (UIColor*) color {
+  [self.square setBackgroundColor:color];
 }
 
 - (void)awakeFromNib

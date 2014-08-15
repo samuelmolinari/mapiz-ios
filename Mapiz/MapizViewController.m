@@ -33,10 +33,13 @@
 @synthesize submitButton;
 @synthesize navigationBar;
 @synthesize mapizDDPClient;
+@synthesize replyTo;
+@synthesize locationSavedAt;
 
 int const MODE_IM_HERE = 0;
 int const MODE_WHERE_ARE_YOU = 1;
 int const MODE_MEET_ME_THERE = 2;
+int const MODE_REPLY_TO = 3;
 
 int const TOTAL_SECTIONS = 3;
 int const INDEX_SECTION_INBOX = 0;
@@ -48,7 +51,6 @@ int position;
 
 CGRect tabFrame;
 CLLocation *savedLocation;
-NSDate *locationSavedAt;
 MapizUser *authUser;
 
 - (void)viewDidLoad
@@ -145,12 +147,15 @@ MapizUser *authUser;
   [self.view layoutIfNeeded];
   
   mapViewController.mapizViewController = self;
+  inboxViewController.mapizViewController = self;
 }
 
 - (IBAction)goToRight:(id)sender {
   switch(position) {
     case INDEX_SECTION_MAP:
-      [self moveToPosition:INDEX_SECTION_FRIENDS];
+      if(![self isInModeReplyTo]) {
+        [self moveToPosition:INDEX_SECTION_FRIENDS];
+      }
       break;
     case INDEX_SECTION_INBOX:
       [self moveToPosition:INDEX_SECTION_MAP];
@@ -178,6 +183,12 @@ MapizUser *authUser;
       break;
   }
   
+}
+
+- (void) setModeReplyTo: (MapizPin*) pin {
+  replyTo = pin;
+  [self setMode: MODE_REPLY_TO];
+  [self.mapViewController.submitButton setTitle:[NSString stringWithFormat:@"Tell %@ I'm here!", pin.sender.username] forState:UIControlStateNormal];
 }
 
 - (void)hideSearchBar {
@@ -228,7 +239,17 @@ MapizUser *authUser;
       [mapViewController.pinButton setEnabled:NO];
       [friendsViewController.submitButton setHidden: YES];
       break;
+    case MODE_REPLY_TO:
+      [self moveToPosition:INDEX_SECTION_MAP];
+      [self lockMap];
+      [submitButton setHidden: YES];
+      [lockUnlockButton setEnabled:YES];
+      [findMeButton setEnabled:YES];
+      [mapViewController.pinButton setEnabled:YES];
+      [friendsViewController.submitButton setHidden: YES];
+      break;
     case MODE_WHERE_ARE_YOU:
+      
       [submitButton setHidden: YES];
       [lockUnlockButton setEnabled:YES];
       [findMeButton setEnabled:YES];
@@ -252,17 +273,6 @@ MapizUser *authUser;
         int pinType;
         if([self isInModeImHere]) {
           pinType = PinTypeImHere;
-//          [MapizPin callImHere: self.friendsViewController.selectedFriends
-//                   coordinates: savedLocation
-//                        hereAt: locationSavedAt
-//              responseCallback:^(NSDictionary *response, NSError *error) {
-//                [self.submitButton setUserInteractionEnabled: YES];
-//                if(error) {
-//                
-//                } else {
-//                  [self cancelMode];
-//                }
-//              }];
         } else if([self isInModeMeetMeThere]) {
           pinType = PinTypeMeetMeThere;
         }
@@ -287,9 +297,11 @@ MapizUser *authUser;
 }
 
 - (void)cancelMode {
+  replyTo = NULL;
   switch(mode) {
     case MODE_IM_HERE:
     case MODE_MEET_ME_THERE:
+    case MODE_REPLY_TO:
       [self setModeWhereAreYou];
       [self.mapViewController.submitButton setTitle:@"I'm here!" forState:UIControlStateNormal];
       [self.friendsViewController resetSelections];
@@ -299,6 +311,7 @@ MapizUser *authUser;
   switch(position) {
     case INDEX_SECTION_MAP:
       leftNavButton.title = @"\uf0e0";
+      rightNavButton.title = @"\uf0c0";
       break;
     case INDEX_SECTION_INBOX:
       leftNavButton.title = @"\uf013";
@@ -344,6 +357,10 @@ MapizUser *authUser;
 
 - (BOOL) isInModeWhereAreYou {
   return mode == MODE_WHERE_ARE_YOU;
+}
+
+- (BOOL) isInModeReplyTo {
+  return mode == MODE_REPLY_TO;
 }
 
 - (void)viewDidUnload
@@ -418,13 +435,19 @@ MapizUser *authUser;
         case MODE_IM_HERE:
         case MODE_MEET_ME_THERE:
           leftNavButton.title = @"\uf00d";
+          rightNavButton.title = @"\uf0c0";
           break;
         case MODE_WHERE_ARE_YOU:
           leftNavButton.title = @"\uf0e0";
+          rightNavButton.title = @"\uf0c0";
+          break;
+        case MODE_REPLY_TO:
+          leftNavButton.title = @"\uf00d";
+          rightNavButton.title = @"";
           break;
       }
       
-      rightNavButton.title = @"\uf0c0";
+      
       self.navigationBar.topItem.title = @"Mapiz";
       
       if([self isInModeImHere] || [self isInModeMeetMeThere]) {
@@ -473,6 +496,12 @@ MapizUser *authUser;
       break;
   }
   }];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+  if([self isInModeReplyTo] && position == INDEX_SECTION_FRIENDS) {
+    [self moveToPosition: INDEX_SECTION_MAP];
+  }
 }
 
 - (IBAction)setupMeetup:(id)sender {

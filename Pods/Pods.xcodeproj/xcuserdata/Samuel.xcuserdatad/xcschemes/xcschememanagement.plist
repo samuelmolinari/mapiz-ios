@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Mapiz-FormatterKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Mapiz-IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0EC68F9EB0B64C54B50A3D37</key>
+		<key>26E3B1B12C9943379CDFE2E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1E65318EB34B48498985E801</key>
+		<key>80D8D43DFFC2410FBEDE4E71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6CAD79159B824B759BD0CEA4</key>
+		<key>8B1D67E9DE80465FA3B5C8D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6F24E49C020A4C149E5926D8</key>
+		<key>97AC5CE4D1014539B4E5F04A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC9AAB664C644778A7239D07</key>
+		<key>AA320778C9D9464ABAAA3A3D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4393F47E7D7428B99F4ED86</key>
 		<dict>
 			<key>primary</key>
 			<true/>

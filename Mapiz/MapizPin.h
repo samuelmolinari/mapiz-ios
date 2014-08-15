@@ -14,19 +14,28 @@
 @interface MapizPin : NSObject
 
 typedef NS_ENUM(NSInteger, Colour) {
-  PinColourBlue = 0,
+  PinColourBlue   = 0,
   PinColourPurple = 1,
   PinColourOrange = 2,
-  PinColourRed = 3,
-  PinColourGreen = 4,
+  PinColourRed    = 3,
+  PinColourGreen  = 4,
   PinColourYellow = 5,
-  PinColourBlack = 6
+  PinColourBlack  = 6
 };
 
 typedef NS_ENUM(NSInteger, Type) {
-  PinTypeImHere = 0,
-  PinTypeWhereAreYou = 1,
-  PinTypeMeetMeThere = 2
+  PinTypeImHere       = 0,
+  PinTypeWhereAreYou  = 1,
+  PinTypeMeetMeThere  = 2
+};
+
+typedef NS_ENUM(NSInteger, Status) {
+  PinStatusSending  = 0,
+  PinStatusReceived = 1,
+  PinStatusOpened   = 2,
+  PinStatusReplied  = 3,
+  PinStatusComplete = 4,
+  PinStatusLocked   = 5
 };
 
 @property (nonatomic, retain) NSString *_id;
@@ -39,16 +48,28 @@ typedef NS_ENUM(NSInteger, Type) {
 @property (nonatomic, retain) CLLocation *recipientLocation;
 @property (nonatomic, retain) NSDate *senderHereAt;
 @property (nonatomic, retain) NSDate *recipientHereAt;
+@property (nonatomic, retain) NSDate *updatedAt;
+@property (nonatomic) BOOL recipientIsGoing;
 
 - (id) initWithResponse: (NSDictionary*) response;
 
+- (BOOL) isRecipient;
+- (BOOL) isSender;
+- (BOOL) isImHereType;
+- (BOOL) isWhereAreYouType;
+- (BOOL) isMeetup;
+- (BOOL) hasReply;
+
 + (NSString *)pinImage: (int)colour;
++ (UIColor *)pinColour: (int)colourCode;
 
 + (void) callWhereAreYou: (NSArray *) recipients responseCallback:(MeteorClientMethodCallback) responseCallback;
+
 + (void) callImHere: (NSArray *) recipients
         coordinates:(CLLocation *)location
              hereAt:(NSDate *)hereAt
    responseCallback:(MeteorClientMethodCallback) responseCallback;
+
 + (void) callSubmitPinOfType:(int)type
                 toRecipients:(NSArray *)recipients
              withCoordinates:(CLLocation *)location

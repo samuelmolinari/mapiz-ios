@@ -55,14 +55,15 @@ UIView *header;
 
 -(void) reloadFriends {
   [MapizUser callMyFriends:^(NSDictionary *response, NSError *error) {
+    [refreshControl endRefreshing];
     if(!error) {
       NSArray *friends = [response objectForKey:@"result"];
       MapizDBManager *dbManager = [MapizDBManager getSharedInstance];
       [dbManager resetUserTable];
       [dbManager saveUsers:friends];
-      [refreshControl endRefreshing];
       [self.tableView reloadData];
     }
+    
   }];
 }
 

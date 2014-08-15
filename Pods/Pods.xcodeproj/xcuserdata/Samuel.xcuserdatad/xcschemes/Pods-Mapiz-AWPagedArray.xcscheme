@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CC9AAB664C644778A7239D07"
+               BlueprintIdentifier = "AA320778C9D9464ABAAA3A3D"
                BuildableName = "libPods-Mapiz-AWPagedArray.a"
                BlueprintName = "Pods-Mapiz-AWPagedArray"
                ReferencedContainer = "container:Pods.xcodeproj">

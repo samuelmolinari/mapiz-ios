@@ -38,5 +38,21 @@
   return [UIColor colorWithRed:0.95 green:0.91 blue:0.33 alpha:1];
 }
 
++(UIColor *) primary {
+  return [UIColor colorWithRed:0.36 green:0.84 blue:0.75 alpha:1];
+}
+
++(UIColor *) primaryDark {
+  return [UIColor colorWithRed:0.34 green:0.75 blue:0.68 alpha:1];
+}
+
++(UIColor *) secondary {
+  return [UIColor colorWithRed:0.71 green:0.63 blue:0.63 alpha:1];
+}
+
++(UIColor *) secondayDark {
+  return [UIColor colorWithRed:0.57 green:0.52 blue:0.52 alpha:1];
+}
+
 
 @end

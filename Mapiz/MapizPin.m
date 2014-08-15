@@ -20,14 +20,17 @@
 @synthesize senderHereAt;
 @synthesize senderLocation;
 @synthesize recipientLocation;
+@synthesize updatedAt;
 
 - (id) initWithResponse: (NSDictionary*) response {
   self = [super init];
   
   self._id = [response valueForKeyPath:@"_id"];
   self._type = [[response valueForKeyPath:@"_type"] intValue];
+  
   self._status = [[response valueForKeyPath:@"_status"] intValue];
   self.colour = [[response valueForKeyPath:@"colour"] intValue];
+  self.recipientIsGoing = [[response valueForKeyPath:@"recipient.is_going"] boolValue];
 
   self.sender = [[MapizUser alloc] initWithResponse:@{
                                                       @"_id": [response valueForKeyPath:@"sender_id"],
@@ -55,6 +58,9 @@
   NSTimeInterval recipientTimestamp = [[response valueForKeyPath:@"recipient.here_at.$date"] longValue] / 1000;
   self.recipientHereAt = [[NSDate alloc] initWithTimeIntervalSince1970:recipientTimestamp];
   
+  NSTimeInterval updatedAtTimestamp = [[response valueForKeyPath:@"updated_at.$date"] longValue] / 1000;
+  self.updatedAt = [[NSDate alloc] initWithTimeIntervalSince1970:updatedAtTimestamp];
+  
   return self;
 }
 
@@ -68,6 +74,18 @@
 
 - (BOOL) isMeetup {
   return self._type == PinTypeMeetMeThere;
+}
+
+- (BOOL) isRecipient {
+  return [[MapizUser getID] isEqualToString: self.recipient._id];
+}
+
+- (BOOL) isSender {
+  return ![self isRecipient];
+}
+
+- (BOOL) hasReply {
+  return self._status >= PinStatusReplied;
 }
 
 + (void) callWhereAreYou: (NSArray *) recipients responseCallback:(MeteorClientMethodCallback) responseCallback {
