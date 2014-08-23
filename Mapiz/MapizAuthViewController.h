@@ -13,7 +13,7 @@
 @class MapizLoginViewController;
 @class MapizSignupViewController;
 
-@interface MapizAuthViewController : UIViewController<UIScrollViewDelegate> {
+@interface MapizAuthViewController : UIViewController<UIScrollViewDelegate,MapizDDPDelegate> {
   
   IBOutlet UIScrollView *scrollView;
 }

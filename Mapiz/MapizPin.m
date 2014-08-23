@@ -48,18 +48,60 @@
   double senderLng = [[[response valueForKeyPath:@"sender.lat_lon.lon"] stringValue] doubleValue];
   self.senderLocation = [[CLLocation alloc] initWithLatitude:senderLat longitude:senderLng];
   
-  double recipientLat = [[[response valueForKeyPath:@"sender.lat_lon.lat"] stringValue] doubleValue];
-  double recipientLng = [[[response valueForKeyPath:@"sender.lat_lon.lon"] stringValue] doubleValue];
+  double recipientLat = [[[response valueForKeyPath:@"recipient.lat_lon.lat"] stringValue] doubleValue];
+  double recipientLng = [[[response valueForKeyPath:@"recipient.lat_lon.lon"] stringValue] doubleValue];
   self.recipientLocation = [[CLLocation alloc] initWithLatitude:recipientLat longitude:recipientLng];
   
-  NSTimeInterval senderTimestamp = [[response valueForKeyPath:@"sender.here_at.$date"] longValue] / 1000;
-  self.senderHereAt = [[NSDate alloc] initWithTimeIntervalSince1970:senderTimestamp];
+  NSTimeInterval senderTimestamp = [[[response valueForKeyPath:@"sender.here_at.$date"] stringValue] doubleValue];
+  self.senderHereAt = [[NSDate alloc] initWithTimeIntervalSince1970:senderTimestamp / 1000];
   
-  NSTimeInterval recipientTimestamp = [[response valueForKeyPath:@"recipient.here_at.$date"] longValue] / 1000;
-  self.recipientHereAt = [[NSDate alloc] initWithTimeIntervalSince1970:recipientTimestamp];
+  NSTimeInterval recipientTimestamp = [[[response valueForKeyPath:@"recipient.here_at.$date"] stringValue] doubleValue];
+  self.recipientHereAt = [[NSDate alloc] initWithTimeIntervalSince1970:recipientTimestamp / 1000];
   
-  NSTimeInterval updatedAtTimestamp = [[response valueForKeyPath:@"updated_at.$date"] longValue] / 1000;
-  self.updatedAt = [[NSDate alloc] initWithTimeIntervalSince1970:updatedAtTimestamp];
+  NSTimeInterval updatedAtTimestamp = [[[response valueForKeyPath:@"updated_at.$date"] stringValue] doubleValue];
+  self.updatedAt = [[NSDate alloc] initWithTimeIntervalSince1970:updatedAtTimestamp / 1000];
+  
+  return self;
+}
+
+- (id) initWithNotification: (NSDictionary*) userInfo {
+  self = [super init];
+  
+  self._id = [userInfo valueForKeyPath:@"_id"];
+  self._type = (int)[[userInfo valueForKey:@"_type"] integerValue];
+  self.colour = (int)[[userInfo valueForKeyPath:@"colour"] intValue];
+  
+  if([userInfo valueForKey:@"is_going"] != nil) {
+    
+    self.recipientIsGoing = (bool)[[userInfo valueForKey:@"is_going"] boolValue];
+    
+    self._status = PinStatusReplied;
+    
+    self.sender = [[MapizUser alloc] initWithResponse:@{
+                                                        @"_id": [userInfo valueForKeyPath:@"recipient_id"],
+                                                        @"username": [userInfo valueForKeyPath:@"recipient_username"]
+                                                        }];
+    self.recipient = [[MapizUser alloc] initWithResponse:@{
+                                                           @"_id": [userInfo valueForKeyPath:@"sender_id"],
+                                                           @"username": [userInfo valueForKeyPath:@"sender_username"]
+                                                           }];
+  } else {
+    self.sender = [[MapizUser alloc] initWithResponse:@{
+                                                        @"_id": [userInfo valueForKeyPath:@"sender_id"],
+                                                        @"username": [userInfo valueForKeyPath:@"sender_username"]
+                                                        }];
+    self.recipient = [[MapizUser alloc] initWithResponse:@{
+                                                           @"_id": [MapizUser getID],
+                                                           @"username": [userInfo valueForKeyPath:@"recipient_username"]
+                                                           }];
+  }
+  
+  double senderLat = [[[userInfo valueForKeyPath:@"lat"] stringValue] doubleValue];
+  double senderLng = [[[userInfo valueForKeyPath:@"lon"] stringValue] doubleValue];
+  self.senderLocation = [[CLLocation alloc] initWithLatitude:senderLat longitude:senderLng];
+  
+  NSTimeInterval senderTimestamp = [[[userInfo valueForKeyPath:@"here_at"] stringValue] doubleValue];
+  self.senderHereAt = [[NSDate alloc] initWithTimeIntervalSince1970:senderTimestamp / 1000];
   
   return self;
 }
@@ -117,6 +159,27 @@
                                                     }]
                               responseCallback: responseCallback];
   
+}
+
++ (void) callAcceptMeetupInvite:(NSString *) pinId
+               responseCallback:(MeteorClientMethodCallback) responseCallback {
+  [[MapizDDPClient getInstance] callMethodName:@"acceptMeetupInvite"
+                                    parameters:@[pinId]
+                              responseCallback:responseCallback];
+}
+
++ (void) callTurnDownMeetupInvite:(NSString *) pinId
+                 responseCallback:(MeteorClientMethodCallback) responseCallback {
+  [[MapizDDPClient getInstance] callMethodName:@"turnDownMeetupInvite"
+                                    parameters:@[pinId]
+                              responseCallback:responseCallback];
+}
+
++ (void)callRemove:(NSString *)pinId
+  responseCallback:(MeteorClientMethodCallback)responseCallback {
+  [[MapizDDPClient getInstance] callMethodName:@"removePin"
+                                    parameters:@[pinId]
+                              responseCallback:responseCallback];
 }
 
 +(NSString*) pinImage:(int)colour {

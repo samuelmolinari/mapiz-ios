@@ -21,6 +21,7 @@ static NSString* KEY_AUTH_USER_USERNAME = @"co.mapiz.auth.username";
 static NSString* KEY_AUTH_USER_EMAIL = @"co.mapiz.auth.email";
 static NSString* KEY_AUTH_USER_DISPLAY_NAME = @"co.mapiz.auth.display_name";
 static NSString* KEY_AUTH_USER_PIN_COLOUR = @"co.mapiz.auth.pin_colour";
+static NSString* KEY_APN_TOKEN = @"co.mapiz.notification.apn_token";
 
 static NSString* FIELD_ID = @"_id";
 static NSString* FIELD_USERNAME = @"username";
@@ -58,6 +59,30 @@ static MapizUser* loggedInUser = nil;
   [[MapizDDPClient getInstance] callMethodName:@"myInbox" parameters:@[] responseCallback:responseCallback];
 }
 
++ (void) callUpdateUsername: (NSString *) username responseCallback: (MeteorClientMethodCallback) responseCallback {
+  [[MapizDDPClient getInstance] callMethodName:@"updateUsername" parameters:@[[username lowercaseString]] responseCallback:responseCallback];
+}
+
++ (void) callUpdateEmail: (NSString *) email responseCallback: (MeteorClientMethodCallback) responseCallback {
+  [[MapizDDPClient getInstance] callMethodName:@"updateEmail" parameters:@[[email lowercaseString]] responseCallback:responseCallback];
+}
+
++ (void) callUpdateDisplayName: (NSString *) displayName responseCallback: (MeteorClientMethodCallback) responseCallback {
+  [[MapizDDPClient getInstance] callMethodName:@"updateDisplayName" parameters:@[displayName] responseCallback:responseCallback];
+}
+
++ (void) callChangePassword: (NSString *) oldPassword withNewPassword: (NSString *) newPassword responseCallback: (MeteorClientMethodCallback) responseCallback {
+  [[MapizDDPClient getInstance] callMethodName:@"changePassword" parameters:@[oldPassword, newPassword] responseCallback:responseCallback];
+}
+
++ (void) callAddApnToken: (NSString *) apnToken responseCallback: (MeteorClientMethodCallback) responseCallback {
+  [[MapizDDPClient getInstance] callMethodName:@"addApnToken" parameters:@[apnToken] responseCallback:responseCallback];
+}
+
++ (void) callRemoveApnToken: (NSString *) apnToken responseCallback: (MeteorClientMethodCallback) responseCallback {
+  [[MapizDDPClient getInstance] callMethodName:@"removeApnToken" parameters:@[apnToken] responseCallback:responseCallback];
+}
+
 + (void) saveAuthUserWithToken: (NSString *) token
                        expires: (NSDate *) expires
                             _id: (NSString *) _id
@@ -85,8 +110,15 @@ static MapizUser* loggedInUser = nil;
 }
 
 + (void) savePinColour: (int) pinColour {
-  
   [JNKeychain saveValue:[NSNumber numberWithInt:pinColour] forKey: KEY_AUTH_USER_PIN_COLOUR];
+}
+
++ (void) saveApnToken: (NSString *) token {
+  [JNKeychain saveValue:token forKey:KEY_APN_TOKEN];
+}
+
++ (NSString *) getApnToken {
+  return [JNKeychain loadValueForKey:KEY_APN_TOKEN];
 }
 
 + (BOOL) isLoggedIn {
@@ -104,6 +136,7 @@ static MapizUser* loggedInUser = nil;
   return [[MapizToken alloc] initWithToken:token expires:date];
 }
 
+
 + (NSString *) getUsername {
   return [JNKeychain loadValueForKey:KEY_AUTH_USER_USERNAME];
 }
@@ -114,6 +147,18 @@ static MapizUser* loggedInUser = nil;
 
 + (NSString *) getDisplayName {
   return [JNKeychain loadValueForKey:KEY_AUTH_USER_DISPLAY_NAME];
+}
+
++ (void) setUsername: (NSString *) username {
+  [JNKeychain saveValue:username forKey: KEY_AUTH_USER_USERNAME];
+}
+
++ (void) setEmail: (NSString *) email {
+  [JNKeychain saveValue:email forKey: KEY_AUTH_USER_EMAIL];
+}
+
++ (void) setDisplayName: (NSString *) displayName {
+  [JNKeychain saveValue:displayName forKey: KEY_AUTH_USER_DISPLAY_NAME];
 }
 
 + (int) getPinColour {

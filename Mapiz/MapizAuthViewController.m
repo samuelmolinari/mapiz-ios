@@ -38,6 +38,7 @@ int const INDEX_SECTION_SIGNUP = 1;
   [super viewDidLoad];
   
   mapizDDPClient = [MapizDDPClient getInstance];
+  mapizDDPClient.delegate = self;
   
   self.loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapizLoginViewController"];
   self.signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapizSignupViewController"];
@@ -45,6 +46,7 @@ int const INDEX_SECTION_SIGNUP = 1;
   self.loginViewController.authViewController = self;
   self.signupViewController.authViewController = self;
   
+  scrollView.scrollEnabled = NO;
 }
 
 -(void)viewDidLayoutSubviews
@@ -103,9 +105,23 @@ int const INDEX_SECTION_SIGNUP = 1;
   NSTimeInterval timeInterval = [expiresStr longLongValue] / 1000;
   NSDate *expires = [[NSDate alloc] initWithTimeIntervalSince1970:timeInterval];
   
-  [MapizUser saveAuthUserWithToken:token expires:expires _id:_id username:username email:email displayName:displayName];
+  [MapizUser callAddApnToken:[MapizUser getApnToken] responseCallback:^(NSDictionary *response, NSError *error) {
+    [MapizUser saveAuthUserWithToken:token expires:expires _id:_id username:username email:email displayName:displayName];
+    [self performSegueWithIdentifier:@"showMain" sender:self];
+  }];
   
-  [self performSegueWithIdentifier:@"showMain" sender:self];
+}
+
+- (void)didConnect {
+  
+}
+
+-(void) didReceiveAuthUserDetails:(MapizUser *)user {
+  
+}
+
+-(void) didAuth {
+  
 }
 
 @end

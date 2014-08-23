@@ -14,6 +14,8 @@
 
 @implementation MapizSplashViewController
 
+@synthesize pin;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,7 +28,7 @@
 - (void)viewDidLoad
 {
 //  [MapizUser clearAuthUser];
-  [self performSelector:@selector(showAuth) withObject:nil afterDelay:2.0];
+  [self performSelector:@selector(showAuth) withObject:nil afterDelay:1.2];
   [super viewDidLoad];
 }
 
@@ -37,6 +39,18 @@
   } else {
     [self performSegueWithIdentifier:@"showMain" sender:self];
   }
+}
+
+-(void) handleNotification: (MapizPin*) pin {
+  self.pin = pin;
+  [self performSegueWithIdentifier:@"showMain" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  MapizViewController *destinationController = segue.destinationViewController;
+  MapizSplashViewController *sourceController = sender;
+  destinationController.pinFromNotification = sourceController.pin;
+  
 }
 
 @end

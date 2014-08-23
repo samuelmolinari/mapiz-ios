@@ -35,6 +35,8 @@
 @synthesize mapizDDPClient;
 @synthesize replyTo;
 @synthesize locationSavedAt;
+@synthesize position;
+@synthesize pinFromNotification;
 
 int const MODE_IM_HERE = 0;
 int const MODE_WHERE_ARE_YOU = 1;
@@ -47,18 +49,32 @@ int const INDEX_SECTION_MAP = 1;
 int const INDEX_SECTION_FRIENDS = 2;
 
 int mode;
-int position;
 
 CGRect tabFrame;
+BOOL tabFrameBackedUp;
 CLLocation *savedLocation;
 MapizUser *authUser;
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  tabFrameBackedUp = NO;
+  NSDate *now = [[NSDate alloc] init];
+  
+  self.inboxViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InboxViewController"];
+  self.mapViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+  self.friendsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsViewController"];
+  mapViewController.mapizViewController = self;
+  inboxViewController.mapizViewController = self;
+  
   
   self.mapizDDPClient = [MapizDDPClient getInstance];
   self.mapizDDPClient.delegate = self;
+  
+  if([self.mapizDDPClient connected]) {
+    [self didConnect];
+    [self didAuth];
+  }
   
   if(![self.navigationController.navigationBar respondsToSelector:@selector(barTintColor)]) {
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:208/255 green:66/255 blue:76/255 alpha:1.0];
@@ -86,10 +102,13 @@ MapizUser *authUser;
   self.scrollView.delegate = self;
   
   mode = MODE_WHERE_ARE_YOU;
+  position = INDEX_SECTION_MAP;
   
-  self.inboxViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InboxViewController"];
-  self.mapViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
-  self.friendsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendsViewController"];
+  if(self.pinFromNotification) {
+    if(![pinFromNotification isWhereAreYouType]) {
+      position = INDEX_SECTION_INBOX;
+    }
+  }
   
   [lockUnlockButton.titleLabel setFont: [UIFont fontWithName:@"FontAwesome" size:20]];
   [lockUnlockButton setTitle:@"\uf023" forState:UIControlStateNormal];
@@ -140,14 +159,33 @@ MapizUser *authUser;
   [self.scrollView addSubview: self.friendsViewController.view];
   [self.scrollView addSubview: self.inboxViewController.view];
   
-  tabFrame = tabsView.frame;
-  
-  [self goToPosition: INDEX_SECTION_MAP];
+  if(!tabFrameBackedUp) {
+    tabFrameBackedUp = YES;
+    tabFrame = tabsView.frame;
+    [self goToPosition:position];
+  }
   
   [self.view layoutIfNeeded];
   
-  mapViewController.mapizViewController = self;
-  inboxViewController.mapizViewController = self;
+  
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+  [self refreshMapMenuBarMargin: position];
+  [self appearFromNotification:pinFromNotification];
+}
+
+-(void)appearFromNotification: (MapizPin*)pin {
+  if(pin) {
+    if([pin isImHereType] || [pin isMeetup] || ([pin isWhereAreYouType] && [pin isSender] && [pin hasReply])) {
+      MapizPinViewController *pinViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MapizPinViewController"];
+      pinViewController.pin = pin;
+      [self presentViewController:pinViewController animated:YES completion:nil];
+    } else if([pin isWhereAreYouType]) {
+      [self setModeReplyTo:pin];
+    }
+    pinFromNotification = nil;
+  }
 }
 
 - (IBAction)goToRight:(id)sender {
@@ -175,6 +213,7 @@ MapizUser *authUser;
       [self cancelMode];
       break;
     case INDEX_SECTION_INBOX:
+      [self performSegueWithIdentifier:@"showSettings" sender:self];
       [self cancelMode];
       break;
     case INDEX_SECTION_FRIENDS:
@@ -270,6 +309,8 @@ MapizUser *authUser;
         break;
       default:
         [self.submitButton setUserInteractionEnabled: NO];
+        [self.submitButton setTitle:@"" forState:UIControlStateNormal];
+        [_actionInProgressIndicator setHidden:NO];
         int pinType;
         if([self isInModeImHere]) {
           pinType = PinTypeImHere;
@@ -282,8 +323,9 @@ MapizUser *authUser;
                       withCoordinates:savedLocation
                                    at:locationSavedAt
                      responseCallback:^(NSDictionary *response, NSError *error) {
-          
+                       [self.submitButton setTitle:@"\ue422" forState:UIControlStateNormal];
                        [self.submitButton setUserInteractionEnabled: YES];
+                       [_actionInProgressIndicator setHidden:YES];
                        if(error) {
                        
                        } else {
@@ -321,6 +363,10 @@ MapizUser *authUser;
       break;
   }
   }];
+}
+
+- (void)updateMyLocation:(CLLocation *)location {
+  [inboxViewController updateMyLocation:location];
 }
 
 - (void)setModeImHere {
@@ -394,11 +440,7 @@ MapizUser *authUser;
   }
 }
 
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-  position = [self getCurrentPosition];
-  
+-(void)refreshMapMenuBarMargin: (int) position {
   int x = scrollView.contentOffset.x;
   float width = scrollView.frame.size.width;
   int sign = 1;
@@ -424,8 +466,16 @@ MapizUser *authUser;
   newTabFrame.origin.x = tabFrame.origin.x;
   newTabFrame.origin.y = tabFrame.origin.y + marginTop;
   
-  tabsView.frame = newTabFrame;
-  tabsBackground.frame = newTabFrame;
+  [tabsView setFrame:newTabFrame];
+  [tabsBackground setFrame:newTabFrame];
+//  tabsView.frame = newTabFrame;
+//  tabsBackground.frame = newTabFrame;
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  position = [self getCurrentPosition];
+  
+  [self refreshMapMenuBarMargin:position];
   
   [UIView performWithoutAnimation:^{
   switch(position) {

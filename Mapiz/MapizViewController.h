@@ -13,6 +13,7 @@
 #import "MapizUser.h"
 #import "MapizPin.h"
 #import "ILTranslucentView.h"
+#import "MapizSplashViewController.h"
 
 @class MapViewController;
 @class InboxViewController;
@@ -33,8 +34,10 @@
   IBOutlet UISearchBar *searchBar;
   IBOutlet ILTranslucentView *meetupSetupView;
   IBOutlet UIDatePicker *datePicker;
+  IBOutlet UIActivityIndicatorView *actionInProgressIndicator;
 }
 
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *actionInProgressIndicator;
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, retain) MapViewController *mapViewController;
 @property (nonatomic, retain) InboxViewController *inboxViewController;
@@ -54,7 +57,9 @@
 @property (nonatomic, retain) IBOutlet MapizPrimaryImportantCircleButton *submitButton;
 @property (nonatomic, strong) MapizDDPClient *mapizDDPClient;
 @property (nonatomic, retain) MapizPin *replyTo;
+@property (nonatomic, retain) MapizPin *pinFromNotification;
 @property (nonatomic, retain) NSDate *locationSavedAt;
+@property (nonatomic) int position;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)setModeImHere:(CLLocation *)location;
@@ -65,9 +70,12 @@
 - (BOOL)isInModeReplyTo;
 - (void)cancelMode;
 - (void)lockMap;
+- (void)updateMyLocation:(CLLocation *)location;
 
 - (void)didReceiveAuthUserDetails:(MapizUser *)user;
 - (void)didConnect;
 - (void)didAuth;
+
+-(void)appearFromNotification: (MapizPin*)pin;
 
 @end

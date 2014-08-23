@@ -31,6 +31,8 @@ MapizDDPClient *mapizDDPClient;
 {
   [super viewDidLoad];
   mapizDDPClient = authViewController.mapizDDPClient;
+  loginTextField.delegate = self;
+  passwordTextField.delegate = self;
 }
 
 - (IBAction)goToSignup:(id)sender {
@@ -40,7 +42,8 @@ MapizDDPClient *mapizDDPClient;
 - (IBAction)login:(id)sender {
   NSString *login = [loginTextField.text lowercaseString];
   NSString *password = passwordTextField.text;
-  
+  _actionInProgressIndicator.hidden = NO;
+  loginButton.enabled = NO;
   if (!mapizDDPClient.websocketReady) {
     UIAlertView *notConnectedAlert = [[UIAlertView alloc] initWithTitle:@"Connection Error"
                                                                 message:@"Looks like we were unable to access our servers."
@@ -48,9 +51,13 @@ MapizDDPClient *mapizDDPClient;
                                                       cancelButtonTitle:@"OK"
                                                       otherButtonTitles:nil];
     [notConnectedAlert show];
+    _actionInProgressIndicator.hidden = YES;
+    loginButton.enabled = YES;
   }
   
   [mapizDDPClient logonWithUsernameOrEmail:login password:password responseCallback:^(NSDictionary *response, NSError *error){
+    _actionInProgressIndicator.hidden = YES;
+    loginButton.enabled = YES;
     if (error) {
       UIAlertView *notConnectedAlert = [[UIAlertView alloc] initWithTitle:@"Login error"
                                                                   message:@"Make sure your login details are right or sign up!"
@@ -62,25 +69,9 @@ MapizDDPClient *mapizDDPClient;
     }
     
     [self.authViewController handleAuth: response];
+    
   }];
 
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

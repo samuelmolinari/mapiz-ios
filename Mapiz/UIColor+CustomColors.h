@@ -16,6 +16,9 @@
 +(UIColor *) secondary;
 +(UIColor *) secondayDark;
 
++(UIColor *) success;
++(UIColor *) danger;
+
 +(UIColor *) bluePin;
 +(UIColor *) redPin;
 +(UIColor *) greenPin;

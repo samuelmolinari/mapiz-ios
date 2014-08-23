@@ -19,6 +19,7 @@
   IBOutlet UIButton *submitButton;
   IBOutlet UILabel *pinLabel;
   IBOutlet UIButton *dateLabel;
+  IBOutlet UIActivityIndicatorView *actionInProgressIndicator;
 }
 
 @property (nonatomic, retain) IBOutlet MKMapView* mapView;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) IBOutlet UIButton* submitButton;
 @property (nonatomic, retain) IBOutlet UILabel* pinLabel;
 @property (nonatomic, retain) IBOutlet UIButton* dateLabel;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *actionInProgressIndicator;
 @property (nonatomic, weak) MapizViewController* mapizViewController;
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation;

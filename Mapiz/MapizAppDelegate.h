@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MeteorClient.h>
+#import "MapizUser.h"
+#import "MapizPin.h"
+#import "MapizSplashViewController.h"
 
 @interface MapizAppDelegate : UIResponder <UIApplicationDelegate>
 

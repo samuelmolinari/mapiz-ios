@@ -19,6 +19,7 @@ BOOL REQUEST_RESUME_PENDING = NO;
 - (id)init {
   self = [super initWithDDPVersion:@"pre2"];
 
+//  ObjectiveDDP *ddp = [[ObjectiveDDP alloc] initWithURLString:@"wss://mapiz.herokuapp.com/websocket" delegate:self];
   ObjectiveDDP *ddp = [[ObjectiveDDP alloc] initWithURLString:@"ws://192.168.1.65:3000/websocket" delegate:self];
   self.ddp = ddp;
   [self.ddp connectWebSocket];

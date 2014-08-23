@@ -27,6 +27,7 @@ NSString *query;
 NSInteger sectionNumber;
 UIRefreshControl *refreshControl;
 UIView *header;
+BOOL isLoadingFriends;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,11 +39,15 @@ UIView *header;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  isLoadingFriends = NO;
+  [_addFriendButton sizeToFit];
+  [_addFriendButton setTitle:@"  " forState:UIControlStateDisabled];
   tableView.delegate = self;
   tableView.dataSource = self;
   selectedFriends = [[NSMutableArray alloc] init];
   friends = [[NSMutableDictionary alloc] init];
-  
+  [submitButton setTitle:@"  " forState:UIControlStateDisabled];
+  [submitButton sizeToFit];
   refreshControl = [[UIRefreshControl alloc]init];
   [self.tableView addSubview:refreshControl];
   [refreshControl addTarget:self action:@selector(reloadFriends) forControlEvents:UIControlEventValueChanged];
@@ -51,20 +56,24 @@ UIView *header;
   UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0,0,0,125)];
   header = [[UIView alloc] initWithFrame:CGRectMake(0,0,0,44)];
   tableView.tableFooterView = footer;
+  [refreshControl beginRefreshing];
 }
 
 -(void) reloadFriends {
-  [MapizUser callMyFriends:^(NSDictionary *response, NSError *error) {
-    [refreshControl endRefreshing];
-    if(!error) {
-      NSArray *friends = [response objectForKey:@"result"];
-      MapizDBManager *dbManager = [MapizDBManager getSharedInstance];
-      [dbManager resetUserTable];
-      [dbManager saveUsers:friends];
-      [self.tableView reloadData];
-    }
-    
-  }];
+  if(!isLoadingFriends) {
+    isLoadingFriends = YES;
+    [MapizUser callMyFriends:^(NSDictionary *response, NSError *error) {
+      [refreshControl endRefreshing];
+      if(!error) {
+        NSArray *friends = [response objectForKey:@"result"];
+        MapizDBManager *dbManager = [MapizDBManager getSharedInstance];
+        [dbManager resetUserTable];
+        [dbManager saveUsers:friends];
+        [self.tableView reloadData];
+      }
+      isLoadingFriends = NO;
+    }];
+  }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -138,9 +147,12 @@ UIView *header;
 
 - (IBAction)submitWhereAreYou:(id)sender {
   if([selectedFriends count] > 0) {
-    [submitButton setUserInteractionEnabled: NO];
+    
+    [submitButton setEnabled:NO];
+    [_actionInProgressIndicator setHidden:NO];
     [MapizPin callWhereAreYou:selectedFriends responseCallback:^(NSDictionary *response, NSError *error) {
-      [submitButton setUserInteractionEnabled: YES];
+      [submitButton setEnabled: YES];
+      [_actionInProgressIndicator setHidden:YES];
       if(error) {
         
       } else {
@@ -152,7 +164,10 @@ UIView *header;
 }
 
 - (IBAction)addFriend:(id)sender {
+  [_addFriendButton setEnabled:NO];
+  _friendActionInProgressIndicator.hidden = NO;
   [MapizUser callAddFriend:query responseCallback:^(NSDictionary *response, NSError *error) {
+    [_addFriendButton setEnabled:YES];
     if(error) {
       [ToastView showToastInParentView:self.view withText:error.localizedDescription withDuaration:5.0];
     } else {
@@ -163,6 +178,7 @@ UIView *header;
       [selectedFriends addObject:user._id];
       [tableView reloadData];
     }
+    _friendActionInProgressIndicator.hidden = YES;
   }];
 }
 

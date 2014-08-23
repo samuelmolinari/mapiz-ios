@@ -12,8 +12,22 @@
 
 @synthesize meteorClient;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+   (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+ 
+  [MapizDDPClient getInstance];
+  NSDictionary *userInfo = [launchOptions valueForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
+  if([[userInfo valueForKey:@"_collection"] isEqualToString:@"pins"]) {
+    MapizPin *pin = [[MapizPin alloc] initWithNotification:userInfo];
+    if(pin) {
+      MapizSplashViewController *splashViewController = (MapizSplashViewController*) self.window.rootViewController;
+      splashViewController.pin = pin;
+    }
+    NSLog(@"%@", launchOptions);
+  }
   
   return YES;
 }
@@ -32,7 +46,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-  // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+  
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -43,6 +57,58 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken {
+  
+  const unsigned *tokenBytes = [deviceToken bytes];
+  NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x",
+                        ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
+                        ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
+                        ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
+  
+  if([[MapizUser getApnToken] length] <= 0) {
+    [MapizUser saveApnToken:hexToken];
+  }
+  
+	NSLog(@"My token is: %@", hexToken);
+}
+
+- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo {
+	NSLog(@"Received notification: %@", userInfo);
+  if([[userInfo valueForKey:@"_collection"] isEqualToString:@"pins"]) {
+    MapizPin *pin = [[MapizPin alloc] initWithNotification:userInfo];
+    
+    UIViewController *controller = [self topMostController];
+    
+    if([application applicationState] != UIApplicationStateActive) {
+    
+      if([controller isKindOfClass:[MapizViewController class]]) {
+        MapizViewController *mapizViewController = (MapizViewController*)controller;
+        [mapizViewController appearFromNotification: pin];
+      } else if(![controller isKindOfClass:[MapizAuthViewController class]] || ![controller isKindOfClass:[MapizSplashViewController class]]) {
+        [controller dismissViewControllerAnimated:NO completion:Nil];
+        MapizViewController *mapizViewController = (MapizViewController*)[self topMostController];
+        [mapizViewController appearFromNotification: pin];
+      }
+    }
+  }
+  
+}
+
+- (UIViewController*) topMostController {
+  UIViewController *topController = self.window.rootViewController;
+  
+  while (topController.presentedViewController) {
+    topController = topController.presentedViewController;
+  }
+  
+  return topController;
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
 }
 
 @end

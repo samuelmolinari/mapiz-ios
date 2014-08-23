@@ -54,5 +54,11 @@
   return [UIColor colorWithRed:0.57 green:0.52 blue:0.52 alpha:1];
 }
 
++(UIColor *) success {
+  return [UIColor colorWithRed:0.7 green:0.76 blue:0.36 alpha:1];
+}
 
++(UIColor *) danger {
+  return [UIColor colorWithRed:0.86 green:0.38 blue:0.38 alpha:1];
+}
 @end

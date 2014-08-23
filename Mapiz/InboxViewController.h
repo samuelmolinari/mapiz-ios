@@ -12,18 +12,20 @@
 #import "MapizPinTableViewCell.h"
 #import "MapizViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "MapizDDPClient.h"
+#import "MapizPinViewController.h"
 
-@interface InboxViewController : UIViewController<CLLocationManagerDelegate,UITableViewDelegate, UITableViewDataSource, MapizDDPDelegate> {
-  
+@interface InboxViewController : UIViewController<CLLocationManagerDelegate,UITableViewDelegate, UITableViewDataSource, MapizDDPDelegate, UIAlertViewDelegate> {
   IBOutlet UITableView *tableView;
   
 }
 
 @property (nonatomic,retain) IBOutlet UITableView *tableView;
-@property (nonatomic,retain) IBOutlet UIRefreshControl *refreshControl;
+@property (nonatomic,retain) UIRefreshControl *refreshControl;
 @property (nonatomic, weak) MapizViewController* mapizViewController;
 
 - (void)didReceiveAuthUserDetails:(MapizUser *)user;
+- (void)updateMyLocation:(CLLocation *)location;
 - (void)didConnect;
 - (void)didAuth;
 

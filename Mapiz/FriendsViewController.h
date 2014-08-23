@@ -17,13 +17,19 @@
   IBOutlet UITableView *tableView;
   IBOutlet UILabel *friendLabel;
   IBOutlet UIView *addFriendView;
+  IBOutlet UIActivityIndicatorView *actionInProgressIndicator;
+  IBOutlet UIActivityIndicatorView *friendActionInProgressIndicator;
+  IBOutlet UIButton *addFriendButton;
 }
 
+@property (nonatomic, retain) IBOutlet UIButton *addFriendButton;
 @property (nonatomic, retain) IBOutlet UIButton *submitButton;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UILabel *friendLabel;
 @property (nonatomic, retain) IBOutlet UIView *addFriendView;
-@property (nonatomic, retain) IBOutlet NSMutableArray *selectedFriends;
+@property (nonatomic, retain) NSMutableArray *selectedFriends;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *actionInProgressIndicator;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *friendActionInProgressIndicator;
 @property (nonatomic, weak) MapizViewController* mapizViewController;
 
 - (void)resetSelections;

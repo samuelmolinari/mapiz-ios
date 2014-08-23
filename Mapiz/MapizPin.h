@@ -52,6 +52,7 @@ typedef NS_ENUM(NSInteger, Status) {
 @property (nonatomic) BOOL recipientIsGoing;
 
 - (id) initWithResponse: (NSDictionary*) response;
+- (id) initWithNotification: (NSDictionary*) userInfo;
 
 - (BOOL) isRecipient;
 - (BOOL) isSender;
@@ -75,5 +76,14 @@ typedef NS_ENUM(NSInteger, Status) {
              withCoordinates:(CLLocation *)location
                           at:(NSDate *)at
             responseCallback:(MeteorClientMethodCallback)responseCallback;
+
++ (void) callAcceptMeetupInvite: (NSString *) pinId
+               responseCallback:(MeteorClientMethodCallback) responseCallback;
+
++ (void) callTurnDownMeetupInvite: (NSString *) pinId
+                 responseCallback:(MeteorClientMethodCallback) responseCallback;
+
++ (void) callRemove: (NSString *) pinId
+                 responseCallback:(MeteorClientMethodCallback) responseCallback;
 
 @end

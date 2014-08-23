@@ -39,7 +39,7 @@ int pinColour;
   pinLabel.text = [[[MapizUser getUsername] substringToIndex:1] uppercaseString];
   self.mapView.delegate = self;
   [self startTracking];
-  
+  [submitButton setTitle:@"  " forState:UIControlStateDisabled];
   [dateLabel sizeToFit];
 }
 
@@ -63,10 +63,16 @@ int pinColour;
       pinType = PinTypeMeetMeThere;
       date = mapizViewController.locationSavedAt;
     }
+    
+    [submitButton setEnabled:NO];
+    [_actionInProgressIndicator setHidden:NO];
     [MapizPin callSubmitPinOfType:pinType
                      toRecipients:@[mapizViewController.replyTo.sender._id]
                   withCoordinates:location
-                               at:date responseCallback:^(NSDictionary *response, NSError *error) {
+                               at:date
+                 responseCallback:^(NSDictionary *response, NSError *error) {
+                                 [submitButton setEnabled:YES];
+                                 [_actionInProgressIndicator setHidden:YES];
                                  [mapizViewController cancelMode];
                                }];
   }
@@ -93,12 +99,14 @@ int pinColour;
 - (void)startTracking {
   trackingUser = YES;
   [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:NO];
+  CLLocation *location = [[CLLocation alloc] initWithLatitude:self.mapView.userLocation.coordinate.latitude longitude:self.mapView.userLocation.coordinate.longitude];
+  [self.mapizViewController updateMyLocation:location];
   [self.mapView setShowsUserLocation: YES];
   [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
 }
 
 - (void)stopTracking {
-  [self performSelector:@selector(stopTrackingNow) withObject:nil afterDelay:3.0];
+  [self performSelector:@selector(stopTrackingNow) withObject:nil afterDelay:30.0];
 }
 
 - (void)stopTrackingNow {
@@ -110,6 +118,9 @@ int pinColour;
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+  
+  CLLocation *location = [[CLLocation alloc] initWithLatitude:userLocation.coordinate.latitude longitude:userLocation.coordinate.longitude];
+  [self.mapizViewController updateMyLocation:location];
   [self stopTracking];
 }
 
@@ -131,6 +142,7 @@ int pinColour;
 }
 
 -(void)unlockMap {
+  [self stopTrackingNow];
   [mapView setZoomEnabled: YES];
   [mapView setScrollEnabled: YES];
   [mapView setUserInteractionEnabled: YES];
